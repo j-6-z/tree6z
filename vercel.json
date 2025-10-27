@@ -10,39 +10,36 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/windows",
-      "dest": "/windows.html"
-    },
-    {
-      "src": "/lawn-care",
-      "dest": "/lawn-care.html"
-    },
-    {
-      "src": "/leaf-removal",
-      "dest": "/leaf-removal.html"
-    },
-    {
-      "src": "/spring-cleanup",
-      "dest": "/spring-cleanup.html"
-    },
-    {
-      "src": "/snow-removal",
-      "dest": "/snow-removal.html"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "handle": "filesystem"
-    }
-  ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/windows",
+      "destination": "/windows.html"
+    },
+    {
+      "source": "/lawn-care",
+      "destination": "/lawn-care.html"
+    },
+    {
+      "source": "/leaf-removal",
+      "destination": "/leaf-removal.html"
+    },
+    {
+      "source": "/spring-cleanup",
+      "destination": "/spring-cleanup.html"
+    },
+    {
+      "source": "/snow-removal",
+      "destination": "/snow-removal.html"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "/images/$1"
+    }
+  ]
 }
