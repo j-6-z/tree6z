@@ -4,7 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>tree6z | We Keep Your Place Looking Sharp All Year</title>
+
+    <!-- ========== OPEN GRAPH / SOCIAL META TAGS ========== -->
+    <meta property="og:title" content="tree6z | We Keep Your Place Looking Sharp All Year" />
+    <meta property="og:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right in Regina, SK." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tree6z.ca/" />
+    <meta property="og:image" content="https://tree6z.ca/images/tree6z-logo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="tree6z" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="tree6z | We Keep Your Place Looking Sharp All Year" />
+    <meta name="twitter:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right." />
+    <meta name="twitter:image" content="https://tree6z.ca/images/tree6z-logo.jpg" />
+
+    <!-- ========== FAVICON (Optional but Recommended) ========== -->
+    <link rel="icon" href="https://tree6z.ca/images/tree6z-logo.jpg" type="image/jpeg">
+
+    <!-- ========== GOOGLE FONTS ========== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ========== SCHEMA.ORG LOCAL BUSINESS ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "tree6z",
+      "image": "https://tree6z.ca/images/tree6z-logo.jpg",
+      "url": "https://tree6z.ca",
+      "telephone": "+13062229165",
+      "email": "tree6zlandscaping@gmail.com",
+      "description": "Year-round property maintenance in Regina, SK: lawn care, snow removal, window cleaning, leaf removal, spring cleanup.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "SK",
+        "addressCountry": "CA"
+      },
+      "openingHours": "Mo-Su 06:00-22:00"
+    }
+    </script>
+
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.7;overflow-x:hidden}
@@ -50,11 +92,11 @@
             width:160px;height:160px;border:3px solid #fff;border-radius:50%;
             background:#111;display:flex;align-items:center;justify-content:center;
             margin-bottom:1.8rem;overflow:hidden;box-shadow:0 0 0 10px rgba(0,0,0,.4);
-            padding:12px; /* Tight inner padding */
+            padding:12px;
         }
         .logo-space img{
-            width:100%;height:100%;object-fit:contain; /* Keeps full logo visible */
-            transform:scale(1.15); /* ZOOMS IN — makes logo punchier */
+            width:100%;height:100%;object-fit:contain;
+            transform:scale(1.15);
         }
         .hero-content{max-width:800px}
         .tagline{font-size:1.3rem;margin:1rem 0;opacity:.9}
@@ -95,7 +137,7 @@
         .call-float:hover{transform:translateX(-50%) scale(1.05)}
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
 
-        /* FOOTER - FIXED & CLEAN */
+        /* FOOTER */
         footer{
             background:#111;
             padding:4rem 0 1.5rem;
@@ -187,8 +229,7 @@
 <!-- HERO WITH ZOOMED-IN LOGO -->
 <header id="home">
     <div class="logo-space">
-        <!-- Replace with your actual logo -->
-        <img src="images/download.jpg" alt="tree6z logo">
+        <img src="images/tree6z-logo.jpg" alt="tree6z logo - Regina property maintenance">
     </div>
     <div class="container hero-content">
         <h1>We Keep Your Place Looking Sharp All Year</h1>
@@ -243,27 +284,27 @@
     </div>
     <div class="services-grid">
         <a href="window.html" class="service-card">
-            <div class="service-icon"><img src="images/window.jpg" alt=""></div>
+            <div class="service-icon"><img src="images/window.jpg" alt="Professional window cleaning by tree6z"></div>
             <h3>Window Cleaning</h3>
             <p>No streaks. Inside & out.</p>
         </a>
         <a href="lawncare.html" class="service-card">
-            <div class="service-icon"><img src="images/lawn.jpg" alt=""></div>
+            <div class="service-icon"><img src="images/lawn.jpg" alt="Lawn mowing and edging service"></div>
             <h3>Lawn Care</h3>
             <p>Mow, edge, weed control. Weekly.</p>
         </a>
         <a href="leaf.html" class="service-card">
-            <div class="service-icon"><img src="images/leaf.jpg" alt=""></div>
+            <div class="h3ervice-icon"><img src="images/leaf.jpg" alt="Fall leaf and gutter cleanup"></div>
             <h3>Leaf Removal</h3>
             <p>Fall cleanup + gutters.</p>
         </a>
         <a href="spring.html" class="service-card">
-            <div class="service-icon"><img src="images/spring.jpg" alt=""></div>
+            <div class="service-icon"><img src="images/spring.jpg" alt="Spring yard cleanup and dethatching"></div>
             <h3>Spring Cleanup</h3>
             <p>Dethatch, mulch, first cut.</p>
         </a>
         <a href="snow.html" class="service-card">
-            <div class="service-icon"><img src="images/snow.jpg" alt=""></div>
+            <div class="service-icon"><img src="images/snow.jpg" alt="24/7 snow plowing and salting"></div>
             <h3>Snow Removal</h3>
             <p>24/7 plowing & salting.</p>
         </a>
@@ -287,7 +328,7 @@
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
-                <a href="#services">Services</a>
+                <a href="index.html">Services</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
