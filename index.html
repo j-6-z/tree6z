@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>tree6z | Year-Round Property Maintenance in Saskatoon</title>
-
     <!-- Open Graph -->
     <meta property="og:title" content="tree6z | We Keep Your Place Looking Sharp All Year" />
     <meta property="og:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right in Saskatoon, SK." />
@@ -13,13 +12,10 @@
     <meta property="og:image" content="https://i.ibb.co/HTzW6J9J/download.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-
     <!-- Favicon -->
     <link rel="icon" href="https://i.ibb.co/HTzW6J9J/download.jpg" type="image/jpeg">
-
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
-
     <!-- Schema -->
     <script type="application/ld+json">
     {
@@ -40,7 +36,6 @@
       "openingHours": "Mo-Su 06:00-22:00"
     }
     </script>
-
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
@@ -48,7 +43,7 @@
         img{max-width:100%;display:block}
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-
+        .text-center{text-align:center}
         /* NAV */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
@@ -62,7 +57,6 @@
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
-
         /* Mobile Menu */
         .mobile-menu{
             position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
@@ -72,20 +66,60 @@
         .mobile-menu.active{right:0}
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
-
-        /* Hero - NO OVERLAP */
+        /* HERO - CSS-ONLY LOGO BUBBLE */
         header{
             min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-            text-align:center;padding-top:110px;
+            text-align:center;padding-top:110px;position:relative;
             background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
                        url('https://images.unsplash.com/photo-1502086223501-09a85ba1a2b7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
-        .logo-space{
-            width:180px;height:180px;border:5px solid #fff;border-radius:50%;background:#000;
-            display:flex;align-items:center;justify-content:center;margin:0 auto 2.5rem;
-            overflow:hidden;box-shadow:0 0 0 14px rgba(0,0,0,.6);
+        .logo-bubble{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            background:#000;
+            border:4px solid #fff;
+            border-radius:60px;
+            padding:22px 48px;
+            margin:0 auto 2.8rem;
+            box-shadow:
+                0 0 0 12px rgba(0,0,0,.6),
+                0 0 60px rgba(255,255,255,.15),
+                inset 0 0 30px rgba(0,0,0,.4);
+            backdrop-filter:blur(12px);
+            transition:all .4s ease;
+            animation:logoFloat 4s ease-in-out infinite;
+            overflow:hidden;
         }
-        .logo-space img{width:100%;height:100%;object-fit:contain;transform:scale(1.2)}
+        /* CSS-ONLY LOGO: Tree + 6z */
+        .logo-tree{
+            width:78px;height:78px;
+            filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));
+            transition:transform .4s ease;
+        }
+        .logo-text{
+            font-size:3.2rem;
+            font-weight:900;
+            letter-spacing:-.04em;
+            color:#fff;
+            transition:transform .4s ease;
+        }
+        .logo-bubble:hover{
+            transform:translateY(-4px) scale(1.02);
+            box-shadow:
+                0 0 0 12px rgba(0,0,0,.6),
+                0 0 80px rgba(255,255,255,.25),
+                inset 0 0 40px rgba(0,0,0,.5);
+        }
+        .logo-bubble:hover .logo-tree,
+        .logo-bubble:hover .logo-text{
+            transform:scale(1.05);
+        }
+        @keyframes logoFloat{
+            0%,100%{transform:translateY(0)}
+            50%{transform:translateY(-8px)}
+        }
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
         .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
@@ -94,20 +128,14 @@
             font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;
         }
         .cta:hover{background:#fff;color:#000;transform:scale(1.06)}
-
-        /* OWNER & VISION SECTION (NEW) */
+        /* OWNER & VISION SECTION */
         .owner-vision{
             padding:8rem 1.5rem;background:#111;text-align:center;
             border-top:1px solid #222;border-bottom:1px solid #222;
         }
         .owner-photo{
-            width:80px;
-            height:80px;
-            border-radius:50%;
-            object-fit:cover;
-            border:2px solid #fff;
-            margin:0 auto 1.2rem;
-            display:block;
+            width:80px;height:80px;border-radius:50%;object-fit:cover;
+            border:2px solid #fff;margin:0 auto 1.2rem;display:block;
             box-shadow:0 8px 20px rgba(0,0,0,.4);
         }
         .owner-vision h2{
@@ -119,20 +147,13 @@
             opacity:.92;line-height:1.7;font-weight:500;
         }
         .owner-vision p + p{margin-top:1.2rem}
-        .owner-vision .highlight{
-            font-weight:900;color:#fff;display:inline-block;
-        }
-
-        /* WHY CLIENTS STAY - GODLIKE, SIMPLE, RELEVANT */
+        .owner-vision .highlight{font-weight:900;color:#fff;display:inline-block;}
+        /* WHY CLIENTS STAY */
         .trust-section{
             padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
         }
-        .trust-section h2{
-            font-size:2.6rem;text-align:center;margin-bottom:1.8rem;
-        }
-        .trust-grid{
-            display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;
-        }
+        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:1.8rem}
+        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
         .trust-card{
             background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
             border:1px solid #222;transition:all .4s;
@@ -140,7 +161,6 @@
         .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
         .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
         .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
-
         /* Services */
         section{padding:6rem 0}
         .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:4rem}
@@ -155,8 +175,7 @@
             width:90px;height:90px;background:#fff;border-radius:50%;margin:0 auto 1.5rem;
             display:flex;align-items:center;justify-content:center;overflow:hidden;
         }
-
-        /* CRYSTAL CLEAR GLASS CALL BUBBLE */
+        /* CALL BUBBLE */
         .call-bubble{
             position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
             background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
@@ -177,42 +196,38 @@
         }
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
-
         /* License */
         .license-section{padding:8rem 1.5rem;background:#000;border-top:5px solid #222}
         .license-img{
             max-width:820px;width:100%;margin:3rem auto 0;display:block;
             border:6px solid #222;border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.9);
         }
-
         /* Footer */
         footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
-
+        .footer-col h3{margin-bottom:1rem}
         /* Mobile */
         @media(max-width:768px){
             nav{padding:1.4rem 0}
             nav.scrolled{padding:1rem 0}
             header{padding-top:95px}
-            .logo-space{width:140px;height:140px}
-            .owner-photo{
-                width:70px;
-                height:70px;
-                margin-bottom:1rem;
+            .logo-bubble{
+                padding:16px 36px;
+                margin-bottom:2.2rem;
+                gap:8px;
             }
+            .logo-tree{width:62px;height:62px}
+            .logo-text{font-size:2.6rem}
+            .owner-photo{width:70px;height:70px;margin-bottom:1rem}
             .owner-vision h2{font-size:2.3rem}
             .trust-section h2{font-size:2.2rem}
-            .call-bubble{
-                font-size:1rem;padding:15px 28px;bottom:20px;
-                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
-            }
+            .call-bubble{font-size:1rem;padding:15px 28px;bottom:20px}
             h1{font-size:2.8rem}
             .tagline{font-size:1.2rem}
         }
     </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav id="nav">
     <div class="container nav-inner">
@@ -222,7 +237,6 @@
         </div>
     </div>
 </nav>
-
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
@@ -233,11 +247,16 @@
     <a href="snow.html">Snow Removal</a>
     <a href="contact.html">Contact</a>
 </div>
-
-<!-- Hero -->
+<!-- HERO - CSS-ONLY LOGO BUBBLE -->
 <header id="home">
-    <div class="logo-space">
-        <img src="https://i.ibb.co/HTzW6J9J/download.jpg" alt="tree6z logo">
+    <div class="logo-bubble">
+        <!-- Tree Icon (SVG) -->
+        <svg class="logo-tree" viewBox="0 0 100 100" width="78" height="78">
+            <path d="M50 15 L30 35 L40 35 L40 55 L30 55 L50 75 L70 55 L60 55 L60 35 L70 35 Z" fill="#fff"/>
+            <rect x="45" y="75" width="10" height="20" fill="#fff"/>
+        </svg>
+        <!-- Text -->
+        <span class="logo-text">6z</span>
     </div>
     <div class="container hero-content">
         <h1>We Keep Your Place Looking Sharp All Year</h1>
@@ -245,25 +264,23 @@
         <a href="#services" class="cta">See Our Services</a>
     </div>
 </header>
-
-<!-- OWNER & VISION SECTION (replaces old greatness) -->
+<!-- OWNER & VISION SECTION -->
 <section class="owner-vision">
     <div class="container">
         <img src="https://i.ibb.co/1wzXdz6/jay-profile.jpg" alt="Jay Turner – Owner of tree6z" class="owner-photo">
         <h2>Hey, I'm Jay T — Owner of tree6z</h2>
         <p>
-            I started this in 2018 with one beat-up truck and a mower I bought off Kijiji. 
+            I started this in 2018 with one beat-up truck and a mower I bought off Kijiji.
             No investors, no fluff — just me, my crew, and a promise: <span class="highlight">we'll beat anyone on price and still make your place look like a damn magazine.</span>
         </p>
         <p>
-            Our vision? Be the <span class="highlight">most competitively priced landscaper in Saskatoon</span> without ever cutting corners. 
-            Sharp lines, zero weeds, spotless windows, snow gone before you wake up — all at rates that don't make you choke on your coffee. 
+            Our vision? Be the <span class="highlight">most competitively priced landscaper in Saskatoon</span> without ever cutting corners.
+            Sharp lines, zero weeds, spotless windows, snow gone before you wake up — all at rates that don't make you choke on your coffee.
             We obsess over the details so you don't have to. Family-run, local, and built on repeat clients who know we're not here to upsell — we're here to <span class="highlight">outwork and outprice everyone else.</span>
         </p>
     </div>
 </section>
-
-<!-- WHY CLIENTS STAY - GODLIKE, CLEAN, RELEVANT -->
+<!-- WHY CLIENTS STAY -->
 <section class="trust-section">
     <div class="container">
         <h2>Why Clients Never Leave</h2>
@@ -287,7 +304,6 @@
         </div>
     </div>
 </section>
-
 <!-- Services -->
 <section id="services" class="container">
     <div class="text-center">
@@ -317,7 +333,6 @@
         </a>
     </div>
 </section>
-
 <!-- Business License -->
 <section class="license-section">
     <div class="container text-center">
@@ -331,12 +346,10 @@
         </p>
     </div>
 </section>
-
-<!-- CRYSTAL GLASS CALL BUBBLE -->
+<!-- CALL BUBBLE -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
     Call Now: (306) 222-9165
 </div>
-
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -358,19 +371,16 @@
         </div>
     </div>
 </footer>
-
 <script>
     window.addEventListener('scroll', () => {
         document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
     });
-
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');
         menu.classList.toggle('active');
         hamburger.classList.toggle('active');
     }
-
     document.addEventListener('click', (e) => {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');
