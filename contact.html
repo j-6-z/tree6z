@@ -2,215 +2,203 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Contact Us | tree6z</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/HTzW6J9J/download.jpg" type="image/jpeg">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "tree6z",
+      "image": "https://i.ibb.co/HTzW6J9J/download.jpg",
+      "url": "https://tree6z.ca",
+      "telephone": "+13062229165",
+      "email": "tree6zlandscaping@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Saskatoon",
+        "addressRegion": "SK",
+        "addressCountry": "CA"
+      }
+    }
+    </script>
+
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden;position:relative}
+        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
         a{color:inherit;text-decoration:none}
         img{max-width:100%;display:block}
-        h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
-        h1{font-size:clamp(2.8rem,9vw,5.5rem);letter-spacing:-.03em}
-        h2{font-size:clamp(2rem,6vw,3rem)}
-        h3{font-size:1.3rem}
-        .container{max-width:1400px;margin:0 auto;padding:0 2rem}
+        h1,h2,h3{font-weight:900;letter-spacing:-.02em}
+        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        /* NAV */
-        nav{position:fixed;top:0;width:100%;padding:1.5rem 0;z-index:1000;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);transition:.4s}
-        nav.scrolled{padding:1rem 0;background:rgba(0,0,0,.95)}
+        /* NAV - SAME AS INDEX */
+        nav{
+            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
+            background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
+        }
+        nav.scrolled{padding:1.2rem 0}
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-size:1.8rem;font-weight:700;letter-spacing:.12em}
-        .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
-        .nav-links a{position:relative;font-weight:500;padding:0.5rem 0;transition:color .3s}
-        .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;background:#fff;transition:.4s}
-        .nav-links a:hover::after{width:100%}
+        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
+        .hamburger{cursor:pointer;padding:10px;border-radius:50%;transition:all .3s}
+        .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
+        .hamburger.active span:nth-child(2){opacity:0}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* DROPDOWN - CENTERED UNDER "SERVICES" */
-        .dropdown{position:relative;display:inline-block}
-        .dropdown > a::after{left:50%;transform:translateX(-50%)}
-        .dropdown:hover .dropdown-menu,
-        .dropdown.active .dropdown-menu{
-            opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
-        }
-        .dropdown-menu{
-            position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(15px);
-            background:#111;border:1px solid #333;border-radius:8px;padding:1rem 0;
-            min-width:220px;opacity:0;visibility:hidden;
-            transition:all .4s cubic-bezier(.215,.61,.355,1);
-            box-shadow:0 20px 40px rgba(0,0,0,.5);z-index:999;
-            text-align:center;
-        }
-        .dropdown-menu a{
-            display:block;padding:0.75rem 1.5rem;font-size:0.95rem;transition:.3s;position:relative
-        }
-        .dropdown-menu a:hover{
-            background:rgba(255,255,255,.1);padding-left:1.8rem
-        }
-        .dropdown-menu a::before{
-            content:'';position:absolute;left:0;top:50%;width:3px;height:0;background:#fff;
-            transition:height .3s;transform:translateY(-50%)
-        }
-        .dropdown-menu a:hover::before{height:100%}
-
-        /* HAMBURGER (MOBILE) */
-        .hamburger{display:none;cursor:pointer;padding:0.5rem}
-        .hamburger span{display:block;width:25px;height:2px;background:#fff;margin:5px 0;transition:.3s}
+        /* Mobile Menu - SAME AS INDEX */
         .mobile-menu{
-            position:fixed;top:70px;left:0;width:100%;background:#111;
-            padding:1.5rem 0;display:none;z-index:998;
-            border-bottom:1px solid #333
+            position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
+            padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
+            box-shadow:-10px 0 40px rgba(0,0,0,.7);border-left:1px solid #222;overflow-y:auto;
         }
-        .mobile-menu.active{display:block}
-        .mobile-menu a{
-            display:block;padding:1rem 2rem;font-size:1.1rem;border-bottom:1px solid #222;text-align:center
-        }
+        .mobile-menu.active{right:0}
+        .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* HERO - CONTACT PAGE */
-        .hero-contact{
-            min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;
-            background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1516321310766-90c75cc76bc7?auto=format&fit=crop&w=1600&q=80') center/cover;
-            position:relative;
+        /* CONTACT HERO - LOGO + H1 */
+        header{
+            min-height:70dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+            text-align:center;padding-top:110px;
+            background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+                       url('https://images.unsplash.com/photo-1516321310766-90c75cc76bc7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
-        .hero-contact .container{max-width:900px}
-        .hero-contact h1{margin-bottom:1rem}
-        .hero-contact .tagline{font-size:1.4rem;opacity:.9}
+        .logo-space{
+            width:180px;height:180px;border:5px solid #fff;border-radius:50%;background:#000;
+            display:flex;align-items:center;justify-content:center;margin:0 auto 2.5rem;
+            overflow:hidden;box-shadow:0 0 0 14px rgba(0,0,0,.6);
+        }
+        .logo-space img{width:100%;height:100%;object-fit:contain;transform:scale(1.2)}
+        .hero-content{max-width:900px;padding:0 1rem}
+        h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
+        .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
 
-        /* CONTACT FORM */
-        .contact-form-section{padding:6rem 0}
+        /* CONTACT FORM - GLASS INPUTS, FLOATING LABELS */
+        .contact-form-section{padding:6rem 1.5rem}
         .contact-form{
-            max-width:700px;margin:0 auto;background:#111;padding:3rem;
-            border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.5);
+            max-width:700px;margin:0 auto;background:#111;padding:3.5rem;
+            border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.6);
+            border:1px solid #222;
         }
-        .form-group{margin-bottom:1.5rem}
+        .form-group{position:relative;margin-bottom:2rem}
         .form-group label{
-            display:block;margin-bottom:.5rem;font-weight:600;opacity:.9
+            position:absolute;top:1rem;left:1rem;font-size:1rem;font-weight:600;opacity:.8;
+            transition:all .3s;pointer-events:none;color:#aaa;
+        }
+        .form-group input:focus ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group input:not(:placeholder-shown) ~ label,
+        .form-group textarea:not(:placeholder-shown) ~ label{
+            top:-10px;left:12px;font-size:.85rem;background:#111;padding:0 .5rem;opacity:1;color:#fff;
         }
         .form-group input,
-        .form-group textarea{
-            width:100%;padding:1rem;background:#222;border:1px solid #444;
-            color:#fff;font:inherit;border-radius:8px;transition:border .3s;
+        .form-group textarea,
+        .form-group select{
+            width:100%;padding:1.1rem 1rem;background:#222;border:1px solid #444;
+            color:#fff;font:inherit;border-radius:10px;transition:all .3s;
         }
         .form-group input:focus,
-        .form-group textarea:focus{
-            outline:none;border-color:#fff
+        .form-group textarea:focus,
+        .form-group select:focus{
+            outline:none;border-color:#fff;background:#333;
         }
         .form-group textarea{height:160px;resize:vertical}
         .submit-btn{
-            background:transparent;border:2px solid #fff;color:#fff;padding:1rem 2.8rem;
-            font-weight:600;cursor:pointer;border-radius:50px;transition:.4s;
-            font-size:1rem
+            background:transparent;border:2px solid #fff;color:#fff;padding:1.1rem 3rem;
+            font-weight:900;font-size:1.1rem;letter-spacing:1px;cursor:pointer;
+            border-radius:50px;transition:all .4s;width:100%;margin-top:1rem;
         }
         .submit-btn:hover{
-            background:#fff;color:#000;transform:translateY(-4px);
-            box-shadow:0 12px 24px rgba(255,255,255,.15)
+            background:#fff;color:#000;transform:scale(1.02);
+            box-shadow:0 15px 35px rgba(255,255,255,.15);
         }
         .success-message{
-            background:#0f5132;color:#d1e7dd;padding:1rem;border-radius:8px;
-            text-align:center;margin-top:1.5rem;display:none
+            background:rgba(0,255,0,.15);color:#d1e7dd;padding:1.2rem;border-radius:10px;
+            text-align:center;margin-top:1.5rem;display:none;border:1px solid rgba(0,255,0,.3);
         }
 
-        /* CENTERED FLOATING CALL BUTTON */
-        .call-float{
-            position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);
-            z-index:999;background:#fff;color:#000;padding:1rem 2rem;
-            border-radius:50px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.4);
-            display:flex;align-items:center;gap:.75rem;
-            animation:float 3s ease-in-out infinite;transition:.3s;cursor:pointer;
-            font-size:1rem;white-space:nowrap;
+        /* TRUST GRID - SAME AS INDEX */
+        .trust-section{
+            padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
         }
-        .call-float:hover{transform:translateX(-50%) scale(1.08);box-shadow:0 15px 40px rgba(0,0,0,.5)}
-        .call-float::before{content:'Phone';font-size:1.5rem;}
-        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+        .trust-section h2{
+            font-size:2.6rem;text-align:center;margin-bottom:1.8rem;
+        }
+        .trust-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;
+        }
+        .trust-card{
+            background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
+            border:1px solid #222;transition:all .4s;
+        }
+        .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
+        .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
+        .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
 
-        /* CLEAN FOOTER */
-        .footer-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-            gap:3rem;
-            padding:3rem 0 2rem;
-            border-bottom:1px solid #222;
+        /* CRYSTAL GLASS CALL BUBBLE - SAME AS INDEX */
+        .call-bubble{
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
+            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
+            font-weight:900;font-size:1.1rem;letter-spacing:.7px;
+            box-shadow:0 20px 55px rgba(0,0,0,.35);
+            display:flex;align-items:center;gap:14px;cursor:pointer;
+            animation:float 3s ease-in-out infinite;white-space:nowrap;
+            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
+            transition:all .3s;
         }
-        .footer-contact h3,
-        .footer-links-col h3,
-        .footer-social h3{
-            font-size:1.3rem;margin-bottom:1rem;letter-spacing:-0.02em;
+        .call-bubble::before{
+            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
+            animation:pulse 2s infinite;
         }
-        .footer-phone,
-        .footer-email{
-            display:block;font-size:1.1rem;font-weight:600;margin:.5rem 0;
+        .call-bubble:hover{
+            background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);
+            box-shadow:0 25px 65px rgba(0,0,0,.5);
         }
-        .footer-links-col a,
-        .footer-social a{
-            display:block;margin:.5rem 0;opacity:.85;transition:.3s;
-        }
-        .footer-links-col a:hover,
-        .footer-social a:hover{opacity:1;transform:translateX(4px)}
-        .social-icons{
-            display:flex;gap:1.5rem;margin-top:.75rem;
-        }
-        .social-icons a{
-            width:40px;height:40px;background:#fff;color:#000;border-radius:50%;
-            display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-            transition:transform .3s, box-shadow .3s;
-        }
-        .social-icons a:hover{
-            transform:translateY(-4px);box-shadow:0 8px 20px rgba(255,255,255,.2);
-        }
-        .footer-bottom{
-            text-align:center;padding:1.5rem 0;font-size:.95rem;opacity:.8;
-        }
+        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
+        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* ANIMATIONS */
-        @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-        .fade{opacity:0;transform:translateY(30px);transition:.8s}
-        .fade.visible{opacity:1;transform:translateY(0)}
+        /* FOOTER - SAME AS INDEX */
+        footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
+        .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
+        .footer-col a:hover{transform:translateX(8px);color:#fff}
 
-        /* RESPONSIVE */
+        /* Mobile */
         @media(max-width:768px){
-            .hamburger{display:block}
-            .nav-links{display:none}
-            .dropdown-menu{
-                position:static;transform:none;left:auto;top:auto;
-                display:none;width:100%;border-radius:0;box-shadow:none;
-                border-top:1px solid #333;margin-top:0
+            nav{padding:1.4rem 0}
+            nav.scrolled{padding:1rem 0}
+            header{padding-top:95px}
+            .logo-space{width:140px;height:140px}
+            .contact-form{padding:2.5rem}
+            .call-bubble{
+                font-size:1rem;padding:15px 28px;bottom:20px;
+                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
             }
-            .dropdown.active .dropdown-menu{display:block}
-            .dropdown-menu a{padding:1rem 2rem;text-align:center}
-            .call-float{bottom:1rem;padding:.9rem 1.5rem;font-size:.9rem}
-            .call-float::before{font-size:1.2rem}
-            .contact-form{padding:2rem}
+            .trust-section h2{font-size:2.2rem}
+            h1{font-size:2.8rem}
+            .tagline{font-size:1.2rem}
         }
     </style>
 </head>
 <body>
 
-<!-- NAV WITH CENTERED DROPDOWN -->
+<!-- NAV - SAME AS INDEX -->
 <nav id="nav">
     <div class="container nav-inner">
         <div class="logo">tree6z</div>
         <div class="hamburger" onclick="toggleMobileMenu()">
             <span></span><span></span><span></span>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="event.preventDefault(); toggleDropdown(event)">Services</a>
-                <div class="dropdown-menu">
-                    <a href="window.html">Window Cleaning</a>
-                    <a href="lawncare.html">Lawn Care</a>
-                    <a href="leaf.html">Leaf Removal</a>
-                    <a href="spring.html">Spring Cleanup</a>
-                    <a href="snow.html">Snow Removal</a>
-                </div>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
     </div>
 </nav>
 
-<!-- MOBILE MENU -->
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="window.html">Window Cleaning</a>
@@ -222,125 +210,134 @@
 </div>
 
 <!-- CONTACT HERO -->
-<header class="hero-contact">
-    <div class="container">
+<header>
+    <div class="logo-space">
+        <img src="https://i.ibb.co/HTzW6J9J/download.jpg" alt="tree6z logo">
+    </div>
+    <div class="container hero-content">
         <h1>Contact Us</h1>
         <p class="tagline">Get a quote in under 2 hours</p>
     </div>
 </header>
 
 <!-- CONTACT FORM -->
-<section class="contact-form-section container">
-    <form class="contact-form fade" action="https://formspree.io/f/xdoqjykl" method="POST">
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required placeholder="John Doe">
-        </div>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="_replyto" required placeholder="john@example.com">
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone (Optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="(306) 555-1234">
-        </div>
-        <div class="form-group">
-            <label for="service">Service Needed</label>
-            <select name="service" id="service" style="width:100%;padding:1rem;background:#222;border:1px solid #444;color:#fff;border-radius:8px;">
-                <option value="Window Cleaning">Window Cleaning</option>
-                <option value="Lawn Care">Lawn Care</option>
-                <option value="Leaf Removal">Leaf Removal</option>
-                <option value="Spring Cleanup">Spring Cleanup</option>
-                <option value="Snow Removal">Snow Removal</option>
-                <option value="Other">Other / Quote</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-        <div class="success-message" id="successMsg">
-            Thank you! We'll reply within 2 hours.
-        </div>
-    </form>
+<section class="contact-form-section">
+    <div class="container">
+        <form class="contact-form" action="https://formspree.io/f/xdoqjykl" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required placeholder=" ">
+                <label for="name">Full Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="_replyto" required placeholder=" ">
+                <label for="email">Email Address</label>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder=" ">
+                <label for="phone">Phone (Optional)</label>
+            </div>
+            <div class="form-group">
+                <select name="service" id="service">
+                    <option value="" disabled selected></option>
+                    <option value="Window Cleaning">Window Cleaning</option>
+                    <option value="Lawn Care">Lawn Care</option>
+                    <option value="Leaf Removal">Leaf Removal</option>
+                    <option value="Spring Cleanup">Spring Cleanup</option>
+                    <option value="Snow Removal">Snow Removal</option>
+                    <option value="Other">Other / Quote</option>
+                </select>
+                <label for="service">Service Needed</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" required placeholder=" "></textarea>
+                <label for="message">Message</label>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+            <div class="success-message" id="successMsg">
+                Thank you! We'll reply within 2 hours.
+            </div>
+        </form>
+    </div>
 </section>
 
-<!-- CENTERED FLOATING CALL BUTTON -->
-<div class="call-float" onclick="window.location.href='tel:+13062229165'">
-    <span>Call Now</span>
+<!-- WHY CLIENTS STAY - SAME AS INDEX -->
+<section class="trust-section">
+    <div class="container">
+        <h2>Why Clients Never Leave</h2>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <h3>Reliable 24/7</h3>
+                <p>Snow at 3 AM? We’re there before you wake up.</p>
+            </div>
+            <div class="trust-card">
+                <h3>Same Crew, Every Time</h3>
+                <p>No strangers. You’ll know our names.</p>
+            </div>
+            <div class="trust-card">
+                <h3>Fully Insured</h3>
+                <p>Liability + workers’ comp. Zero risk to you.</p>
+            </div>
+            <div class="trust-card">
+                <h3>One Call Does It All</h3>
+                <p>Lawn, snow, windows — one crew, year-round.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GLASS CALL BUBBLE -->
+<div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
+    Call Now: (306) 222-9165
 </div>
 
-<!-- CLEAN FOOTER -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
-            <div class="footer-contact">
+            <div class="footer-col">
                 <h3>Get in Touch</h3>
-                <div class="footer-phone">Phone: (306) 222-9165</div>
-                <div class="footer-email">Email: tree6zlandscaping@gmail.com</div>
+                <p>(306) 222-9165</p>
+                <p>tree6zlandscaping@gmail.com</p>
             </div>
-            <div class="footer-links-col">
+            <div class="footer-col">
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
                 <a href="index.html#services">Services</a>
                 <a href="contact.html">Contact</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Instagram">Instagram</a>
-                    <a href="#" aria-label="Facebook">Facebook</a>
-                    <a href="#" aria-label="Google Reviews">Google</a>
-                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p><strong>© 2025 tree6z</strong> • Fully Insured • Local & Family-Owned</p>
+        <div class="text-center" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #222;opacity:.8;font-size:.95rem;">
+            <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
         </div>
     </div>
 </footer>
 
 <script>
-    // Navbar shrink
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
+    });
 
-    // Fade on scroll
-    const faders = document.querySelectorAll('.fade');
-    const observer = new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('visible')),{threshold:.15});
-    faders.forEach(f=>observer.observe(f));
-
-    // Mobile menu
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
         menu.classList.toggle('active');
-        document.querySelector('.hamburger').classList.toggle('active');
+        hamburger.classList.toggle('active');
     }
 
-    // Dropdown toggle
-    function toggleDropdown(e) {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            document.querySelector('.dropdown').classList.toggle('active');
-        }
-    }
-
-    // Close dropdown on outside click
     document.addEventListener('click', (e) => {
-        const dropdown = document.querySelector('.dropdown');
-        if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('active');
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
         }
     });
 
-    // Form success message
+    // Form success
     const form = document.querySelector('form');
     const successMsg = document.getElementById('successMsg');
     if (form) {
-        form.addEventListener('submit', function() {
+        form.addEventListener('submit', function(e) {
             setTimeout(() => {
                 successMsg.style.display = 'block';
                 form.reset();

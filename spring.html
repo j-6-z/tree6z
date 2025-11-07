@@ -2,199 +2,211 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Spring Cleanup | tree6z</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/HTzW6J9J/download.jpg" type="image/jpeg">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Spring Cleanup",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "tree6z",
+        "telephone": "+13062229165",
+        "email": "tree6zlandscaping@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Saskatoon",
+          "addressRegion": "SK",
+          "addressCountry": "CA"
+        }
+      },
+      "areaServed": "Saskatoon",
+      "description": "Full spring reset: dethatching, debris removal, mulching, and first mow."
+    }
+    </script>
+
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.7;overflow-x:hidden}
+        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
         a{color:inherit;text-decoration:none}
         img{max-width:100%;display:block}
-        h1,h2,h3{font-weight:700}
-        h1{font-size:clamp(2.5rem,8vw,4.5rem);letter-spacing:-.02em}
-        h2{font-size:clamp(1.8rem,5vw,2.5rem)}
-        h3{font-size:1.2rem}
+        h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        /* NAV */
-        nav{position:fixed;top:0;width:100%;padding:1.2rem 0;z-index:1000;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);transition:.3s}
-        nav.scrolled{padding:.8rem 0}
-        .nav-inner{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-size:1.6rem;font-weight:700;letter-spacing:.1em}
-        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-        .nav-links a{font-weight:500;padding:.4rem 0;position:relative}
-        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:#fff;transition:.3s}
-        .nav-links a:hover::after{width:100%}
-
-        /* DROPDOWN */
-        .dropdown{position:relative}
-        .dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(8px)}
-        .dropdown-menu{
-            position:absolute;top:100%;left:0;background:#111;border:1px solid #333;border-radius:6px;padding:.8rem 0;
-            min-width:180px;opacity:0;visibility:hidden;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.4);
+        /* NAV - SAME AS INDEX */
+        nav{
+            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
+            background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
         }
-        .dropdown-menu a{display:block;padding:.6rem 1.2rem;font-size:.95rem}
-        .dropdown-menu a:hover{background:rgba(255,255,255,.1)}
+        nav.scrolled{padding:1.2rem 0}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
+        .hamburger{cursor:pointer;padding:10px;border-radius:50%;transition:all .3s}
+        .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
+        .hamburger.active span:nth-child(2){opacity:0}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* HAMBURGER */
-        .hamburger{display:none;cursor:pointer}
-        .hamburger span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
-        .mobile-menu{position:fixed;top:60px;left:0;width:100%;background:#111;padding:1rem 0;display:none;z-index:998}
-        .mobile-menu.active{display:block}
-        .mobile-menu a{display:block;padding:.8rem 1.5rem;text-align:center;border-bottom:1px solid #222}
+        /* Mobile Menu - SAME AS INDEX */
+        .mobile-menu{
+            position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
+            padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
+            box-shadow:-10px 0 40px rgba(0,0,0,.7);border-left:1px solid #222;overflow-y:auto;
+        }
+        .mobile-menu.active{right:0}
+        .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* SERVICE HERO WITH ZOOMED LOGO */
-        .hero-service{
-            min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-            background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1558618666-fcd25a5eaf57?auto=format&fit=crop&w=1600&q=80') center/cover;
-            position:relative;
+        /* SERVICE HERO - SPRING IMAGE LOGO */
+        header{
+            min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+            text-align:center;padding-top:110px;
+            background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+                       url('https://images.unsplash.com/photo-1558618666-fcd25a5eaf57?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
         .logo-space{
-            width:160px;height:160px;border:3px solid #fff;border-radius:50%;
-            background:#111;display:flex;align-items:center;justify-content:center;
-            margin-bottom:1.8rem;overflow:hidden;box-shadow:0 0 0 10px rgba(0,0,0,.4);
-            padding:12px;
+            width:180px;height:180px;border:5px solid #fff;border-radius:50%;background:#000;
+            display:flex;align-items:center;justify-content:center;margin:0 auto 2.5rem;
+            overflow:hidden;box-shadow:0 0 0 14px rgba(0,0,0,.6);
         }
-        .logo-space img{
-            width:100%;height:100%;object-fit:contain;
-            transform:scale(1.15); /* ZOOMED IN */
-        }
-        .hero-service .hero-content{max-width:900px}
-        .hero-service .tagline{font-size:1.3rem;margin:1rem 0;opacity:.9}
+        .logo-space img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+        .hero-content{max-width:900px;padding:0 1rem}
+        h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
+        .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
 
         /* SERVICE CONTENT */
-        .service-content{padding:6rem 0}
+        .service-content{padding:6rem 1.5rem}
         .content-grid{
-            display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;
+            display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;
         }
-        .service-details h2{margin-bottom:1.2rem}
-        .service-details p{margin-bottom:1.5rem;font-size:1.05rem}
+        .service-details h2{font-size:2.6rem;margin-bottom:1.5rem}
+        .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
         .service-details ul{
-            margin:1.5rem 0;list-style:none;
+            margin:2rem 0;list-style:none;
         }
         .service-details li{
-            padding:.7rem 0;display:flex;align-items:center;gap:.9rem;
-            font-size:1.05rem;opacity:.92;
+            padding:1rem 0;display:flex;align-items:center;gap:1rem;
+            font-size:1.15rem;opacity:.95;font-weight:500;
         }
         .service-details li::before{
-            content:'Checkmark';font-size:1.25rem;color:#fff;
+            content:'Checkmark';font-size:1.4rem;color:#fff;
         }
+
+        /* PRICING TABLE */
         .pricing-table{
-            background:#111;padding:2.2rem;border-radius:12px;
-            box-shadow:0 12px 35px rgba(0,0,0,.3);
+            background:#111;padding:2.8rem 2.2rem;border-radius:16px;
+            box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;
         }
-        .pricing-table h3{margin-bottom:1.5rem;text-align:center;font-size:1.3rem}
+        .pricing-table h3{
+            font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;
+        }
         .price-item{
-            display:flex;justify-content:space-between;padding:.8rem 0;
-            border-bottom:1px solid #333;font-size:1.05rem;
+            display:flex;justify-content:space-between;padding:1rem 0;
+            border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;
         }
         .price-item:last-child{border:none}
-        .price-item strong{font-weight:600}
+        .price-item strong{font-weight:900;color:#fff}
         .pricing-note{
-            margin-top:1.5rem;font-size:.9rem;opacity:.8;text-align:center;
+            margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center;line-height:1.5;
         }
 
         /* CTA */
         .cta-service{
-            display:inline-block;margin-top:1.8rem;padding:.9rem 2.4rem;
-            border:1px solid #fff;font-weight:600;transition:.3s;
+            display:inline-block;margin-top:2rem;padding:1.1rem 3rem;
+            border:2px solid #fff;font-weight:900;font-size:1.1rem;
+            letter-spacing:1px;transition:all .4s;border-radius:50px;
         }
         .cta-service:hover{
-            background:#fff;color:#000;transform:translateY(-3px);
+            background:#fff;color:#000;transform:scale(1.05);
+            box-shadow:0 15px 35px rgba(255,255,255,.15);
         }
 
-        /* FLOATING CALL */
-        .call-float{
-            position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:999;
-            background:#fff;color:#000;padding:.8rem 1.4rem;border-radius:30px;
-            font-weight:600;display:flex;align-items:center;gap:.6rem;
-            box-shadow:0 8px 25px rgba(0,0,0,.3);cursor:pointer;font-size:.95rem;
-            animation:float 2.5s ease-in-out infinite
+        /* TRUST GRID - SAME AS INDEX */
+        .trust-section{
+            padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
         }
-        .call-float:hover{transform:translateX(-50%) scale(1.05)}
-        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+        .trust-section h2{
+            font-size:2.6rem;text-align:center;margin-bottom:1.8rem;
+        }
+        .trust-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;
+        }
+        .trust-card{
+            background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
+            border:1px solid #222;transition:all .4s;
+        }
+        .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
+        .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
+        .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
 
-        /* FOOTER - SICK & CLEAN */
-        footer{
-            background:#111;
-            padding:4rem 0 1.5rem;
-            border-top:1px solid #222;
-            margin-top:8rem;
+        /* CRYSTAL GLASS CALL BUBBLE - SAME AS INDEX */
+        .call-bubble{
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
+            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
+            font-weight:900;font-size:1.1rem;letter-spacing:.7px;
+            box-shadow:0 20px 55px rgba(0,0,0,.35);
+            display:flex;align-items:center;gap:14px;cursor:pointer;
+            animation:float 3s ease-in-out infinite;white-space:nowrap;
+            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
+            transition:all .3s;
         }
-        .footer-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:3rem;
-            margin-bottom:3rem;
-            padding:0 1rem;
+        .call-bubble::before{
+            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
+            animation:pulse 2s infinite;
         }
-        .footer-col h3{
-            font-size:1.25rem;
-            margin-bottom:1rem;
-            color:#fff;
-            position:relative;
-            padding-bottom:.5rem;
+        .call-bubble:hover{
+            background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);
+            box-shadow:0 25px 65px rgba(0,0,0,.5);
         }
-        .footer-col h3::after{
-            content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background:#fff;
-        }
-        .footer-col p,.footer-col a{
-            display:block;margin:.5rem 0;font-size:.98rem;opacity:.9;transition:.2s
-        }
-        .footer-col a:hover{opacity:1;transform:translateX(4px)}
-        .footer-bottom{
-            text-align:center;
-            font-size:.9rem;
-            opacity:.75;
-            padding-top:1.5rem;
-            border-top:1px solid #222;
-            margin-top:2rem;
-        }
+        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
+        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* RESPONSIVE */
+        /* FOOTER - SAME AS INDEX */
+        footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
+        .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
+        .footer-col a:hover{transform:translateX(8px);color:#fff}
+
+        /* Mobile */
         @media(max-width:768px){
-            .hamburger{display:block}
-            .nav-links{display:none}
-            .dropdown-menu{position:static;transform:none;box-shadow:none;border-top:1px solid #333}
-            .dropdown-menu a{text-align:center;padding:1rem}
-            .call-float{font-size:.85rem;padding:.7rem 1.1rem}
-            .content-grid{grid-template-columns:1fr;gap:2.5rem}
-            .pricing-table{text-align:center}
-            .footer-grid{text-align:center;gap:2.5rem}
-            .logo-space{width:130px;height:130px;padding:10px}
-            .logo-space img{transform:scale(1.2)}
-            .footer-col h3::after{left:50%;transform:translateX(-50%)}
+            nav{padding:1.4rem 0}
+            nav.scrolled{padding:1rem 0}
+            header{padding-top:95px}
+            .logo-space{width:140px;height:140px}
+            .content-grid{grid-template-columns:1fr;gap:3rem}
+            .pricing-table{padding:2.2rem 1.8rem}
+            .call-bubble{
+                font-size:1rem;padding:15px 28px;bottom:20px;
+                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
+            }
+            .trust-section h2{font-size:2.2rem}
+            h1{font-size:2.8rem}
+            .tagline{font-size:1.2rem}
         }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV - SAME AS INDEX -->
 <nav id="nav">
     <div class="container nav-inner">
         <div class="logo">tree6z</div>
         <div class="hamburger" onclick="toggleMobileMenu()">
             <span></span><span></span><span></span>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="event.preventDefault()">Services</a>
-                <div class="dropdown-menu">
-                    <a href="window.html">Window Cleaning</a>
-                    <a href="lawncare.html">Lawn Care</a>
-                    <a href="leaf.html">Leaf Removal</a>
-                    <a href="spring.html">Spring Cleanup</a>
-                    <a href="snow.html">Snow Removal</a>
-                </div>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
     </div>
 </nav>
 
-<!-- MOBILE MENU -->
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="window.html">Window Cleaning</a>
@@ -205,10 +217,10 @@
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- SERVICE HERO WITH SICK LOGO -->
-<header class="hero-service">
+<!-- SERVICE HERO -->
+<header>
     <div class="logo-space">
-        <img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="tree6z logo">
+        <img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring Cleanup">
     </div>
     <div class="container hero-content">
         <h1>Spring Cleanup</h1>
@@ -217,7 +229,7 @@
 </header>
 
 <!-- SERVICE CONTENT -->
-<section class="service-content container">
+<section class="service-content">
     <div class="content-grid">
         <div class="service-details">
             <h2>Full Spring Reset — No Trace of Winter</h2>
@@ -250,12 +262,37 @@
     </div>
 </section>
 
-<!-- FLOATING CALL -->
-<div class="call-float" onclick="window.location.href='tel:+13062229165'">
-    <span>Call Now: (306) 222-9165</span>
+<!-- WHY CLIENTS STAY - SAME AS INDEX -->
+<section class="trust-section">
+    <div class="container">
+        <h2>Why Clients Never Leave</h2>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <h3>Reliable 24/7</h3>
+                <p>Snow at 3 AM? We’re there before you wake up.</p>
+            </div>
+            <div class="trust-card">
+                <h3>Same Crew, Every Time</h3>
+                <p>No strangers. You’ll know our names.</p>
+            </div>
+            <div class="trust-card">
+                <h3>Fully Insured</h3>
+                <p>Liability + workers’ comp. Zero risk to you.</p>
+            </div>
+            <div class="trust-card">
+                <h3>One Call Does It All</h3>
+                <p>Lawn, snow, windows — one crew, year-round.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GLASS CALL BUBBLE -->
+<div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
+    Call Now: (306) 222-9165
 </div>
 
-<!-- SICK FOOTER -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -271,30 +308,30 @@
                 <a href="contact.html">Contact</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 tree6z • Local & Family-Run • Fully Insured</p>
+        <div class="text-center" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #222;opacity:.8;font-size:.95rem;">
+            <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
         </div>
     </div>
 </footer>
 
 <script>
-    // Nav shrink
     window.addEventListener('scroll', () => {
         document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
     });
 
-    // Mobile menu
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
         menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     }
 
-    // Close mobile menu on click outside
     document.addEventListener('click', (e) => {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');
         if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
             menu.classList.remove('active');
+            hamburger.classList.remove('active');
         }
     });
 </script>

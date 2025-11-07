@@ -2,44 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>tree6z | We Keep Your Place Looking Sharp All Year</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>tree6z | Year-Round Property Maintenance in Saskatoon</title>
 
-    <!-- ========== OPEN GRAPH / SOCIAL META TAGS ========== -->
+    <!-- Open Graph -->
     <meta property="og:title" content="tree6z | We Keep Your Place Looking Sharp All Year" />
-    <meta property="og:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right in Regina, SK." />
+    <meta property="og:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right in Saskatoon, SK." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tree6z.ca/" />
-    <meta property="og:image" content="https://tree6z.ca/images/tree6z-logo.jpg" />
+    <meta property="og:image" content="https://i.ibb.co/HTzW6J9J/download.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="tree6z" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="tree6z | We Keep Your Place Looking Sharp All Year" />
-    <meta name="twitter:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right." />
-    <meta name="twitter:image" content="https://tree6z.ca/images/tree6z-logo.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/HTzW6J9J/download.jpg" type="image/jpeg">
 
-    <!-- ========== FAVICON (Optional but Recommended) ========== -->
-    <link rel="icon" href="https://tree6z.ca/images/tree6z-logo.jpg" type="image/jpeg">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
 
-    <!-- ========== GOOGLE FONTS ========== -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- ========== SCHEMA.ORG LOCAL BUSINESS ========== -->
+    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "tree6z",
-      "image": "https://tree6z.ca/images/tree6z-logo.jpg",
+      "image": "https://i.ibb.co/HTzW6J9J/download.jpg",
       "url": "https://tree6z.ca",
       "telephone": "+13062229165",
       "email": "tree6zlandscaping@gmail.com",
-      "description": "Year-round property maintenance in Regina, SK: lawn care, snow removal, window cleaning, leaf removal, spring cleanup.",
+      "description": "Year-round property maintenance in Saskatoon, SK.",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Saskatoon",
         "addressRegion": "SK",
         "addressCountry": "CA"
       },
@@ -49,143 +43,171 @@
 
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.7;overflow-x:hidden}
+        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
         a{color:inherit;text-decoration:none}
         img{max-width:100%;display:block}
-        h1,h2,h3{font-weight:700}
-        h1{font-size:clamp(2.5rem,8vw,4.5rem);letter-spacing:-.02em}
-        h2{font-size:clamp(1.8rem,5vw,2.5rem)}
-        h3{font-size:1.2rem}
+        h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
         /* NAV */
-        nav{position:fixed;top:0;width:100%;padding:1.2rem 0;z-index:1000;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);transition:.3s}
-        nav.scrolled{padding:.8rem 0}
-        .nav-inner{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-size:1.6rem;font-weight:700;letter-spacing:.1em}
-        .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-        .nav-links a{font-weight:500;padding:.4rem 0;position:relative}
-        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:#fff;transition:.3s}
-        .nav-links a:hover::after{width:100%}
-
-        /* DROPDOWN */
-        .dropdown{position:relative}
-        .dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(8px)}
-        .dropdown-menu{
-            position:absolute;top:100%;left:0;background:#111;border:1px solid #333;border-radius:6px;padding:.8rem 0;
-            min-width:180px;opacity:0;visibility:hidden;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.4);
+        nav{
+            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
+            background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
         }
-        .dropdown-menu a{display:block;padding:.6rem 1.2rem;font-size:.95rem}
-        .dropdown-menu a:hover{background:rgba(255,255,255,.1)}
+        nav.scrolled{padding:1.2rem 0}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
+        .hamburger{cursor:pointer;padding:10px;border-radius:50%;transition:all .3s}
+        .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
+        .hamburger.active span:nth-child(2){opacity:0}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* HAMBURGER */
-        .hamburger{display:none;cursor:pointer}
-        .hamburger span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
-        .mobile-menu{position:fixed;top:60px;left:0;width:100%;background:#111;padding:1rem 0;display:none;z-index:998}
-        .mobile-menu.active{display:block}
-        .mobile-menu a{display:block;padding:.8rem 1.5rem;text-align:center;border-bottom:1px solid #222}
+        /* Mobile Menu */
+        .mobile-menu{
+            position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
+            padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
+            box-shadow:-10px 0 40px rgba(0,0,0,.7);border-left:1px solid #222;overflow-y:auto;
+        }
+        .mobile-menu.active{right:0}
+        .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* HERO WITH ZOOMED-IN LOGO */
-        header{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1502086223501-09a85ba1a2b7?auto=format&fit=crop&w=2000&q=80') center/cover;position:relative}
+        /* Hero - NO OVERLAP */
+        header{
+            min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+            text-align:center;padding-top:110px;
+            background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+                       url('https://images.unsplash.com/photo-1502086223501-09a85ba1a2b7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+        }
         .logo-space{
-            width:160px;height:160px;border:3px solid #fff;border-radius:50%;
-            background:#111;display:flex;align-items:center;justify-content:center;
-            margin-bottom:1.8rem;overflow:hidden;box-shadow:0 0 0 10px rgba(0,0,0,.4);
-            padding:12px;
+            width:180px;height:180px;border:5px solid #fff;border-radius:50%;background:#000;
+            display:flex;align-items:center;justify-content:center;margin:0 auto 2.5rem;
+            overflow:hidden;box-shadow:0 0 0 14px rgba(0,0,0,.6);
         }
-        .logo-space img{
-            width:100%;height:100%;object-fit:contain;
-            transform:scale(1.15);
+        .logo-space img{width:100%;height:100%;object-fit:contain;transform:scale(1.2)}
+        .hero-content{max-width:900px;padding:0 1rem}
+        h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
+        .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
+        .cta{
+            display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;
+            font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;
         }
-        .hero-content{max-width:800px}
-        .tagline{font-size:1.3rem;margin:1rem 0;opacity:.9}
-        .cta{display:inline-block;margin-top:1.5rem;padding:.9rem 2.2rem;border:1px solid #fff;font-weight:600;transition:.3s}
-        .cta:hover{background:#fff;color:#000}
+        .cta:hover{background:#fff;color:#000;transform:scale(1.06)}
 
-        /* SECTIONS */
-        section{padding:5rem 0}
-        .text-center{text-align:center}
-        .services-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:3rem;
-            margin-top:3rem;
+        /* OWNER & VISION SECTION (NEW) */
+        .owner-vision{
+            padding:8rem 1.5rem;background:#111;text-align:center;
+            border-top:1px solid #222;border-bottom:1px solid #222;
         }
+        .owner-photo{
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            object-fit:cover;
+            border:2px solid #fff;
+            margin:0 auto 1.2rem;
+            display:block;
+            box-shadow:0 8px 20px rgba(0,0,0,.4);
+        }
+        .owner-vision h2{
+            font-size:2.8rem;max-width:900px;margin:0 auto 1.5rem;
+            line-height:1.2;letter-spacing:-.03em;
+        }
+        .owner-vision p{
+            font-size:1.25rem;max-width:720px;margin:0 auto;
+            opacity:.92;line-height:1.7;font-weight:500;
+        }
+        .owner-vision p + p{margin-top:1.2rem}
+        .owner-vision .highlight{
+            font-weight:900;color:#fff;display:inline-block;
+        }
+
+        /* WHY CLIENTS STAY - GODLIKE, SIMPLE, RELEVANT */
+        .trust-section{
+            padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
+        }
+        .trust-section h2{
+            font-size:2.6rem;text-align:center;margin-bottom:1.8rem;
+        }
+        .trust-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;
+        }
+        .trust-card{
+            background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
+            border:1px solid #222;transition:all .4s;
+        }
+        .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
+        .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
+        .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
+
+        /* Services */
+        section{padding:6rem 0}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:4rem}
         .service-card{
-            background:#111;padding:2.5rem 2rem;border-radius:12px;transition:.4s;border:1px solid #222;
-            text-align:center;cursor:pointer
+            background:#111;padding:3rem 2rem;border-radius:16px;transition:all .5s;
+            border:1px solid #222;text-align:center;
         }
         .service-card:hover{
-            transform:translateY(-12px);box-shadow:0 24px 48px rgba(255,255,255,.12);border-color:#fff
+            transform:translateY(-20px);box-shadow:0 40px 80px rgba(255,255,255,.12);border-color:#fff;
         }
         .service-icon{
-            width:78px;height:78px;background:#fff;border-radius:50%;margin:0 auto 1.2rem;
-            display:flex;align-items:center;justify-content:center;overflow:hidden
-        }
-        .service-icon img{width:100%;height:100%;object-fit:cover}
-        .service-card:hover .service-icon{transform:scale(1.12)}
-
-        /* FLOATING CALL */
-        .call-float{
-            position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:999;
-            background:#fff;color:#000;padding:.8rem 1.4rem;border-radius:30px;
-            font-weight:600;display:flex;align-items:center;gap:.6rem;
-            box-shadow:0 8px 25px rgba(0,0,0,.3);cursor:pointer;font-size:.95rem;
-            animation:float 2.5s ease-in-out infinite
-        }
-        .call-float:hover{transform:translateX(-50%) scale(1.05)}
-        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
-
-        /* FOOTER */
-        footer{
-            background:#111;
-            padding:4rem 0 1.5rem;
-            border-top:1px solid #222;
-            margin-top:8rem;
-        }
-        .footer-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:3rem;
-            margin-bottom:3rem;
-            padding:0 1rem;
-        }
-        .footer-col h3{
-            font-size:1.25rem;
-            margin-bottom:1rem;
-            color:#fff;
-            position:relative;
-            padding-bottom:.5rem;
-        }
-        .footer-col h3::after{
-            content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background:#fff;
-        }
-        .footer-col p,.footer-col a{
-            display:block;margin:.5rem 0;font-size:.98rem;opacity:.9;transition:.2s
-        }
-        .footer-col a:hover{opacity:1;transform:translateX(4px)}
-        .footer-bottom{
-            text-align:center;
-            font-size:.9rem;
-            opacity:.75;
-            padding-top:1.5rem;
-            border-top:1px solid #222;
-            margin-top:2rem;
+            width:90px;height:90px;background:#fff;border-radius:50%;margin:0 auto 1.5rem;
+            display:flex;align-items:center;justify-content:center;overflow:hidden;
         }
 
-        /* RESPONSIVE */
+        /* CRYSTAL CLEAR GLASS CALL BUBBLE */
+        .call-bubble{
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
+            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
+            font-weight:900;font-size:1.1rem;letter-spacing:.7px;
+            box-shadow:0 20px 55px rgba(0,0,0,.35);
+            display:flex;align-items:center;gap:14px;cursor:pointer;
+            animation:float 3s ease-in-out infinite;white-space:nowrap;
+            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
+            transition:all .3s;
+        }
+        .call-bubble::before{
+            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
+            animation:pulse 2s infinite;
+        }
+        .call-bubble:hover{
+            background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);
+            box-shadow:0 25px 65px rgba(0,0,0,.5);
+        }
+        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
+        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
+
+        /* License */
+        .license-section{padding:8rem 1.5rem;background:#000;border-top:5px solid #222}
+        .license-img{
+            max-width:820px;width:100%;margin:3rem auto 0;display:block;
+            border:6px solid #222;border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.9);
+        }
+
+        /* Footer */
+        footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
+
+        /* Mobile */
         @media(max-width:768px){
-            .hamburger{display:block}
-            .nav-links{display:none}
-            .dropdown-menu{position:static;transform:none;box-shadow:none;border-top:1px solid #333}
-            .dropdown-menu a{text-align:center;padding:1rem}
-            .call-float{font-size:.85rem;padding:.7rem 1.1rem}
-            .footer-grid{text-align:center;gap:2.5rem}
-            .logo-space{width:130px;height:130px;padding:10px}
-            .logo-space img{transform:scale(1.2)}
-            .services-grid{gap:2.5rem}
-            .footer-col h3::after{left:50%;transform:translateX(-50%)}
+            nav{padding:1.4rem 0}
+            nav.scrolled{padding:1rem 0}
+            header{padding-top:95px}
+            .logo-space{width:140px;height:140px}
+            .owner-photo{
+                width:70px;
+                height:70px;
+                margin-bottom:1rem;
+            }
+            .owner-vision h2{font-size:2.3rem}
+            .trust-section h2{font-size:2.2rem}
+            .call-bubble{
+                font-size:1rem;padding:15px 28px;bottom:20px;
+                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
+            }
+            h1{font-size:2.8rem}
+            .tagline{font-size:1.2rem}
         }
     </style>
 </head>
@@ -198,24 +220,10 @@
         <div class="hamburger" onclick="toggleMobileMenu()">
             <span></span><span></span><span></span>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li class="dropdown">
-                <a href="#" onclick="event.preventDefault()">Services</a>
-                <div class="dropdown-menu">
-                    <a href="window.html">Window Cleaning</a>
-                    <a href="lawncare.html">Lawn Care</a>
-                    <a href="leaf.html">Leaf Removal</a>
-                    <a href="spring.html">Spring Cleanup</a>
-                    <a href="snow.html">Snow Removal</a>
-                </div>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
     </div>
 </nav>
 
-<!-- MOBILE MENU -->
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="window.html">Window Cleaning</a>
@@ -226,136 +234,149 @@
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO WITH ZOOMED-IN LOGO -->
+<!-- Hero -->
 <header id="home">
     <div class="logo-space">
-        <img src="https://i.ibb.co/HTzW6J9J/download.jpg" alt="tree6z logo - Regina property maintenance">
+        <img src="https://i.ibb.co/HTzW6J9J/download.jpg" alt="tree6z logo">
     </div>
     <div class="container hero-content">
         <h1>We Keep Your Place Looking Sharp All Year</h1>
-        <p class="tagline">One crew. Every season. No bullshit.</p>
-        <a href="#services" class="cta">See What We Do</a>
+        <p class="tagline">One crew. Every season. Done right.</p>
+        <a href="#services" class="cta">See Our Services</a>
     </div>
 </header>
 
-<!-- OWNER STORY -->
-<section class="container">
-    <div style="max-width:800px;margin:0 auto;text-align:center;">
-        <h2>I’ve Been Obsessed With This Since I Was 16</h2>
-        <p style="margin-top:1rem;font-size:1.1rem;">
-            Started with a beat-up mower and a summer gig. Now? 15 years in, I still show up at 6 AM in February to plow your driveway before you’ve had coffee. My crew’s small, tight, and we give a damn. We don’t just mow — we make your lawn look like a damn golf course. Windows? Spotless. Gutters? Clean. Snow? Gone. Your place is our reputation.
+<!-- OWNER & VISION SECTION (replaces old greatness) -->
+<section class="owner-vision">
+    <div class="container">
+        <img src="https://i.ibb.co/1wzXdz6/jay-profile.jpg" alt="Jay Turner – Owner of tree6z" class="owner-photo">
+        <h2>Hey, I'm Jay T — Owner of tree6z</h2>
+        <p>
+            I started this in 2018 with one beat-up truck and a mower I bought off Kijiji. 
+            No investors, no fluff — just me, my crew, and a promise: <span class="highlight">we'll beat anyone on price and still make your place look like a damn magazine.</span>
+        </p>
+        <p>
+            Our vision? Be the <span class="highlight">most competitively priced landscaper in Saskatoon</span> without ever cutting corners. 
+            Sharp lines, zero weeds, spotless windows, snow gone before you wake up — all at rates that don't make you choke on your coffee. 
+            We obsess over the details so you don't have to. Family-run, local, and built on repeat clients who know we're not here to upsell — we're here to <span class="highlight">outwork and outprice everyone else.</span>
         </p>
     </div>
 </section>
 
-<!-- WHY TRUST US -->
-<section class="container" style="background:#111;padding:4rem 2rem;border-radius:12px;margin:4rem auto;max-width:1100px;">
-    <div class="text-center">
-        <h2 style="color:#fff;">Why People Don’t Fire Us</h2>
-        <p class="tagline" style="color:#ccc;margin:1rem auto;max-width:700px;">
-            Same guys. Same quality. No subcontractors. No excuses.
-        </p>
-    </div>
-    <div class="services-grid" style="margin-top:2rem;">
-        <div class="service-card">
-            <h3>15+ Years In The Trenches</h3>
-            <p>I’ve been doing this since flip phones. Every job’s dialed in.</p>
-        </div>
-        <div class="service-card">
-            <h3>Same Crew Every Time</h3>
-            <p>You’ll know our names. No randoms showing up.</p>
-        </div>
-        <div class="service-card">
-            <h3>Fully Insured</h3>
-            <p>Liability, workers’ comp — your ass is covered.</p>
-        </div>
-        <div class="service-card">
-            <h3>3 AM Snow? We’re There.</h3>
-            <p>Before your alarm. Plowed, salted, safe.</p>
+<!-- WHY CLIENTS STAY - GODLIKE, CLEAN, RELEVANT -->
+<section class="trust-section">
+    <div class="container">
+        <h2>Why Clients Never Leave</h2>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <h3>Reliable 24/7</h3>
+                <p>Snow at 3 AM? We're there before you wake up.</p>
+            </div>
+            <div class="trust-card">
+                <h3>Same Crew, Every Time</h3>
+                <p>No strangers. You'll know our names.</p>
+            </div>
+            <div class="trust-card">
+                <h3>Fully Insured</h3>
+                <p>Liability + workers' comp. Zero risk to you.</p>
+            </div>
+            <div class="trust-card">
+                <h3>One Call Does It All</h3>
+                <p>Lawn, snow, windows — one crew, year-round.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- SERVICES -->
+<!-- Services -->
 <section id="services" class="container">
     <div class="text-center">
-        <h2>What We Actually Do</h2>
-        <p class="tagline">Tap or click</p>
+        <h2 style="font-size:2.6rem;">What We Do</h2>
+        <p class="tagline">Tap any service to learn more</p>
     </div>
     <div class="services-grid">
         <a href="window.html" class="service-card">
-            <div class="service-icon"><img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Professional window cleaning by tree6z"></div>
-            <h3>Window Cleaning</h3>
-            <p>No streaks. Inside & out.</p>
+            <div class="service-icon"><img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Window Cleaning"></div>
+            <h3>Window Cleaning</h3><p>Crystal clear, inside & out.</p>
         </a>
         <a href="lawncare.html" class="service-card">
-            <div class="service-icon"><img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn mowing and edging service"></div>
-            <h3>Lawn Care</h3>
-            <p>Mow, edge, weed control. Weekly.</p>
+            <div class="service-icon"><img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn Care"></div>
+            <h3>Lawn Care</h3><p>Weekly cuts, edging, weed control.</p>
         </a>
         <a href="leaf.html" class="service-card">
-            <div class="service-icon"><img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Fall leaf and gutter cleanup"></div>
-            <h3>Leaf Removal</h3>
-            <p>Fall cleanup + gutters.</p>
+            <div class="service-icon"><img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf Removal"></div>
+            <h3>Leaf Removal</h3><p>Full fall cleanup + gutter clearing.</p>
         </a>
         <a href="spring.html" class="service-card">
-            <div class="service-icon"><img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring yard cleanup and dethatching"></div>
-            <h3>Spring Cleanup</h3>
-            <p>Dethatch, mulch, first cut.</p>
+            <div class="service-icon"><img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring Cleanup"></div>
+            <h3>Spring Cleanup</h3><p>Dethatch, aerate, first cut.</p>
         </a>
         <a href="snow.html" class="service-card">
-            <div class="service-icon"><img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="24/7 snow plowing and salting"></div>
-            <h3>Snow Removal</h3>
-            <p>24/7 plowing & salting.</p>
+            <div class="service-icon"><img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="Snow Removal"></div>
+            <h3>Snow Removal</h3><p>24/7 plowing & ice control.</p>
         </a>
     </div>
 </section>
 
-<!-- FLOATING CALL -->
-<div class="call-float" onclick="window.location.href='tel:+13062229165'">
-    <span>Call Now: (306) 222-9165</span>
+<!-- Business License -->
+<section class="license-section">
+    <div class="container text-center">
+        <h2 style="font-size:3rem;letter-spacing:-2px;">LICENSED. INSURED. LEGIT.</h2>
+        <p style="font-size:1.3rem;opacity:.9;margin:2rem auto;max-width:800px;">
+            City of Saskatoon Business License — proudly serving since day one.
+        </p>
+        <img src="https://i.ibb.co/vCwScfXN/bl-t6z.jpg" alt="tree6z Saskatoon Business License" class="license-img">
+        <p style="margin-top:2.5rem;font-size:1.1rem;opacity:.8;">
+            License #2025-XXXXX • Issued by City of Saskatoon • Valid until June 1, 2026
+        </p>
+    </div>
+</section>
+
+<!-- CRYSTAL GLASS CALL BUBBLE -->
+<div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
+    Call Now: (306) 222-9165
 </div>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h3>Talk to Us</h3>
+                <h3>Contact Us</h3>
                 <p>(306) 222-9165</p>
                 <p>tree6zlandscaping@gmail.com</p>
             </div>
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
-                <a href="index.html">Services</a>
+                <a href="#services">Services</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 tree6z • Local & Family-Run • Fully Insured</p>
+        <div class="text-center" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #222;opacity:.8;font-size:.95rem;">
+            <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
         </div>
     </div>
 </footer>
 
 <script>
-    // Nav shrink
     window.addEventListener('scroll', () => {
         document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
     });
 
-    // Mobile menu
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
         menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     }
 
-    // Close mobile menu on click outside
     document.addEventListener('click', (e) => {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');
         if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
             menu.classList.remove('active');
+            hamburger.classList.remove('active');
         }
     });
 </script>
