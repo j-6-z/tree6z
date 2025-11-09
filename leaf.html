@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Leaf Removal | tree6z</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://i.ibb.co/HTzW6J9J/download.jpg" type="image/jpeg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Leaf Removal | tree6z" />
+    <meta property="og:description" content="Full yard leaf removal, gutter cleaning, haul-away. Zero leaves left behind." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tree6z.ca/leaf.html" />
+    <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- F2Favicon -->
+    <link rel="icon" href="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" type="image/jpeg">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
@@ -20,6 +29,7 @@
       "provider": {
         "@type": "LocalBusiness",
         "name": "tree6z",
+        "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
         "telephone": "+13062229165",
         "email": "tree6zlandscaping@gmail.com",
         "address": {
@@ -66,19 +76,55 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* SERVICE HERO - LEAF IMAGE LOGO */
+        /* SERVICE HERO - LOGO BUBBLE (MATCHES INDEX & CONTACT) */
         header{
             min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
             text-align:center;padding-top:110px;
             background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
                        url('https://images.unsplash.com/photo-1604595704328-9f47701ed2f8?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
-        .logo-space{
-            width:180px;height:180px;border:5px solid #fff;border-radius:50%;background:#000;
-            display:flex;align-items:center;justify-content:center;margin:0 auto 2.5rem;
-            overflow:hidden;box-shadow:0 0 0 14px rgba(0,0,0,.6);
+        .logo-bubble{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#000;
+            border:4px solid #fff;
+            border-radius:60px;
+            width:140px;
+            height:140px;
+            padding:0;
+            margin:0 auto 2.8rem;
+            box-shadow:
+                0 0 0 12px rgba(0,0,0,.6),
+                0 0 60px rgba(255,255,255,.15),
+                inset 0 0 30px rgba(0,0,0,.4);
+            backdrop-filter:blur(12px);
+            transition:all .4s ease;
+            animation:logoFloat 4s ease-in-out infinite;
+            overflow:hidden;
         }
-        .logo-space img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+        .logo-img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            object-position:center center;
+            filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));
+            transition:transform .4s ease;
+        }
+        .logo-bubble:hover .logo-img{
+            transform:scale(1.05);
+        }
+        .logo-bubble:hover{
+            transform:translateY(-4px) scale(1.02);
+            box-shadow:
+                0 0 0 12px rgba(0,0,0,.6),
+                0 0 80px rgba(255,255,255,.25),
+                inset 0 0 40px rgba(0,0,0,.5);
+        }
+        @keyframes logoFloat{
+            0%,100%{transform:translateY(0)}
+            50%{transform:translateY(-8px)}
+        }
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
         .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
@@ -181,7 +227,7 @@
             nav{padding:1.4rem 0}
             nav.scrolled{padding:1rem 0}
             header{padding-top:95px}
-            .logo-space{width:140px;height:140px}
+            .logo-bubble{width:110px;height:110px}
             .content-grid{grid-template-columns:1fr;gap:3rem}
             .pricing-table{padding:2.2rem 1.8rem}
             .call-bubble{
@@ -217,10 +263,10 @@
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- SERVICE HERO -->
+<!-- SERVICE HERO - LOGO BUBBLE (MATCHES INDEX) -->
 <header>
-    <div class="logo-space">
-        <img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf Removal">
+    <div class="logo-bubble">
+        <img src="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" alt="tree6z Logo" class="logo-img">
     </div>
     <div class="container hero-content">
         <h1>Leaf Removal</h1>
