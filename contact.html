@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>Contact Us | tree6z</title>
+    <title>Spring Cleanup | tree6z</title>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Contact tree6z | Get a Quote in 2 Hours" />
-    <meta property="og:description" content="One crew. Every season. Done right. Get a quote in under 2 hours." />
+    <meta property="og:title" content="Spring Cleanup | tree6z" />
+    <meta property="og:description" content="Full spring reset: dethatching, debris removal, mulching, first mow. Winter erased." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tree6z.ca/contact.html" />
+    <meta property="og:url" content="https://tree6z.ca/spring.html" />
     <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -24,18 +24,23 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "tree6z",
-      "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
-      "url": "https://tree6z.ca",
-      "telephone": "+13062229165",
-      "email": "tree6zlandscaping@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Saskatoon",
-        "addressRegion": "SK",
-        "addressCountry": "CA"
-      }
+      "@type": "Service",
+      "serviceType": "Spring Cleanup",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "tree6z",
+        "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
+        "telephone": "+13062229165",
+        "email": "tree6zlandscaping@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Saskatoon",
+          "addressRegion": "SK",
+          "addressCountry": "CA"
+        }
+      },
+      "areaServed": "Saskatoon",
+      "description": "Full spring reset: dethatching, debris removal, mulching, and first mow."
     }
     </script>
 
@@ -47,21 +52,38 @@
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        /* NAV - SAME AS INDEX */
+        /* NAV - FIXED LOGO CONSISTENCY */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
         }
         nav.scrolled{padding:1.2rem 0}
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
+
+        /* LOGO - EXACT SAME ON MOBILE & DESKTOP */
+        .logo{
+            font-size:1.8rem;
+            font-weight:900;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            color:#fff;
+            white-space:nowrap;
+            transition:all .3s ease;
+            display:flex;
+            align-items:center;
+        }
+        .logo:hover{
+            color:#ddd;
+            transform:scale(1.03);
+        }
+
         .hamburger{cursor:pointer;padding:10px;border-radius:50%;transition:all .3s}
         .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* Mobile Menu - SAME AS INDEX */
+        /* Mobile Menu */
         .mobile-menu{
             position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
             padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
@@ -71,172 +93,109 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* CONTACT HERO - LOGO BUBBLE (MATCHES INDEX) */
+        /* SERVICE HERO - LOGO BUBBLE */
         header{
-            min-height:70dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+            min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
             text-align:center;padding-top:110px;
             background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-                       url('https://images.unsplash.com/photo-1516321310766-90c75cc76bc7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+                       url('https://images.unsplash.com/photo-1558618666-fcd25a5eaf57?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
         .logo-bubble{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:#000;
-            border:4px solid #fff;
-            border-radius:60px;
-            width:140px;
-            height:140px;
-            padding:0;
-            margin:0 auto 2.8rem;
-            box-shadow:
-                0 0 0 12px rgba(0,0,0,.6),
-                0 0 60px rgba(255,255,255,.15),
-                inset 0 0 30px rgba(0,0,0,.4);
-            backdrop-filter:blur(12px);
-            transition:all .4s ease;
-            animation:logoFloat 4s ease-in-out infinite;
-            overflow:hidden;
+            display:flex;align-items:center;justify-content:center;
+            background:#000;border:4px solid #fff;border-radius:60px;
+            width:140px;height:140px;margin:0 auto 2.8rem;
+            box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 60px rgba(255,255,255,.15),inset 0 0 30px rgba(0,0,0,.4);
+            backdrop-filter:blur(12px);transition:all .4s ease;animation:logoFloat 4s ease-in-out infinite;overflow:hidden;
         }
-        .logo-img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position:center center;
-            filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));
-            transition:transform .4s ease;
-        }
-        .logo-bubble:hover .logo-img{
-            transform:scale(1.05);
-        }
-        .logo-bubble:hover{
-            transform:translateY(-4px) scale(1.02);
-            box-shadow:
-                0 0 0 12px rgba(0,0,0,.6),
-                0 0 80px rgba(255,255,255,.25),
-                inset 0 0 40px rgba(0,0,0,.5);
-        }
-        @keyframes logoFloat{
-            0%,100%{transform:translateY(0)}
-            50%{transform:translateY(-8px)}
-        }
+        .logo-img{width:100%;height:100%;object-fit:cover;object-position:center;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));transition:transform .4s ease;}
+        .logo-bubble:hover .logo-img{transform:scale(1.05);}
+        .logo-bubble:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 80px rgba(255,255,255,.25),inset 0 0 40px rgba(0,0,0,.5);}
+        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
         .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
 
-        /* CONTACT FORM - GLASS INPUTS, FLOATING LABELS */
-        .contact-form-section{padding:6rem 1.5rem}
-        .contact-form{
-            max-width:700px;margin:0 auto;background:#111;padding:3.5rem;
-            border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.6);
-            border:1px solid #222;
-        }
-        .form-group{position:relative;margin-bottom:2rem}
-        .form-group label{
-            position:absolute;top:1rem;left:1rem;font-size:1rem;font-weight:600;opacity:.8;
-            transition:all .3s;pointer-events:none;color:#aaa;
-        }
-        .form-group input:focus ~ label,
-        .form-group textarea:focus ~ label,
-        .form-group input:not(:placeholder-shown) ~ label,
-        .form-group textarea:not(:placeholder-shown) ~ label{
-            top:-10px;left:12px;font-size:.85rem;background:#111;padding:0 .5rem;opacity:1;color:#fff;
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select{
-            width:100%;padding:1.1rem 1rem;background:#222;border:1px solid #444;
-            color:#fff;font:inherit;border-radius:10px;transition:all .3s;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus{
-            outline:none;border-color:#fff;background:#333;
-        }
-        .form-group textarea{height:160px;resize:vertical}
-        .submit-btn{
-            background:transparent;border:2px solid #fff;color:#fff;padding:1.1rem 3rem;
-            font-weight:900;font-size:1.1rem;letter-spacing:1px;cursor:pointer;
-            border-radius:50px;transition:all .4s;width:100%;margin-top:1rem;
-        }
-        .submit-btn:hover{
-            background:#fff;color:#000;transform:scale(1.02);
-            box-shadow:0 15px 35px rgba(255,255,255,.15);
-        }
-        .success-message{
-            background:rgba(0,255,0,.15);color:#d1e7dd;padding:1.2rem;border-radius:10px;
-            text-align:center;margin-top:1.5rem;display:none;border:1px solid rgba(0,255,0,.3);
-        }
+        /* SERVICE CONTENT */
+        .service-content{padding:6rem 1.5rem}
+        .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;}
+        .service-details h2{font-size:2.6rem;margin-bottom:1.5rem}
+        .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
+        .service-details ul{margin:2rem 0;list-style:none;}
+        .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;opacity:.95;font-weight:500;}
+        .service-details li::before{content:'Checkmark';font-size:1.4rem;color:#fff;}
 
-        /* TRUST GRID - SAME AS INDEX */
-        .trust-section{
-            padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
-        }
-        .trust-section h2{
-            font-size:2.6rem;text-align:center;margin-bottom:1.8rem;
-        }
-        .trust-grid{
-            display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;
-        }
-        .trust-card{
-            background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
-            border:1px solid #222;transition:all .4s;
-        }
+        /* PRICING TABLE */
+        .pricing-table{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
+        .pricing-table h3{font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;}
+        .price-item{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;}
+        .price-item:last-child{border:none}
+        .price-item strong{font-weight:900;color:#fff}
+        .pricing-note{margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center;line-height:1.5;}
+
+        /* CTA */
+        .cta-service{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;}
+        .cta-service:hover{background:#fff;color:#000;transform:scale(1.05);box-shadow:0 15px 35px rgba(255,255,255,.15);}
+
+        /* TRUST GRID */
+        .trust-section{padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;}
+        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:1.8rem;}
+        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;}
+        .trust-card{background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;border:1px solid #222;transition:all .4s;}
         .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
         .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
         .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
 
-        /* CRYSTAL GLASS CALL BUBBLE - SAME AS INDEX */
+        /* CALL BUBBLE */
         .call-bubble{
             position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
             background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
             font-weight:900;font-size:1.1rem;letter-spacing:.7px;
-            box-shadow:0 20px 55px rgba(0,0,0,.35);
-            display:flex;align-items:center;gap:14px;cursor:pointer;
-            animation:float 3s ease-in-out infinite;white-space:nowrap;
-            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
+            box-shadow:0 20px 55px rgba(0,0,0,.35);display:flex;align-items:center;gap:14px;cursor:pointer;
+            animation:float 3s ease-in-out infinite;white-space:nowrap;backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
             transition:all .3s;
         }
-        .call-bubble::before{
-            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
-            animation:pulse 2s infinite;
-        }
-        .call-bubble:hover{
-            background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);
-            box-shadow:0 25px 65px rgba(0,0,0,.5);
-        }
+        .call-bubble::before{content:'';width:12px;height:12px;background:#fff;border-radius:50%;animation:pulse 2s infinite;}
+        .call-bubble:hover{background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);box-shadow:0 25px 65px rgba(0,0,0,.5);}
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* FOOTER - SAME AS INDEX */
+        /* FOOTER */
         footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
         .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
         .footer-col a:hover{transform:translateX(8px);color:#fff}
 
-        /* Mobile */
+        /* RESPONSIVE - LOGO STAYS PERFECT */
         @media(max-width:768px){
             nav{padding:1.4rem 0}
             nav.scrolled{padding:1rem 0}
             header{padding-top:95px}
             .logo-bubble{width:110px;height:110px}
-            .contact-form{padding:2.5rem}
-            .call-bubble{
-                font-size:1rem;padding:15px 28px;bottom:20px;
-                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
-            }
+            .content-grid{grid-template-columns:1fr;gap:3rem}
+            .pricing-table{padding:2.2rem 1.8rem}
+            .call-bubble{font-size:1rem;padding:15px 28px;bottom:20px;background:rgba(255,255,255,.15);backdrop-filter:blur(14px);}
             .trust-section h2{font-size:2.2rem}
             h1{font-size:2.8rem}
             .tagline{font-size:1.2rem}
+
+            /* LOGO FONT SIZE ON MOBILE */
+            .logo{
+                font-size:1.6rem;
+                letter-spacing:.07em;
+            }
+        }
+
+        @media(max-width:480px){
+            .logo{font-size:1.5rem;}
         }
     </style>
 </head>
 <body>
 
-<!-- NAV - SAME AS INDEX -->
+<!-- NAV -->
 <nav id="nav">
     <div class="container nav-inner">
-        <div class="logo">tree6z</div>
+        <a href="index.html" class="logo">tree6z</a>
         <div class="hamburger" onclick="toggleMobileMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -254,58 +213,52 @@
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- CONTACT HERO - MATCHES INDEX LOGO BUBBLE -->
+<!-- HERO -->
 <header>
     <div class="logo-bubble">
         <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img">
     </div>
     <div class="container hero-content">
-        <h1>Contact Us</h1>
-        <p class="tagline">Get a quote in under 2 hours</p>
+        <h1>Spring Cleanup</h1>
+        <p class="tagline">We erase winter. You get a fresh start.</p>
     </div>
 </header>
 
-<!-- CONTACT FORM -->
-<section class="contact-form-section">
-    <div class="container">
-        <form class="contact-form" action="https://formspree.io/f/xdoqjykl" method="POST">
-            <div class="form-group">
-                <input type="text" id="name" name="name" required placeholder=" ">
-                <label for="name">Full Name</label>
+<!-- SERVICE CONTENT -->
+<section class="service-content">
+    <div class="content-grid">
+        <div class="service-details">
+            <h2>Full Spring Reset — No Trace of Winter</h2>
+            <p>We clear the mess, wake up your beds, and prep the lawn. Your yard looks **brand new** — every spring.</p>
+            <ul>
+                <li>Winter debris + stick pickup</li>
+                <li>Dethatching + power raking</li>
+                <li>Bed edging + hand weeding</li>
+                <li>Fresh mulch (up to 3 yards)</li>
+                <li>First mow + full cleanup</li>
+            </ul>
+            <a href="tel:+13062229165" class="cta-service">Call to Book</a>
+        </div>
+        <div class="pricing-table">
+            <h3>Starting At</h3>
+            <div class="price-item">
+                <span>Small Yard (&lt; 5,000 sq ft)</span>
+                <strong>$179</strong>
             </div>
-            <div class="form-group">
-                <input type="email" id="email" name="_replyto" required placeholder=" ">
-                <label for="email">Email Address</label>
+            <div class="price-item">
+                <span>Medium (5,000–10,000 sq ft)</span>
+                <strong>$229</strong>
             </div>
-            <div class="form-group">
-                <input type="tel" id="phone" name="phone" placeholder=" ">
-                <label for="phone">Phone (Optional)</label>
+            <div class="price-item">
+                <span>Large / Acreage</span>
+                <strong>Custom</strong>
             </div>
-            <div class="form-group">
-                <select name="service" id="service">
-                    <option value="" disabled selected></option>
-                    <option value="Window Cleaning">Window Cleaning</option>
-                    <option value="Lawn Care">Lawn Care</option>
-                    <option value="Leaf Removal">Leaf Removal</option>
-                    <option value="Spring Cleanup">Spring Cleanup</option>
-                    <option value="Snow Removal">Snow Removal</option>
-                    <option value="Other">Other / Quote</option>
-                </select>
-                <label for="service">Service Needed</label>
-            </div>
-            <div class="form-group">
-                <textarea id="message" name="message" required placeholder=" "></textarea>
-                <label for="message">Message</label>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-            <div class="success-message" id="successMsg">
-                Thank you! We'll reply within 2 hours.
-            </div>
-        </form>
+            <p class="pricing-note">*Includes up to 3 yards mulch. Extra $65/yard</p>
+        </div>
     </div>
 </section>
 
-<!-- WHY CLIENTS STAY - SAME AS INDEX -->
+<!-- TRUST SECTION -->
 <section class="trust-section">
     <div class="container">
         <h2>Why Clients Never Leave</h2>
@@ -330,65 +283,5 @@
     </div>
 </section>
 
-<!-- GLASS CALL BUBBLE -->
+<!-- CALL BUBBLE -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
-    Call Now: (306) 222-9165
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>Get in Touch</h3>
-                <p>(306) 222-9165</p>
-                <p>tree6zlandscaping@gmail.com</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="index.html#services">Services</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-        <div class="text-center" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #222;opacity:.8;font-size:.95rem;">
-            <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
-        </div>
-    </div>
-</footer>
-
-<script>
-    window.addEventListener('scroll', () => {
-        document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
-    });
-
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        menu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    }
-
-    document.addEventListener('click', (e) => {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    });
-
-    // Form success
-    const form = document.querySelector('form');
-    const successMsg = document.getElementById('successMsg');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            setTimeout(() => {
-                successMsg.style.display = 'block';
-                form.reset();
-            }, 500);
-        });
-    }
-</script>
-</body>
-</html>

@@ -52,21 +52,38 @@
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        /* NAV - SAME AS INDEX */
+        /* NAV - FIXED LOGO CONSISTENCY */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
         }
         nav.scrolled{padding:1.2rem 0}
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
+
+        /* LOGO - EXACT SAME ON MOBILE & DESKTOP */
+        .logo{
+            font-size:1.8rem;
+            font-weight:900;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            color:#fff;
+            white-space:nowrap;
+            transition:all .3s ease;
+            display:flex;
+            align-items:center;
+        }
+        .logo:hover{
+            color:#ddd;
+            transform:scale(1.03);
+        }
+
         .hamburger{cursor:pointer;padding:10px;border-radius:50%;transition:all .3s}
         .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* Mobile Menu - SAME AS INDEX */
+        /* Mobile Menu */
         .mobile-menu{
             position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
             padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
@@ -76,7 +93,7 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* SERVICE HERO - LOGO BUBBLE (MATCHES INDEX & CONTACT) */
+        /* SERVICE HERO - LOGO BUBBLE */
         header{
             min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
             text-align:center;padding-top:110px;
@@ -84,145 +101,71 @@
                        url('https://images.unsplash.com/photo-1583256836016-108d12572289?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
         .logo-bubble{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:#000;
-            border:4px solid #fff;
-            border-radius:60px;
-            width:140px;
-            height:140px;
-            padding:0;
-            margin:0 auto 2.8rem;
-            box-shadow:
-                0 0 0 12px rgba(0,0,0,.6),
-                0 0 60px rgba(255,255,255,.15),
-                inset 0 0 30px rgba(0,0,0,.4);
-            backdrop-filter:blur(12px);
-            transition:all .4s ease;
-            animation:logoFloat 4s ease-in-out infinite;
-            overflow:hidden;
+            display:flex;align-items:center;justify-content:center;
+            background:#000;border:4px solid #fff;border-radius:60px;
+            width:140px;height:140px;margin:0 auto 2.8rem;
+            box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 60px rgba(255,255,255,.15),inset 0 0 30px rgba(0,0,0,.4);
+            backdrop-filter:blur(12px);transition:all .4s ease;animation:logoFloat 4s ease-in-out infinite;overflow:hidden;
         }
-        .logo-img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position:center center;
-            filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));
-            transition:transform .4s ease;
-        }
-        .logo-bubble:hover .logo-img{
-            transform:scale(1.05);
-        }
-        .logo-bubble:hover{
-            transform:translateY(-4px) scale(1.02);
-            box-shadow:
-                0 0 0 12px rgba(0,0,0,.6),
-                0 0 80px rgba(255,255,255,.25),
-                inset 0 0 40px rgba(0,0,0,.5);
-        }
-        @keyframes logoFloat{
-            0%,100%{transform:translateY(0)}
-            50%{transform:translateY(-8px)}
-        }
+        .logo-img{width:100%;height:100%;object-fit:cover;object-position:center;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));transition:transform .4s ease;}
+        .logo-bubble:hover .logo-img{transform:scale(1.05);}
+        .logo-bubble:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 80px rgba(255,255,255,.25),inset 0 0 40px rgba(0,0,0,.5);}
+        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
         .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
 
         /* SERVICE CONTENT */
         .service-content{padding:6rem 1.5rem}
-        .content-grid{
-            display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;
-        }
+        .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;}
         .service-details h2{font-size:2.6rem;margin-bottom:1.5rem}
         .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
-        .service-details ul{
-            margin:2rem 0;list-style:none;
-        }
-        .service-details li{
-            padding:1rem 0;display:flex;align-items:center;gap:1rem;
-            font-size:1.15rem;opacity:.95;font-weight:500;
-        }
-        .service-details li::before{
-            content:'Checkmark';font-size:1.4rem;color:#fff;
-        }
+        .service-details ul{margin:2rem 0;list-style:none;}
+        .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;opacity:.95;font-weight:500;}
+        .service-details li::before{content:'Checkmark';font-size:1.4rem;color:#fff;}
 
         /* PRICING TABLE */
-        .pricing-table{
-            background:#111;padding:2.8rem 2.2rem;border-radius:16px;
-            box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;
-        }
-        .pricing-table h3{
-            font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;
-        }
-        .price-item{
-            display:flex;justify-content:space-between;padding:1rem 0;
-            border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;
-        }
+        .pricing-table{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
+        .pricing-table h3{font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;}
+        .price-item{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;}
         .price-item:last-child{border:none}
         .price-item strong{font-weight:900;color:#fff}
-        .pricing-note{
-            margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center;line-height:1.5;
-        }
+        .pricing-note{margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center;line-height:1.5;}
 
         /* CTA */
-        .cta-service{
-            display:inline-block;margin-top:2rem;padding:1.1rem 3rem;
-            border:2px solid #fff;font-weight:900;font-size:1.1rem;
-            letter-spacing:1px;transition:all .4s;border-radius:50px;
-        }
-        .cta-service:hover{
-            background:#fff;color:#000;transform:scale(1.05);
-            box-shadow:0 15px 35px rgba(255,255,255,.15);
-        }
+        .cta-service{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;}
+        .cta-service:hover{background:#fff;color:#000;transform:scale(1.05);box-shadow:0 15px 35px rgba(255,255,255,.15);}
 
-        /* TRUST GRID - SAME AS INDEX */
-        .trust-section{
-            padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
-        }
-        .trust-section h2{
-            font-size:2.6rem;text-align:center;margin-bottom:1.8rem;
-        }
-        .trust-grid{
-            display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;
-        }
-        .trust-card{
-            background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
-            border:1px solid #222;transition:all .4s;
-        }
+        /* TRUST GRID */
+        .trust-section{padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;}
+        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:1.8rem;}
+        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;}
+        .trust-card{background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;border:1px solid #222;transition:all .4s;}
         .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
         .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
         .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
 
-        /* CRYSTAL GLASS CALL BUBBLE - SAME AS INDEX */
+        /* CALL BUBBLE */
         .call-bubble{
             position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
             background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
             font-weight:900;font-size:1.1rem;letter-spacing:.7px;
-            box-shadow:0 20px 55px rgba(0,0,0,.35);
-            display:flex;align-items:center;gap:14px;cursor:pointer;
-            animation:float 3s ease-in-out infinite;white-space:nowrap;
-            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
+            box-shadow:0 20px 55px rgba(0,0,0,.35);display:flex;align-items:center;gap:14px;cursor:pointer;
+            animation:float 3s ease-in-out infinite;white-space:nowrap;backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
             transition:all .3s;
         }
-        .call-bubble::before{
-            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
-            animation:pulse 2s infinite;
-        }
-        .call-bubble:hover{
-            background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);
-            box-shadow:0 25px 65px rgba(0,0,0,.5);
-        }
+        .call-bubble::before{content:'';width:12px;height:12px;background:#fff;border-radius:50%;animation:pulse 2s infinite;}
+        .call-bubble:hover{background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);box-shadow:0 25px 65px rgba(0,0,0,.5);}
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* FOOTER - SAME AS INDEX */
+        /* FOOTER */
         footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
         .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
         .footer-col a:hover{transform:translateX(8px);color:#fff}
 
-        /* Mobile */
+        /* RESPONSIVE - LOGO STAYS PERFECT */
         @media(max-width:768px){
             nav{padding:1.4rem 0}
             nav.scrolled{padding:1rem 0}
@@ -230,22 +173,29 @@
             .logo-bubble{width:110px;height:110px}
             .content-grid{grid-template-columns:1fr;gap:3rem}
             .pricing-table{padding:2.2rem 1.8rem}
-            .call-bubble{
-                font-size:1rem;padding:15px 28px;bottom:20px;
-                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
-            }
+            .call-bubble{font-size:1rem;padding:15px 28px;bottom:20px;background:rgba(255,255,255,.15);backdrop-filter:blur(14px);}
             .trust-section h2{font-size:2.2rem}
             h1{font-size:2.8rem}
             .tagline{font-size:1.2rem}
+
+            /* LOGO FONT SIZE ON MOBILE */
+            .logo{
+                font-size:1.6rem;
+                letter-spacing:.07em;
+            }
+        }
+
+        @media(max-width:480px){
+            .logo{font-size:1.5rem;}
         }
     </style>
 </head>
 <body>
 
-<!-- NAV - SAME AS INDEX -->
+<!-- NAV -->
 <nav id="nav">
     <div class="container nav-inner">
-        <div class="logo">tree6z</div>
+        <a href="index.html" class="logo">tree6z</a>
         <div class="hamburger" onclick="toggleMobileMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -263,7 +213,7 @@
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- SERVICE HERO - LOGO BUBBLE (MATCHES INDEX) -->
+<!-- HERO -->
 <header>
     <div class="logo-bubble">
         <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img">
@@ -308,7 +258,7 @@
     </div>
 </section>
 
-<!-- WHY CLIENTS STAY - SAME AS INDEX -->
+<!-- TRUST SECTION -->
 <section class="trust-section">
     <div class="container">
         <h2>Why Clients Never Leave</h2>
@@ -333,7 +283,7 @@
     </div>
 </section>
 
-<!-- GLASS CALL BUBBLE -->
+<!-- CALL BUBBLE -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
     Call Now: (306) 222-9165
 </div>
@@ -368,7 +318,7 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');
-        menu.classList.toggle('active');
+        menu.classList.toggle(' проверки');
         hamburger.classList.toggle('active');
     }
 
