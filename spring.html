@@ -53,7 +53,7 @@
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
         .text-center{text-align:center}
 
-        /* NAV - EXACTLY LIKE index.html */
+        /* NAV - CONSISTENT Z-INDEX */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
@@ -62,17 +62,17 @@
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
         .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
         .hamburger{
-            cursor:pointer;padding:10px;border-radius:50%;transition:all .3s
+            cursor:pointer;padding:16px;border-radius:50%;transition:all .3s
         }
         .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* Mobile Menu - EXACTLY LIKE index.html */
+        /* Mobile Menu - CONSISTENT Z-INDEX */
         .mobile-menu{
             position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
-            padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
+            padding:7rem 2rem 3rem;z-index:1002;transition:right .5s cubic-bezier(0.77,0,0.18,1);
             box-shadow:-10px 0 40px rgba(0,0,0,.7);border-left:1px solid #222;overflow-y:auto;
         }
         .mobile-menu.active{right:0}
@@ -85,6 +85,7 @@
             text-align:center;padding-top:160px;
             background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
                        url('https://images.unsplash.com/photo-1558618666-fcd25a5eaf57?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+            position: relative;
         }
 
         .logo-bubble {
@@ -105,8 +106,9 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            z-index: 1001;
+            z-index: 10; /* LOWERED FROM 1001 */
             padding: 0;
+            transition: all .4s ease;
         }
 
         .logo-img {
@@ -230,7 +232,15 @@
         .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
         .footer-col a:hover{transform:translateX(8px);color:#fff}
 
-        /* RESPONSIVE - HAMBURGER ALWAYS VISIBLE */
+        /* HIDE LOGO BUBBLE WHEN MOBILE MENU IS OPEN */
+        .mobile-menu.active ~ header .logo-bubble,
+        .mobile-menu.active ~ .logo-bubble {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px) scale(0.95);
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             nav { padding: 1rem 0; }
             nav.scrolled { padding: 0.8rem 0; }
@@ -241,13 +251,13 @@
             .logo { font-size: 1.5rem; }
         }
 
-        /* HAMBURGER ALWAYS VISIBLE - LIKE index.html */
+        /* HAMBURGER ALWAYS VISIBLE */
         .hamburger { display: block !important; }
     </style>
 </head>
 <body>
 
-<!-- NAV - EXACTLY LIKE index.html -->
+<!-- NAV -->
 <nav id="nav">
     <div class="container nav-inner">
         <div class="logo">tree6z</div>
@@ -257,7 +267,7 @@
     </div>
 </nav>
 
-<!-- Mobile Menu - EXACTLY LIKE index.html -->
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="window.html">Window Cleaning</a>
