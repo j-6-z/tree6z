@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
     <title>tree6z | Year-Round Property Maintenance in Saskatoon</title>
+
     <!-- Open Graph -->
-    <meta property="og:title" content="tree6z | We Keep Your Place Looking Sharp All Year" />
-    <meta property="og:description" content="One crew. Every season. Lawn care, snow removal, window cleaning — done right in Saskatoon, SK." />
+    <meta property="og:title" content="tree6z | Year-Round Property Maintenance in Saskatoon" />
+    <meta property="og:description" content="Lawn care, snow removal, window cleaning, spring cleanup — one crew, one call." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tree6z.ca/" />
+    <meta property="og:url" content="https://tree6z.ca" />
     <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+
     <!-- Favicon -->
     <link rel="icon" href="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" type="image/jpeg">
+
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+
     <!-- Schema -->
     <script type="application/ld+json">
     {
@@ -26,7 +30,7 @@
       "url": "https://tree6z.ca",
       "telephone": "+13062229165",
       "email": "tree6zlandscaping@gmail.com",
-      "description": "Year-round property maintenance in Saskatoon, SK.",
+      "description": "Year-round property maintenance in Saskatoon: lawn care, snow removal, window cleaning, spring cleanup.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Saskatoon",
@@ -36,6 +40,7 @@
       "openingHours": "Mo-Su 06:00-22:00"
     }
     </script>
+
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
@@ -45,7 +50,7 @@
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
         .text-center{text-align:center}
 
-        /* NAV */
+        /* NAV - FIXED + HAMBURGER ALWAYS VISIBLE */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
@@ -54,7 +59,7 @@
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
         .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
         .hamburger{
-            display:none;cursor:pointer;padding:10px;border-radius:50%;transition:all .3s
+            cursor:pointer;padding:10px;border-radius:50%;transition:all .3s
         }
         .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
@@ -71,7 +76,7 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* HERO - LOGO FULLY VISIBLE ON MOBILE */
+        /* HERO - FULL SCREEN */
         header{
             min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
             text-align:center;padding-top:140px;position:relative;
@@ -79,27 +84,27 @@
                        url('https://images.unsplash.com/photo-1502086223501-09a85ba1a2b7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
 
-        /* LOGO BUBBLE - DOMINATES, NO OVERLAP */
+        /* LOGO BUBBLE - BIG WHITE SQUARE */
         .logo-bubble {
             position: relative;
             width: clamp(180px, 45vw, 320px);
             height: clamp(180px, 45vw, 320px);
-            background: #000;
-            border: 8px solid #fff;
-            border-radius: 50%;
+            background: #fff;
+            border: 8px solid #000;
             margin: 0 auto 4rem;
             overflow: hidden;
             box-shadow: 
                 0 0 0 22px rgba(0,0,0,.8), 
                 0 0 110px rgba(255,255,255,.4),
-                inset 0 0 60px rgba(0,0,0,.:.7);
+                inset 0 0 60px rgba(0,0,0,.7);
             backdrop-filter: blur(20px);
             animation: logoFloat 4s ease-in-out infinite;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            z-index: 10;
+            z-index: 1001;
+            padding: 0;
         }
 
         .logo-img {
@@ -107,22 +112,22 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            clip-path: circle(50% at center);
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
             transition: transform .4s ease;
+            display: block;
         }
 
         .logo-bubble:hover .logo-img {
-            transform: scale(1.2);
+            transform: scale(1.15);
         }
 
         .logo-bubble:hover {
             transform: translateY(-14px) scale(1.06);
             box-shadow: 
                 0 0 0 22px rgba(0,0,0,.8), 
-                0 0 130px rgba(255,255,255,.5),
-                inset 0 0 70px rgba(0,0,0,.8);
+                0 0 140px rgba(255,255,255,.6),
+                inset 0 0 80px rgba(0,0,0,.9);
         }
 
         @keyframes logoFloat {
@@ -139,28 +144,24 @@
         }
         .cta:hover{background:#fff;color:#000;transform:scale(1.06)}
 
-        /* SECTIONS */
+        /* OWNER VISION */
         .owner-vision{padding:8rem 1.5rem;background:#111;text-align:center;border-top:1px solid #222;border-bottom:1px solid #222}
-        .owner-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin:0 auto 1.2rem;display:block;box-shadow:0 8px 20px rgba(0,0,0,.4)}
         .owner-vision h2{font-size:2.8rem;max-width:900px;margin:0 auto 1.5rem;line-height:1.2;letter-spacing:-.03em}
         .owner-vision p{font-size:1.25rem;max-width:720px;margin:0 auto;opacity:.92;line-height:1.7;font-weight:500}
         .owner-vision p + p{margin-top:1.2rem}
         .owner-vision .highlight{font-weight:900;color:#fff;display:inline-block}
 
-        .trust-section{padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px}
-        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:1.8rem}
-        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
-        .trust-card{background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;border:1px solid #222;transition:all .4s}
-        .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
-        .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
-        .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
-
-        section{padding:6rem 0}
+        /* SERVICES GRID */
         .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:4rem}
         .service-card{background:#111;padding:3rem 2rem;border-radius:16px;transition:all .5s;border:1px solid #222;text-align:center}
         .service-card:hover{transform:translateY(-20px);box-shadow:0 40px 80px rgba(255,255,255,.12);border-color:#fff}
         .service-icon{width:90px;height:90px;background:#fff;border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .service-icon img{width:50px;height:50px;object-fit:contain;filter:invert(1)}
+        .service-card h3{font-size:1.6rem;margin-bottom:.8rem}
+        .service-card a{font-size:1.35rem;font-weight:900;color:#fff;display:block;margin-top:.5rem;transition:all .3s}
+        .service-card a:hover{color:#ccc;transform:scale(1.05)}
 
+        /* CALL BUBBLE */
         .call-bubble{
             position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
             background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
@@ -176,31 +177,24 @@
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        .license-section{padding:8rem 1.5rem;background:#000;border-top:5px solid #222}
-        .license-img{max-width:820px;width:100%;margin:3rem auto 0;display:block;border:6px solid #222;border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.9);}
-
+        /* FOOTER */
         footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
         .footer-col h3{margin-bottom:1rem}
 
-        /* MOBILE FIX - NO NAV OVERLAP */
         @media (max-width: 768px) {
             nav { padding: 1rem 0; }
             nav.scrolled { padding: 0.8rem 0; }
-            header { padding-top: 140px; } /* ← THIS FIXES THE OVERLAP */
-            .owner-photo { width: 70px; height: 70px; margin-bottom: 1rem; }
+            header { padding-top: 140px; }
             .owner-vision h2 { font-size: 2.3rem; }
-            .trust-section h2 { font-size: 2.2rem; }
             .call-bubble { font-size: 1rem; padding: 15px 28px; bottom: 20px; }
             h1 { font-size: 2.8rem; }
             .tagline { font-size: 1.2rem; }
-            .hamburger { display: block; }
             .logo { font-size: 1.5rem; }
         }
 
-        @media (min-width: 769px) {
-            .hamburger { display: none; }
-        }
+        /* HAMBURGER ALWAYS VISIBLE */
+        .hamburger { display: block !important; }
     </style>
 </head>
 <body>
@@ -226,68 +220,79 @@
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO - LOGO IS KING -->
-<header id="home">
+<!-- HERO -->
+<header>
     <div class="logo-bubble">
-        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" 
-             alt="tree6z Logo" 
-             class="logo-img"
-             loading="eager">
+        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img" loading="eager">
     </div>
     <div class="container hero-content">
-        <h1>We Keep Your Place Looking Sharp All Year</h1>
-        <p class="tagline">One crew. Every season. Done right.</p>
-        <a href="#services" class="cta">See Our Services</a>
+        <h1>Year-Round Property Maintenance</h1>
+        <p class="tagline">One crew. One call. Zero excuses.</p>
+        <a href="tel:+13062229165" class="cta">Call (306) 222-9165</a>
     </div>
 </header>
 
-<!-- REST OF PAGE -->
+<!-- OWNER VISION -->
 <section class="owner-vision">
     <div class="container">
-        <img src="https://i.ibb.co/1wzXdz6/jay-profile.jpg" alt="Jay Turner – Owner of tree6z" class="owner-photo">
-        <h2>Hey, I'm Jay T — Owner of tree6z</h2>
-        <p>I started this in 2018 with one beat-up truck and a mower I bought off Kijiji. No investors, no fluff — just me, my crew, and a promise: <span class="highlight">we'll beat anyone on price and still make your place look like a damn magazine.</span></p>
-        <p>Our vision? Be the <span class="highlight">most competitively priced landscaper in Saskatoon</span> without ever cutting corners. Sharp lines, zero weeds, spotless windows, snow gone before you wake up — all at rates that don't make you choke on your coffee. We obsess over the details so you don't have to. Family-run, local, and built on repeat clients who know we're not here to upsell — we're here to <span class="highlight">outwork and outprice everyone else.</span></p>
+        <h2>We Don’t Just Show Up — We Own It</h2>
+        <p>No subcontractors. No middlemen. Just <span class="highlight">us</span> — family-run, fully insured, and obsessed with getting it right.</p>
+        <p>From 3 AM snowstorms to 30°C window days, we’re there. Same crew. Same standards. Every time.</p>
     </div>
 </section>
 
-<section class="trust-section">
-    <div class="container">
-        <h2>Why Clients Never Leave</h2>
-        <div class="trust-grid">
-            <div class="trust-card"><h3>Reliable 24/7</h3><p>Snow at 3 AM? We're there before you wake up.</p></div>
-            <div class="trust-card"><h3>Same Crew, Every Time</h3><p>No strangers. You'll know our names.</p></div>
-            <div class="trust-card"><h3>Fully Insured</h3><p>Liability + workers' comp. Zero risk to you.</p></div>
-            <div class="trust-card"><h3>One Call Does It All</h3><p>Lawn, snow, windows — one crew, year-round.</p></div>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="container">
-    <div class="text-center">
-        <h2 style="font-size:2.6rem;">What We Do</h2>
-        <p class="tagline">Click any service to learn more</p>
-    </div>
+<!-- SERVICES GRID -->
+<section class="container">
     <div class="services-grid">
-        <a href="window.html" class="service-card"><div class="service-icon"><img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Window Cleaning"></div><h3>Window Cleaning</h3><p>Crystal clear, inside & out.</p></a>
-        <a href="lawncare.html" class="service-card"><div class="service-icon"><img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn Care"></div><h3>Lawn Care</h3><p>Weekly cuts, edging, weed control.</p></a>
-        <a href="leaf.html" class="service-card"><div class="service-icon"><img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf Removal"></div><h3>Leaf Removal</h3><p>Full fall cleanup + gutter clearing.</p></a>
-        <a href="spring.html" class="service-card"><div class="service-icon"><img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring Cleanup"></div><h3>Spring Cleanup</h3><p>Dethatch, aerate, first cut.</p></a>
-        <a href="snow.html" class="service-card"><div class="service-icon"><img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="Snow Removal"></div><h3>Snow Removal</h3><p>24/7 plowing & ice control.</p></a>
+        <a href="window.html" class="service-card">
+            <div class="service-icon">
+                <img src="https://i.ibb.co/4p4nV6Y/window-icon.png" alt="Window">
+            </div>
+            <h3>Window Cleaning</h3>
+            <p>Streak-free, no ladders, up to 3 stories.</p>
+        </a>
+        <a href="lawncare.html" class="service-card">
+            <div class="service-icon">
+                <img src="https://i.ibb.co/9YZt3Yk/lawn-icon.png" alt="Lawn">
+            </div>
+            <h3>Lawn Care</h3>
+            <p>Weekly cuts. Sharp lines. Golf-course grass.</p>
+        </a>
+        <a href="leaf.html" class="service-card">
+            <div class="service-icon">
+                <img src="https://i.ibb.co/4p4nV6Y/leaf-icon.png" alt="Leaf">
+            </div>
+            <h3>Leaf Removal</h3>
+            <p>Full yard + gutters. Zero leaves left.</p>
+        </a>
+        <a href="spring.html" class="service-card">
+            <div class="service-icon">
+                <img src="https://i.ibb.co/9YZt3Yk/spring-icon.png" alt="Spring">
+            </div>
+            <h3>Spring Cleanup</h3>
+            <p>Dethatch, mulch, first mow — winter erased.</p>
+        </a>
+        <a href="snow.html" class="service-card">
+            <div class="service-icon">
+                <img src="https://i.ibb.co/4p4nV6Y/snow-icon.png" alt="Snow">
+            </div>
+            <h3>Snow Removal</h3>
+            <p>24/7 response. Gone before you wake up.</p>
+        </a>
+        <a href="contact.html" class="service-card">
+            <div class="service-icon">
+                <img src="https://i.ibb.co/9YZt3Yk/phone-icon.png" alt="Contact">
+            </div>
+            <h3>Contact</h3>
+            <p>Call, text, or send a photo — we answer fast.</p>
+        </a>
     </div>
 </section>
 
-<section class="license-section">
-    <div class="container text-center">
-        <h2 style="font-size:3rem;letter-spacing:-2px;">LICENSED. INSURED. LEGIT.</h2>
-        <p style="font-size:1.3rem;opacity:.9;margin:2rem auto;max-width:800px;">City of Saskatoon Business License — proudly serving since day one.</p>
-        <img src="https://i.ibb.co/vCwScfXN/bl-t6z.jpg" alt="tree6z Saskatoon Business License" class="license-img">
-        <p style="margin-top:2.5rem;font-size:1.1rem;opacity:.8;">License #2025-XXXXX • Issued by City of Saskatoon • Valid until June 1, 2026</p>
-    </div>
-</section>
-
+<!-- CALL BUBBLE -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">Call Now: (306) 222-9165</div>
 
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -304,12 +309,14 @@
     window.addEventListener('scroll', () => {
         document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
     });
+
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');
         menu.classList.toggle('active');
         hamburger.classList.toggle('active');
     }
+
     document.addEventListener('click', (e) => {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger');

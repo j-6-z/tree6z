@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>Spring Cleanup | tree6z</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+    <title>Contact | tree6z</title>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Spring Cleanup | tree6z" />
-    <meta property="og:description" content="Full spring reset: dethatching, debris removal, mulching, first mow. Winter erased." />
+    <meta property="og:title" content="Contact tree6z | Year-Round Property Maintenance in Saskatoon" />
+    <meta property="og:description" content="Call (306) 222-9165 or email tree6zlandscaping@gmail.com — we answer fast." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tree6z.ca/spring.html" />
+    <meta property="og:url" content="https://tree6z.ca/contact.html" />
     <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -24,23 +24,19 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Spring Cleanup",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "tree6z",
-        "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
-        "telephone": "+13062229165",
-        "email": "tree6zlandscaping@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Saskatoon",
-          "addressRegion": "SK",
-          "addressCountry": "CA"
-        }
+      "@type": "LocalBusiness",
+      "name": "tree6z",
+      "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
+      "url": "https://tree6z.ca/contact.html",
+      "telephone": "+13062229165",
+      "email": "tree6zlandscaping@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Saskatoon",
+        "addressRegion": "SK",
+        "addressCountry": "CA"
       },
-      "areaServed": "Saskatoon",
-      "description": "Full spring reset: dethatching, debris removal, mulching, and first mow."
+      "openingHours": "Mo-Su 06:00-22:00"
     }
     </script>
 
@@ -52,15 +48,14 @@
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        /* NAV - FIXED LOGO CONSISTENCY */
+        /* NAV - LOWER Z-INDEX */
         nav{
-            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
+            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:999;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
         }
         nav.scrolled{padding:1.2rem 0}
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
 
-        /* LOGO - EXACT SAME ON MOBILE & DESKTOP */
         .logo{
             font-size:1.8rem;
             font-weight:900;
@@ -93,24 +88,66 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* SERVICE HERO - LOGO BUBBLE */
+        /* HERO - INCREASED PADDING FOR NAV + LOGO CLEARANCE */
         header{
             min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-            text-align:center;padding-top:110px;
+            text-align:center;padding-top:160px; /* WAS 110px → NOW 160px */
             background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-                       url('https://images.unsplash.com/photo-1558618666-fcd25a5eaf57?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+                       url('https://images.unsplash.com/photo-1502086223501-09a85ba1a2b7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+            position: relative;
         }
-        .logo-bubble{
-            display:flex;align-items:center;justify-content:center;
-            background:#000;border:4px solid #fff;border-radius:60px;
-            width:140px;height:140px;margin:0 auto 2.8rem;
-            box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 60px rgba(255,255,255,.15),inset 0 0 30px rgba(0,0,0,.4);
-            backdrop-filter:blur(12px);transition:all .4s ease;animation:logoFloat 4s ease-in-out infinite;overflow:hidden;
+
+        /* LOGO BUBBLE - HIGHER Z-INDEX + POSITION RELATIVE */
+        .logo-bubble {
+            position: relative;
+            width: clamp(180px, 45vw, 320px);
+            height: clamp(180px, 45vw, 320px);
+            background: #fff;
+            border: 8px solid #000;
+            margin: 0 auto 2.8rem;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 22px rgba(0,0,0,.8), 
+                0 0 110px rgba(255,255,255,.4),
+                inset 0 0 60px rgba(0,0,0,.7);
+            backdrop-filter: blur(20px);
+            animation: logoFloat 4s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 1001; /* ABOVE NAV */
+            padding: 0;
         }
-        .logo-img{width:100%;height:100%;object-fit:cover;object-position:center;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));transition:transform .4s ease;}
-        .logo-bubble:hover .logo-img{transform:scale(1.05);}
-        .logo-bubble:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 80px rgba(255,255,255,.25),inset 0 0 40px rgba(0,0,0,.5);}
-        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            transition: transform .4s ease;
+            display: block;
+        }
+
+        .logo-bubble:hover .logo-img {
+            transform: scale(1.15);
+        }
+
+        .logo-bubble:hover {
+            transform: translateY(-14px) scale(1.06);
+            box-shadow: 
+                0 0 0 22px rgba(0,0,0,.8), 
+                0 0 140px rgba(255,255,255,.6),
+                inset 0 0 80px rgba(0,0,0,.9);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
         .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
@@ -124,13 +161,14 @@
         .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;opacity:.95;font-weight:500;}
         .service-details li::before{content:'Checkmark';font-size:1.4rem;color:#fff;}
 
-        /* PRICING TABLE */
-        .pricing-table{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
-        .pricing-table h3{font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;}
-        .price-item{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;}
-        .price-item:last-child{border:none}
-        .price-item strong{font-weight:900;color:#fff}
-        .pricing-note{margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center;line-height:1.5;}
+        /* CONTACT CARD */
+        .contact-card{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
+        .contact-card h3{font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;}
+        .contact-item{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;}
+        .contact-item:last-child{border:none}
+        .contact-item strong{font-weight:900;color:#fff}
+        .contact-item a{font-weight:900;color:#fff;transition:all .3s}
+        .contact-item a:hover{color:#ccc}
 
         /* CTA */
         .cta-service{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;}
@@ -165,24 +203,18 @@
         .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
         .footer-col a:hover{transform:translateX(8px);color:#fff}
 
-        /* RESPONSIVE - LOGO STAYS PERFECT */
+        /* RESPONSIVE */
         @media(max-width:768px){
             nav{padding:1.4rem 0}
             nav.scrolled{padding:1rem 0}
-            header{padding-top:95px}
-            .logo-bubble{width:110px;height:110px}
+            header{padding-top:140px} /* Reduced on mobile */
             .content-grid{grid-template-columns:1fr;gap:3rem}
-            .pricing-table{padding:2.2rem 1.8rem}
+            .contact-card{padding:2.2rem 1.8rem}
             .call-bubble{font-size:1rem;padding:15px 28px;bottom:20px;background:rgba(255,255,255,.15);backdrop-filter:blur(14px);}
             .trust-section h2{font-size:2.2rem}
             h1{font-size:2.8rem}
             .tagline{font-size:1.2rem}
-
-            /* LOGO FONT SIZE ON MOBILE */
-            .logo{
-                font-size:1.6rem;
-                letter-spacing:.07em;
-            }
+            .logo{font-size:1.6rem;letter-spacing:.07em;}
         }
 
         @media(max-width:480px){
@@ -216,44 +248,42 @@
 <!-- HERO -->
 <header>
     <div class="logo-bubble">
-        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img">
+        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img" loading="eager">
     </div>
     <div class="container hero-content">
-        <h1>Spring Cleanup</h1>
-        <p class="tagline">We erase winter. You get a fresh start.</p>
+        <h1>Get In Touch</h1>
+        <p class="tagline">One call. One crew. One answer — fast.</p>
     </div>
 </header>
 
-<!-- SERVICE CONTENT -->
+<!-- CONTACT CONTENT -->
 <section class="service-content">
     <div class="content-grid">
         <div class="service-details">
-            <h2>Full Spring Reset — No Trace of Winter</h2>
-            <p>We clear the mess, wake up your beds, and prep the lawn. Your yard looks **brand new** — every spring.</p>
+            <h2>We Answer 6 AM – 10 PM • 7 Days a Week</h2>
+            <p>No voicemail hell. No upsells. Just real people who show up when they say they will.</p>
             <ul>
-                <li>Winter debris + stick pickup</li>
-                <li>Dethatching + power raking</li>
-                <li>Bed edging + hand weeding</li>
-                <li>Fresh mulch (up to 3 yards)</li>
-                <li>First mow + full cleanup</li>
+                <li>Call or text — we reply in minutes</li>
+                <li>Free quotes via photo</li>
+                <li>Same-day callbacks</li>
+                <li>24/7 emergency snow response</li>
             </ul>
             <a href="tel:+13062229165" class="cta-service">Call to Book</a>
         </div>
-        <div class="pricing-table">
-            <h3>Starting At</h3>
-            <div class="price-item">
-                <span>Small Yard (&lt; 5,000 sq ft)</span>
-                <strong>$179</strong>
+        <div class="contact-card">
+            <h3>Contact Info</h3>
+            <div class="contact-item">
+                <span>Phone</span>
+                <a href="tel:+13062229165">(306) 222-9165</a>
             </div>
-            <div class="price-item">
-                <span>Medium (5,000–10,000 sq ft)</span>
-                <strong>$229</strong>
+            <div class="contact-item">
+                <span>Email</span>
+                <a href="mailto:tree6zlandscaping@gmail.com">tree6zlandscaping@gmail.com</a>
             </div>
-            <div class="price-item">
-                <span>Large / Acreage</span>
-                <strong>Custom</strong>
+            <div class="contact-item">
+                <span>Service Area</span>
+                <span>Saskatoon + 30km</span>
             </div>
-            <p class="pricing-note">*Includes up to 3 yards mulch. Extra $65/yard</p>
         </div>
     </div>
 </section>
@@ -285,3 +315,49 @@
 
 <!-- CALL BUBBLE -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
+    Call Now: (306) 222-9165
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>(306) 222-9165</p>
+                <p>tree6zlandscaping@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="#services">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:3rem;padding-top:2rem;border-top:1px solid #222;opacity:.8;font-size:.95rem;">
+            <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
+    });
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+    document.addEventListener('click', (e) => {
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+</script>
+</body>
+</html>

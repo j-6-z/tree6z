@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
     <title>Snow Removal | tree6z</title>
     <meta name="description" content="Saskatoon snow removal — $40/visit, no contracts. 24/7 response, driveways, sidewalks, salting.">
 
@@ -52,8 +52,9 @@
         img{max-width:100%;display:block}
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+        .text-center{text-align:center}
 
-        /* NAV */
+        /* NAV - EXACTLY LIKE index.html */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
@@ -62,14 +63,14 @@
         .nav-inner{display:flex;justify-content:space-between;align-items:center}
         .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
         .hamburger{
-            display:none;cursor:pointer;padding:10px;border-radius:50%;transition:all .3s
+            cursor:pointer;padding:10px;border-radius:50%;transition:all .3s
         }
         .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
-        /* Mobile Menu */
+        /* Mobile Menu - EXACTLY LIKE index.html */
         .mobile-menu{
             position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
             padding:7rem 2rem 3rem;z-index:999;transition:right .5s cubic-bezier(0.77,0,0.18,1);
@@ -79,30 +80,64 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* SERVICE HERO */
+        /* HERO - 75dvh + BIG LOGO */
         header{
             min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-            text-align:center;padding-top:110px;
+            text-align:center;padding-top:160px;
             background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
                        url('https://images.unsplash.com/photo-1542601098-3adb3baeb5ec?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
-        .logo-bubble{
-            display:flex;align-items:center;justify-content:center;background:#000;
-            border:4px solid #fff;border-radius:60px;width:140px;height:140px;padding:0;
-            margin:0 auto 2.8rem;box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 60px rgba(255,255,255,.15),
-            inset 0 0 30px rgba(0,0,0,.4);backdrop-filter:blur(12px);transition:all .4s ease;
-            animation:logoFloat 4s ease-in-out infinite;overflow:hidden;
+
+        .logo-bubble {
+            position: relative;
+            width: clamp(180px, 45vw, 320px);
+            height: clamp(180px, 45vw, 320px);
+            background: #fff;
+            border: 8px solid #000;
+            margin: 0 auto 2.8rem;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 22px rgba(0,0,0,.8), 
+                0 0 110px rgba(255,255,255,.4),
+                inset 0 0 60px rgba(0,0,0,.7);
+            backdrop-filter: blur(20px);
+            animation: logoFloat 4s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 1001;
+            padding: 0;
         }
-        .logo-img{
-            width:100%;height:100%;object-fit:cover;object-position:center center;
-            filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));transition:transform .4s ease;
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            transition: transform .4s ease;
+            display: block;
         }
-        .logo-bubble:hover .logo-img{transform:scale(1.05)}
-        .logo-bubble:hover{
-            transform:translateY(-4px) scale(1.02);
-            box-shadow:0 0 0 12px rgba(0,0,0,.6),0 0 80px rgba(255,255,255,.25),inset 0 0 40px rgba(0,0,0,.5);
+
+        .logo-bubble:hover .logo-img {
+            transform: scale(1.15);
         }
-        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+        .logo-bubble:hover {
+            transform: translateY(-14px) scale(1.06);
+            box-shadow: 
+                0 0 0 22px rgba(0,0,0,.8), 
+                0 0 140px rgba(255,255,255,.6),
+                inset 0 0 80px rgba(0,0,0,.9);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
         .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
@@ -196,32 +231,24 @@
         .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
         .footer-col a:hover{transform:translateX(8px);color:#fff}
 
-        /* Mobile */
-        @media(max-width:768px){
-            nav{padding:1.4rem 0}
-            nav.scrolled{padding:1rem 0}
-            header{padding-top:95px}
-            .logo-bubble{width:110px;height:110px}
-            .content-grid{grid-template-columns:1fr;gap:3rem}
-            .pricing-table{padding:2.2rem 1.8rem}
-            .call-bubble{
-                font-size:1rem;padding:15px 28px;bottom:20px;
-                background:rgba(255,255,255,.15);backdrop-filter:blur(14px);
-            }
-            .trust-section h2{font-size:2.2rem}
-            h1{font-size:2.8rem}
-            .tagline{font-size:1.2rem}
-            .hamburger{display:block}
-            .logo{font-size:1.5rem}
+        /* RESPONSIVE - HAMBURGER ALWAYS VISIBLE */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 0; }
+            nav.scrolled { padding: 0.8rem 0; }
+            header { padding-top: 140px; }
+            .call-bubble { font-size: 1rem; padding: 15px 28px; bottom: 20px; }
+            h1 { font-size: 2.8rem; }
+            .tagline { font-size: 1.2rem; }
+            .logo { font-size: 1.5rem; }
         }
-        @media(min-width:769px){
-            .hamburger{display:none}
-        }
+
+        /* HAMBURGER ALWAYS VISIBLE - LIKE index.html */
+        .hamburger { display: block !important; }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV - EXACTLY LIKE index.html -->
 <nav id="nav">
     <div class="container nav-inner">
         <div class="logo">tree6z</div>
@@ -231,7 +258,7 @@
     </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu - EXACTLY LIKE index.html -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="window.html">Window Cleaning</a>
@@ -245,7 +272,7 @@
 <!-- SERVICE HERO -->
 <header>
     <div class="logo-bubble">
-        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img">
+        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img" loading="eager">
     </div>
     <div class="container hero-content">
         <h1>Snow Removal</h1>
