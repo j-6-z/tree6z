@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
     <title>tree6z | Year-Round Property Maintenance in Saskatoon</title>
+    <meta name="description" content="Family-run property maintenance in Saskatoon: lawn care, snow removal, window cleaning, leaf removal, spring cleanup. No contracts, same crew every time.">
+    <meta name="keywords" content="Saskatoon lawn care, Saskatoon snow removal, Saskatoon window cleaning, Saskatoon leaf removal, Saskatoon spring cleanup, property maintenance Saskatoon, landscaping Saskatoon">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="tree6z">
+    <link rel="canonical" href="https://tree6z.ca/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="tree6z | Year-Round Property Maintenance in Saskatoon" />
@@ -50,7 +55,7 @@
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
         .text-center{text-align:center}
 
-        /* NAV - FIXED + HAMBURGER ALWAYS VISIBLE */
+        /* NAV */
         nav{
             position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
             background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
@@ -76,7 +81,7 @@
         .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
-        /* HERO - FULL SCREEN */
+        /* HERO */
         header{
             min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
             text-align:center;padding-top:140px;position:relative;
@@ -84,7 +89,6 @@
                        url('https://images.unsplash.com/photo-1502086223501-09a85ba1a2b7?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
 
-        /* LOGO BUBBLE - BIG WHITE SQUARE */
         .logo-bubble {
             position: relative;
             width: clamp(180px, 45vw, 320px);
@@ -145,19 +149,18 @@
         }
         .cta:hover{background:#fff;color:#000;transform:scale(1.06)}
 
-        /* OWNER VISION */
-        .owner-vision{padding:8rem 1.5rem;background:#111;text-align:center;border-top:1px solid #222;border-bottom:1px solid #222}
-        .owner-vision h2{font-size:2.8rem;max-width:900px;margin:0 auto 1.5rem;line-height:1.2;letter-spacing:-.03em}
-        .owner-vision p{font-size:1.25rem;max-width:720px;margin:0 auto;opacity:.92;line-height:1.7;font-weight:500}
-        .owner-vision p + p{margin-top:1.2rem}
-        .owner-vision .highlight{font-weight:900;color:#fff;display:inline-block}
+        /* ABOUT */
+        .about-section{padding:8rem 1.5rem;background:#111;text-align:center}
+        .about-section h2{font-size:2.8rem;max-width:900px;margin:0 auto 1.5rem;line-height:1.2;letter-spacing:-.03em}
+        .about-section p{font-size:1.25rem;max-width:720px;margin:0 auto 1.2rem;opacity:.92;line-height:1.7;font-weight:500}
+        .about-section p:last-child{margin-bottom:0}
 
-        /* SERVICES GRID */
+        /* SERVICES */
+        .services-section{padding:8rem 0}
         .services-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:2.5rem;
-            margin-top:4rem;
+            gap:3rem;
         }
         .service-card{
             background:#111;
@@ -174,7 +177,6 @@
             border-color:#fff;
         }
 
-        /* SERVICE ICONS — NOW FULLY FILL THE CIRCLE */
         .service-icon {
             width: 110px;
             height: 110px;
@@ -184,7 +186,6 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,.3);
             transition: all .3s ease;
-            position: relative;
         }
 
         .service-icon img {
@@ -207,10 +208,6 @@
         .service-card h3{
             font-size:1.6rem;
             margin-bottom:.8rem;
-            transition:color .3s;
-        }
-        .service-card:hover h3{
-            color:#ccc;
         }
         .service-card p{
             font-size:1.1rem;
@@ -250,17 +247,39 @@
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* FOOTER */
-        footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
-        .footer-col h3{margin-bottom:1rem}
-
-        /* Hide logo bubble when mobile menu is open */
-        .mobile-menu.active ~ header .logo-bubble,
-        .mobile-menu.active ~ .logo-bubble {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px) scale(0.95);
+        /* FOOTER - CLEANED UP */
+        footer{
+            background:#000;
+            padding:6rem 0 4rem;
+            border-top:3px solid #222;
+        }
+        .footer-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:4rem;
+            margin-bottom:5rem;
+        }
+        .footer-col h3{
+            font-size:1.5rem;
+            margin-bottom:1.8rem;
+            font-weight:900;
+        }
+        .footer-col a, .footer-col p{
+            display:block;
+            margin-bottom:1rem;
+            opacity:.9;
+            transition:all .3s;
+        }
+        .footer-col a:hover{
+            opacity:1;
+            transform:translateX(8px);
+        }
+        .footer-bottom{
+            text-align:center;
+            padding-top:2rem;
+            border-top:1px solid #222;
+            opacity:.8;
+            font-size:.95rem;
         }
 
         /* RESPONSIVE */
@@ -268,20 +287,19 @@
             nav { padding: 1rem 0; }
             nav.scrolled { padding: 0.8rem 0; }
             header { padding-top: 140px; }
-            .owner-vision h2 { font-size: 2.3rem; }
+            .about-section { padding: 6rem 1rem; }
+            .about-section h2 { font-size: 2.3rem; }
+            .services-section { padding: 6rem 1rem; }
             .call-bubble { font-size: 1rem; padding: 15px 28px; bottom: 20px; }
             h1 { font-size: 2.8rem; }
             .tagline { font-size: 1.2rem; }
             .logo { font-size: 1.5rem; }
-            
-            /* Smaller icons on mobile, but still FULL FILL */
-            .service-icon { 
-                width: 90px; 
-                height: 90px; 
-            }
+            .service-icon { width: 90px; height: 90px; }
+            .service-card { padding: 2.5rem 1.5rem; }
+            footer { padding: 5rem 0 3rem; }
+            .footer-grid { gap: 3rem; }
         }
 
-        /* HAMBURGER ALWAYS VISIBLE */
         .hamburger { display: block !important; }
     </style>
 </head>
@@ -320,60 +338,63 @@
     </div>
 </header>
 
-<!-- OWNER VISION -->
-<section class="owner-vision">
+<!-- ABOUT -->
+<section class="about-section">
     <div class="container">
-        <h2>We Don’t Just Show Up — We Own It</h2>
-        <p>No subcontractors. No middlemen. Just <span class="highlight">us</span> — family-run, fully insured, and obsessed with getting it right.</p>
-        <p>From 3 AM snowstorms to 30°C window days, we’re there. Same crew. Same standards. Every time.</p>
+        <h2>About tree6z</h2>
+        <p>We're Jay and Wallard — the two guys who started this and still show up to every single job.</p>
+        <p>You'll see one of us pulling up at 3 AM in a blizzard to clear your driveway before you wake up, or out there at first light getting the lines perfect on your lawn. We do the work ourselves because we’re obsessive about it being done right the first time — no shortcuts, no strangers, no bullshit.</p>
+        <p>Brothers, born and raised in Saskatoon, fully insured, and running our own gear. One text or call and we’re on it. That’s it.</p>
     </div>
 </section>
 
-<!-- SERVICES GRID -->
-<section class="container">
-    <div class="services-grid">
-        <a href="window.html" class="service-card">
-            <div class="service-icon">
-                <img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Window">
-            </div>
-            <h3>Window Cleaning</h3>
-            <p>Streak-free, no ladders, up to 3 stories.</p>
-        </a>
-        <a href="lawncare.html" class="service-card">
-            <div class="service-icon">
-                <img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn">
-            </div>
-            <h3>Lawn Care</h3>
-            <p>Weekly cuts. Sharp lines. Golf-course grass.</p>
-        </a>
-        <a href="leaf.html" class="service-card">
-            <div class="service-icon">
-                <img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf">
-            </div>
-            <h3>Leaf Removal</h3>
-            <p>Full yard + gutters. Zero leaves left.</p>
-        </a>
-        <a href="spring.html" class="service-card">
-            <div class="service-icon">
-                <img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring">
-            </div>
-            <h3>Spring Cleanup</h3>
-            <p>Dethatch, mulch, first mow — winter erased.</p>
-        </a>
-        <a href="snow.html" class="service-card">
-            <div class="service-icon">
-                <img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="Snow">
-            </div>
-            <h3>Snow Removal</h3>
-            <p>24/7 response. Gone before you wake up.</p>
-        </a>
-        <a href="contact.html" class="service-card">
-            <div class="service-icon">
-                <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="Contact">
-            </div>
-            <h3>Contact</h3>
-            <p>Call, text, or send a photo — we answer fast.</p>
-        </a>
+<!-- SERVICES -->
+<section class="services-section">
+    <div class="container">
+        <div class="services-grid">
+            <a href="window.html" class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Window Cleaning">
+                </div>
+                <h3>Window Cleaning</h3>
+                <p>Streak-free, no ladders, up to 3 stories.</p>
+            </a>
+            <a href="lawncare.html" class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn Care">
+                </div>
+                <h3>Lawn Care</h3>
+                <p>Weekly cuts. Sharp lines. Golf-course grass.</p>
+            </a>
+            <a href="leaf.html" class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf Removal">
+                </div>
+                <h3>Leaf Removal</h3>
+                <p>Full yard + gutters. Zero leaves left.</p>
+            </a>
+            <a href="spring.html" class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring Cleanup">
+                </div>
+                <h3>Spring Cleanup</h3>
+                <p>Dethatch, mulch, first mow — winter erased.</p>
+            </a>
+            <a href="snow.html" class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="Snow Removal">
+                </div>
+                <h3>Snow Removal</h3>
+                <p>24/7 response. Gone before you wake up.</p>
+            </a>
+            <a href="contact.html" class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="Contact">
+                </div>
+                <h3>Contact</h3>
+                <p>Call, text, or send a photo — we answer fast.</p>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -384,10 +405,26 @@
 <footer>
     <div class="container">
         <div class="footer-grid">
-            <div class="footer-col"><h3>Contact Us</h3><p>(306) 222-9165</p><p>tree6zlandscaping@gmail.com</p></div>
-            <div class="footer-col"><h3>Quick Links</h3><a href="index.html">Home</a><a href="#services">Services</a><a href="contact.html">Contact</a></div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>(306) 222-9165</p>
+                <p>tree6zlandscaping@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="window.html">Window Cleaning</a>
+                <a href="lawncare.html">Lawn Care</a>
+                <a href="snow.html">Snow Removal</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <a href="https://www.instagram.com/tree6z/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
+            </div>
         </div>
-        <div class="text-center" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #222;opacity:.8;font-size:.95rem;">
+        <div class="footer-bottom">
             <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
         </div>
     </div>

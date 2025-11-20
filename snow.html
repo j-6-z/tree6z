@@ -157,7 +157,7 @@
             font-size:1.15rem;opacity:.95;font-weight:500;
         }
         .service-details li::before{
-            content:'Checkmark';font-size:1.4rem;color:#fff;
+            content:'\2714';font-size:1.4rem;color:#fff;
         }
 
         /* PRICING TABLE */
@@ -240,6 +240,36 @@
             h1 { font-size: 2.8rem; }
             .tagline { font-size: 1.2rem; }
             .logo { font-size: 1.5rem; }
+            .content-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .service-content { padding: 4rem 1rem; }
+            .trust-section { padding: 4rem 1rem; margin: 4rem auto; }
+            .pricing-table { padding: 2rem 1.5rem; }
+            .service-details h2 { font-size: 2.2rem; }
+            .trust-section h2 { font-size: 2.2rem; }
+            .container { padding: 0 1rem; }
+            .logo-bubble { margin-bottom: 2rem; }
+            .hero-content { padding: 0 1rem; }
+            .price-item { font-size: 1rem; }
+            .cta-service { padding: 1rem 2.5rem; font-size: 1rem; }
+            .trust-card { padding: 1.8rem 1.4rem; }
+            footer { padding: 4rem 0 2rem; }
+            .footer-grid { gap: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .call-bubble { padding: 12px 24px; font-size: 0.9rem; gap: 10px; bottom: 16px; }
+            .call-bubble::before { width: 10px; height: 10px; }
+            h1 { font-size: 2.4rem; }
+            .tagline { font-size: 1.1rem; }
+            .service-details h2 { font-size: 2rem; }
+            .trust-section h2 { font-size: 2rem; }
+            .pricing-table h3 { font-size: 1.4rem; }
+            .price-item { flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
+            .pricing-note { font-size: 0.9rem; }
+            .trust-card h3 { font-size: 1.2rem; }
+            .trust-card p { font-size: 0.95rem; }
+            .footer-col h3 { font-size: 1.3rem; }
+            .footer-col p, .footer-col a { font-size: 0.95rem; }
         }
 
         /* HAMBURGER ALWAYS VISIBLE - LIKE index.html */
@@ -290,6 +320,7 @@
                 <li>Driveway + sidewalk plowing</li>
                 <li>Hand-shoveling tight spots</li>
                 <li>Safe ice melt (pet & concrete friendly)</li>
+                <li>Roof raking/clearing</li>
                 <li>24/7 emergency calls</li>
                 <li>Seasonal contracts or per-visit</li>
             </ul>
@@ -310,6 +341,10 @@
                 <strong>$95 / visit</strong>
             </div>
             <div class="price-item">
+                <span>Roof Raking/Clearing</span>
+                <strong>$80-160</strong>
+            </div>
+            <div class="price-item">
                 <span>Seasonal (Nov–Mar, small lot)</span>
                 <strong>$225 / month</strong>
             </div>
@@ -317,7 +352,7 @@
                 <span>Seasonal (medium/large + salting)</span>
                 <strong>$375 / month</strong>
             </div>
-            <p class="pricing-note">*GST extra. Gravel +20%. Commercial? We quote.</p>
+            <p class="pricing-note">*GST extra. Gravel +20%. Roof pricing based on size/complexity. Commercial? We quote.</p>
         </div>
     </div>
 </section>
@@ -396,4 +431,4 @@
     });
 </script>
 </body>
-</html>"
+</html>
