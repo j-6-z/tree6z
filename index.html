@@ -247,7 +247,7 @@
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* FOOTER - CLEANED UP */
+        /* FOOTER */
         footer{
             background:#000;
             padding:6rem 0 4rem;
@@ -297,7 +297,15 @@
             .service-icon { width: 90px; height: 90px; }
             .service-card { padding: 2.5rem 1.5rem; }
             footer { padding: 5rem 0 3rem; }
-            .footer-grid { gap: 3rem; }
+            
+            /* Force same layout as desktop on mobile */
+            .footer-grid { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            .footer-col {
+                text-align: left;
+            }
         }
 
         .hamburger { display: block !important; }
@@ -342,9 +350,9 @@
 <section class="about-section">
     <div class="container">
         <h2>About tree6z</h2>
-        <p>We're Jay and Wallard — the two guys who started this and still show up to every single job.</p>
+        <!-- <p>We're Jay and Wallard — the two guys who started this and still show up to every single job.</p>
         <p>You'll see one of us pulling up at 3 AM in a blizzard to clear your driveway before you wake up, or out there at first light getting the lines perfect on your lawn. We do the work ourselves because we’re obsessive about it being done right the first time — no shortcuts, no strangers, no bullshit.</p>
-        <p>Fully insured, and running our own gear. One text or call and we’re on it. That’s it.</p>
+        <p>Fully insured, and running our own gear. One text or call and we’re on it. That’s it.</p> -->
         <p>At TREE6Z, we’re proud to provide reliable, all-season landscaping and snow removal services to homeowners and businesses across Saskatoon. We built our company on simple values: hard work, honest pricing, and a commitment to quality.</p>
         <p>Whether it’s lawn care, yard cleanups, tree trimming, or clearing heavy winter snow, our team delivers dependable results you can count on. As a local business, we understand the unique needs of Saskatoon’s climate — from hot prairie summers to freezing, -40° winters — and we’re equipped to handle it all.</p>
         <p>Your property deserves professional care. TREE6Z is here to make outdoor maintenance easier, faster, and stress-free year-round.</p>
@@ -414,17 +422,9 @@
                 <p>tree6zlandscaping@gmail.com</p>
             </div>
             <div class="footer-col">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="window.html">Window Cleaning</a>
-                <a href="lawncare.html">Lawn Care</a>
-                <a href="snow.html">Snow Removal</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
                 <h3>Follow Us</h3>
-                <a href="https://www.instagram.com/tree6z/" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://www.tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
+                <a href="#" target="_blank" rel="noopener">Instagram</a>
+                <a href="#" target="_blank" rel="noopener">TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
