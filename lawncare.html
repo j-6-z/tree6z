@@ -11,15 +11,15 @@
     <meta property="og:description" content="Weekly lawn mowing, edging, trimming. Sharp lines every time. No contracts." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tree6z.ca/lawncare.html" />
-    <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
+    <meta property="og:image" content="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <link rel="icon" href="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" type="image/jpeg">
+    <link rel="icon" href="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Service","serviceType":"Lawn Care","provider":{"@type":"LocalBusiness","name":"tree6z","image":"https://i.ibb.co/tpFpDrvm/t6z-logo.jpg","telephone":"+13062229165","email":"tree6zlandscaping@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Saskatoon","addressRegion":"SK","addressCountry":"CA"}},"areaServed":"Saskatoon","description":"Weekly lawn mowing, edging, weed control, and full property care."}
+    {"@context":"https://schema.org","@type":"Service","serviceType":"Lawn Care","provider":{"@type":"LocalBusiness","name":"tree6z","image":"https://i.ibb.co/5XK5Zbfx/tree6z-logo.png","telephone":"+13062229165","email":"tree6zlandscaping@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Saskatoon","addressRegion":"SK","addressCountry":"CA"}},"areaServed":"Saskatoon","description":"Weekly lawn mowing, edging, weed control, and full property care."}
     </script>
 
     <style>
@@ -38,7 +38,7 @@
         }
         .menu-overlay.active{opacity:1;visibility:visible}
 
-        /* NAVBAR */
+        /* NAVBAR - MATCHING INDEX */
         nav{
             position:fixed;top:0;left:50%;transform:translateX(-50%);
             width:100%;max-width:1400px;padding:1.8rem 1.5rem;
@@ -51,10 +51,13 @@
         }
         .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;pointer-events:auto}
         .logo{font-size:2.1rem;font-weight:900;letter-spacing:.08em}
-        .hamburger{cursor:pointer;padding:14px;border-radius:50%;background:rgba(255,255,255,.1);transition:all .3s}
+        .hamburger{
+            cursor:pointer;padding:16px;border-radius:50%;
+            background:rgba(255,255,255,.1);transition:all .3s;
+            position:relative;z-index:1004;border:none;
+        }
         .hamburger:hover{background:rgba(255,255,255,.2)}
         .hamburger span{display:block;width:28px;height:3px;background:#fff;margin:6px 0;transition:all .3s;border-radius:3px}
-        /* FIXED HAMBURGER → X */
         .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(10px,10px)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(9px,-9px)}
@@ -99,24 +102,68 @@
         .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
         .service-details ul{margin:2rem 0;list-style:none}
         .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;font-weight:500}
-        .service-details li::before{content:'\2714';font-size:1.4rem;color:#fff;flex-shrink:0}
+        .service-details li::before{content:'✓';font-size:1.4rem;color:#fff;flex-shrink:0}
+        
+        /* ENHANCED PRICING TABLE */
         .pricing-table{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222}
-        .pricing-table h3{font-size:1.6rem;text-align:center;margin-bottom:2rem}
-        .price-item{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500}
-        .price-item strong{font-weight:900;color:#fff}
-        .pricing-note{margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center}
+        .pricing-table h3{font-size:1.8rem;text-align:center;margin-bottom:2.5rem}
+        .price-item{
+            display:flex;justify-content:space-between;align-items:center;
+            padding:1.3rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;
+        }
+        .price-item:last-of-type{border:none}
+        .price-item strong{font-weight:900;color:#fff;font-size:1.2rem}
+        .popular-tag{
+            background:linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+            color:#000;font-size:0.75rem;font-weight:900;padding:0.3rem 0.8rem;
+            border-radius:20px;margin-left:0.5rem;text-transform:uppercase;letter-spacing:0.5px;
+        }
+        .pricing-note{margin-top:2rem;padding-top:2rem;border-top:1px solid #333;font-size:.95rem;opacity:.85;text-align:center;line-height:1.6}
         .cta-service{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;border-radius:50px;transition:all .4s}
         .cta-service:hover{background:#fff;color:#000;transform:scale(1.05)}
 
-        /* TRUST */
-        .trust-section{padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px}
-        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
-        .trust-card{background:#000;padding:2.2rem 1.8rem;border-radius:14px;border:1px solid #222;transition:all .4s;text-align:center}
-        .trust-card:hover{transform:translateY(-10px);border-color:#fff}
+        /* SEASONAL TIPS SECTION */
+        .tips-section{padding:6rem 1.5rem;background:#000;text-align:center}
+        .tips-section h2{font-size:2.8rem;margin-bottom:3rem}
+        .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+        .tip-card{background:#111;padding:2.5rem 2rem;border-radius:14px;border:1px solid #222;transition:all .4s;text-align:left}
+        .tip-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.1)}
+        .season-icon{font-size:3rem;margin-bottom:1rem}
+        .tip-card h3{font-size:1.5rem;margin-bottom:1rem}
+        .tip-card p{font-size:1.05rem;opacity:.9;line-height:1.7;font-weight:500}
 
-        /* CALL BUBBLE */
+        /* PACKAGES SECTION */
+        .packages-section{padding:6rem 1.5rem;background:#111;text-align:center}
+        .packages-section h2{font-size:2.8rem;margin-bottom:1rem}
+        .packages-subtitle{font-size:1.2rem;opacity:.9;margin-bottom:3rem;font-weight:500}
+        .packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:1100px;margin:0 auto}
+        .package-card{background:#000;padding:3rem 2.5rem;border-radius:16px;border:2px solid #222;transition:all .4s;position:relative}
+        .package-card:hover{transform:translateY(-15px);border-color:#fff;box-shadow:0 30px 60px rgba(255,255,255,.15)}
+        .package-card.featured{border-color:#00ff00;background:#0a0a0a}
+        .package-card.featured::before{
+            content:'MOST POPULAR';position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+            background:linear-gradient(135deg, #00ff00 0%, #00cc00 100%);color:#000;
+            padding:0.5rem 1.5rem;border-radius:20px;font-weight:900;font-size:0.85rem;letter-spacing:1px;
+        }
+        .package-card h3{font-size:1.8rem;margin-bottom:1rem}
+        .package-price{font-size:2.5rem;font-weight:900;margin-bottom:1.5rem}
+        .package-price span{font-size:1rem;font-weight:500;opacity:.8}
+        .package-features{list-style:none;margin:2rem 0;text-align:left}
+        .package-features li{padding:0.8rem 0;display:flex;align-items:center;gap:0.8rem;font-size:1.05rem;font-weight:500}
+        .package-features li::before{content:'✓';font-size:1.2rem;color:#00ff00}
+
+        /* TRUST */
+        .trust-section{padding:6rem 1.5rem;background:#000;margin:0}
+        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:2.5rem}
+        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+        .trust-card{background:#111;padding:2.5rem 2rem;border-radius:14px;border:1px solid #222;transition:all .4s;text-align:center}
+        .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
+        .trust-card h3{font-size:1.35rem;margin-bottom:1rem}
+        .trust-card p{font-size:1.05rem;opacity:.9;line-height:1.6;font-weight:500}
+
+        /* CALL BUBBLE - MATCHING INDEX WITH HIDE */
         .call-bubble{
-            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:999;
             background:rgba(255,255,255,.12);color:#fff;padding:18px 36px 18px 18px;border-radius:60px;
             font-weight:900;font-size:1.1rem;letter-spacing:.7px;
             box-shadow:0 20px 55px rgba(0,0,0,.35);cursor:pointer;
@@ -133,20 +180,21 @@
             background:rgba(255,255,255,.22);
             box-shadow:0 25px 65px rgba(0,0,0,.5);
         }
+        .call-bubble.hidden{
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
+        }
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* ORIGINAL FOOTER */
-        footer{
-            background:#000;padding:6rem 0 2rem;border-top:3px solid #222;
-        }
-        .footer-grid{
-            display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:3rem;margin-bottom:4rem;
-        }
-        .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
-        .footer-col p,.footer-col a{margin-bottom:1rem;opacity:.9;transition:all .3s}
-        .footer-col a:hover{opacity:1;transform:translateX(8px)}
+        /* FOOTER - MATCHING INDEX */
+        footer{background:#000;padding:6rem 0 4rem;border-top:3px solid #222}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4rem;margin-bottom:5rem}
+        .footer-col h3{margin-bottom:1rem;font-size:1.2rem}
+        .footer-col p{margin-bottom:0.5rem;opacity:.85}
+        .footer-col a{display:block;margin-bottom:0.8rem;opacity:.85;transition:all .3s;font-weight:500}
+        .footer-col a:hover{opacity:1;transform:translateX(5px)}
         .footer-bottom{text-align:center;opacity:.8;font-size:.95rem}
 
         /* RESPONSIVE */
@@ -155,17 +203,17 @@
             nav.scrolled{padding:0.9rem 1rem;border-radius:0 0 22px 22px}
             .logo{font-size:1.85rem}
             .logo-bubble{width:clamp(140px,38vw,260px)!important;height:clamp(140px,38vw,260px)!important}
-            .content-grid{grid-template-columns:1fr}
-            .service-content,.trust-section{padding:4rem 1rem}
+            .content-grid{grid-template-columns:1fr;gap:3rem}
+            .service-content,.trust-section,.tips-section,.packages-section{padding:4rem 1.5rem}
             .call-bubble{font-size:1rem;padding:15px 32px 15px 15px;bottom:20px}
             .call-bubble::before{margin-right:12px}
-            .footer-grid{grid-template-columns:1fr 1fr;text-align:center}
-            .footer-col a:hover{transform:none}
+            .tips-section h2,.packages-section h2{font-size:2.3rem}
+            .packages-grid{grid-template-columns:1fr}
+            .hamburger{padding:16px}
         }
         @media (max-width:480px){
             .call-bubble{padding:12px 28px 12px 12px;font-size:0.9rem;bottom:16px}
             .call-bubble::before{width:10px;height:10px;margin-right:10px}
-            .footer-grid{grid-template-columns:1fr}
         }
         .hamburger{display:block!important}
     </style>
@@ -176,21 +224,20 @@
 
 <nav id="nav">
     <div class="container nav-inner">
-        <div class="logo">tree6z</div>
-        <div class="hamburger" id="hamburger">
+        <a href="index.html" class="logo">tree6z</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="window.html">Window Cleaning</a>
+    <!-- <a href="window.html">Window Cleaning</a> -->
     <a href="lawncare.html">Lawn Care</a>
     <a href="leaf.html">Leaf Removal</a>
     <a href="spring.html">Spring Cleanup</a>
     <a href="snow.html">Snow Removal</a>
-    <!-- <a href="contact.html">Contact</a> -->
 </div>
 
 <header>
@@ -207,7 +254,7 @@
     <div class="content-grid">
         <div class="service-details">
             <h2>Weekly Cuts. No Excuses.</h2>
-            <p>Every week. On time. Sharp lines. Clean blow-off. We don’t just mow — we dial it in.</p>
+            <p>Every week. On time. Sharp lines. Clean blow-off. We don't just mow — we dial it in.</p>
             <ul>
                 <li>Weekly or bi-weekly cuts</li>
                 <li>Edging along walks, beds, driveways</li>
@@ -220,14 +267,108 @@
             <a href="tel:+13062229165" class="cta-service">Call to Book</a>
         </div>
         <div class="pricing-table">
-            <h3>No Contracts. Just Results.</h3>
-            <div class="price-item"><span>> 1000 sq ft</span><strong>$50 / visit</strong></div>
-            <div class="price-item"><span>1000-2000 sq ft</span><strong>$75 / visit</strong></div>
-            <div class="price-item"><span>2000 sq ft +</span><strong>$100-500 / visit</strong></div>
-            <div class="price-item"><span>Hedge Trimming</span><strong>Starting at $50</strong></div>
-            <div class="price-item"><span>Lawn Edging</span><strong>Starting at $50</strong></div>
-            <div class="price-item"><span>Tree Branch Removal</span><strong>Starting at $50</strong></div>
-            <p class="pricing-note">Larger lots quoted custom. Weekly service = best results.</p>
+            <h3>Transparent Pricing</h3>
+            <div class="price-item">
+                <span>< 1000 sq ft</span>
+                <strong>$50<span class="popular-tag">Most Popular</span></strong>
+            </div>
+            <div class="price-item">
+                <span>1000-2000 sq ft</span>
+                <strong>$75</strong>
+            </div>
+            <div class="price-item">
+                <span>2000+ sq ft</span>
+                <strong>$100-500</strong>
+            </div>
+            <div class="price-item">
+                <span>Hedge Trimming</span>
+                <strong>Starting at $50</strong>
+            </div>
+            <div class="price-item">
+                <span>Lawn Edging</span>
+                <strong>Starting at $50</strong>
+            </div>
+            <div class="price-item">
+                <span>Tree Branch Removal</span>
+                <strong>Starting at $50</strong>
+            </div>
+            <p class="pricing-note"><strong>No contracts required.</strong> Larger lots quoted custom. Weekly service delivers the best results — consistent cuts mean healthier grass.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SEASONAL LAWN CARE TIPS -->
+<section class="tips-section">
+    <div class="container">
+        <h2>Saskatoon Lawn Care Tips</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="season-icon">🌱</div>
+                <h3>Spring (April-May)</h3>
+                <p>Start with dethatching and aeration. Overseed bare spots. First mow when grass hits 3 inches. Apply slow-release fertilizer.</p>
+            </div>
+            <div class="tip-card">
+                <div class="season-icon">☀️</div>
+                <h3>Summer (June-August)</h3>
+                <p>Mow weekly, never removing more than 1/3 of blade height. Water deeply 1-2x per week. Keep blades sharp for clean cuts.</p>
+            </div>
+            <div class="tip-card">
+                <div class="season-icon">🍂</div>
+                <h3>Fall (Sept-Oct)</h3>
+                <p>Continue mowing until first freeze. Fall fertilization is crucial. Remove all leaves before snow. Final mow at 2.5 inches.</p>
+            </div>
+            <div class="tip-card">
+                <div class="season-icon">❄️</div>
+                <h3>Winter Prep</h3>
+                <p>Clear debris to prevent mold. Avoid walking on frozen grass. Plan spring services early — we book fast!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE PACKAGES -->
+<section class="packages-section">
+    <div class="container">
+        <h2>Lawn Care Packages</h2>
+        <p class="packages-subtitle">Save time and money with bundled services</p>
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3>Basic Package</h3>
+                <div class="package-price">$50<span>/visit</span></div>
+                <ul class="package-features">
+                    <li>Weekly or bi-weekly mowing</li>
+                    <li>Edging along walkways</li>
+                    <li>Grass clipping cleanup</li>
+                    <li>Full property blow-off</li>
+                </ul>
+                <a href="tel:+13062229165" class="cta-service">Get Started</a>
+            </div>
+            
+            <div class="package-card featured">
+                <h3>Premium Package</h3>
+                <div class="package-price">$125<span>/visit</span></div>
+                <ul class="package-features">
+                    <li>Everything in Basic</li>
+                    <li>Hedge & shrub trimming</li>
+                    <li>Weed control application</li>
+                    <li>Seasonal fertilization</li>
+                    <li>Priority scheduling</li>
+                </ul>
+                <a href="tel:+13062229165" class="cta-service">Most Popular</a>
+            </div>
+            
+            <div class="package-card">
+                <h3>Full Property Care</h3>
+                <div class="package-price">$250+<span>/visit</span></div>
+                <ul class="package-features">
+                    <li>Everything in Premium</li>
+                    <li>Spring/fall aeration</li>
+                    <li>Tree branch removal</li>
+                    <li>Mulch & bed maintenance</li>
+                    <li>Year-round service plan</li>
+                </ul>
+                <a href="tel:+13062229165" class="cta-service">Custom Quote</a>
+            </div>
         </div>
     </div>
 </section>
@@ -236,10 +377,22 @@
     <div class="container">
         <h2>Why Clients Never Leave</h2>
         <div class="trust-grid">
-            <div class="trust-card"><h3>Reliable Schedule</h3><p>Rain or shine? We're there every week.</p></div>
-            <div class="trust-card"><h3>Same Crew, Every Time</h3><p>No strangers. You’ll know our names.</p></div>
-            <div class="trust-card"><h3>Fully Insured</h3><p>Liability + workers’ comp. Zero risk to you.</p></div>
-            <div class="trust-card"><h3>One Call Does It All</h3><p>Lawn, snow, windows — one crew, year-round.</p></div>
+            <div class="trust-card">
+                <h3>⏰ Reliable Schedule</h3>
+                <p>Rain or shine? We're there every week. No missed cuts, no excuses.</p>
+            </div>
+            <div class="trust-card">
+                <h3>👥 Same Crew, Every Time</h3>
+                <p>No strangers. You'll know our names and we'll know your lawn.</p>
+            </div>
+            <div class="trust-card">
+                <h3>🛡️ Fully Insured</h3>
+                <p>Liability + workers' comp. Zero risk to your property.</p>
+            </div>
+            <div class="trust-card">
+                <h3>📞 One Call Does It All</h3>
+                <p>Lawn, snow, windows — one crew, year-round. Simple.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -254,12 +407,18 @@
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <p>(306) 222-9165</p>
+                <p>tree6zbookings@gmail.com</p>
                 <p>tree6zlandscaping@gmail.com</p>
             </div>
             <div class="footer-col">
+                <h3>Service Area</h3>
+                <p>All of Saskatoon</p>
+                <p>Residential & Commercial</p>
+            </div>
+            <div class="footer-col">
                 <h3>Follow Us</h3>
-                <a href="#" target="_blank" rel="noopener">Instagram</a>
-                <a href="#" target="_blank" rel="noopener">TikTok</a>
+                <a href="https://instagram.com/tree6z" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -273,12 +432,15 @@
     const overlay = document.getElementById('menuOverlay');
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
+    const callBubble = document.querySelector('.call-bubble');
 
     function toggleMenu() {
-        menu.classList.toggle('active');
+        const isActive = menu.classList.toggle('active');
         overlay.classList.toggle('active');
         hamburger.classList.toggle('active');
-        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        callBubble.classList.toggle('hidden');
+        hamburger.setAttribute('aria-expanded', isActive);
+        document.body.style.overflow = isActive ? 'hidden' : '';
     }
 
     hamburger.addEventListener('click', toggleMenu);
@@ -286,6 +448,8 @@
         menu.classList.remove('active');
         overlay.classList.remove('active');
         hamburger.classList.remove('active');
+        callBubble.classList.remove('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     });
 

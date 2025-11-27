@@ -55,8 +55,9 @@
         }
         .logo{font-size:2.1rem;font-weight:900;letter-spacing:.08em}
         .hamburger{
-            cursor:pointer;padding:14px;border-radius:50%;
+            cursor:pointer;padding:16px;border-radius:50%;
             background:rgba(255,255,255,.1);transition:all .3s;
+            position:relative;z-index:1004;border:none;
         }
         .hamburger:hover{background:rgba(255,255,255,.2)}
         .hamburger span{
@@ -106,9 +107,9 @@
         .cta{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;border-radius:50px;transition:all .4s}
         .cta:hover{background:#fff;color:#000;transform:scale(1.06)}
 
-        /* FIXED CALL BUBBLE - CIRCLE STAYS GLUED TO TEXT */
+        /* FIXED CALL BUBBLE - NOW HIDES ON MOBILE */
         .call-bubble{
-            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:999;
             background:rgba(255,255,255,.12);color:#fff;padding:18px 36px 18px 18px;border-radius:60px;
             font-weight:900;font-size:1.1rem;letter-spacing:.7px;
             box-shadow:0 20px 55px rgba(0,0,0,.35);cursor:pointer;
@@ -128,7 +129,7 @@
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* REST OF YOUR STYLES (about, services, footer, responsive) */
+        /* REST OF YOUR STYLES */
         .about-section{padding:8rem 1.5rem;background:#111;text-align:center}
         .about-section h2{font-size:2.8rem;max-width:900px;margin:0 auto 1.5rem;line-height:1.2}
         .about-section p{font-size:1.25rem;max-width:720px;margin:0 auto 1.2rem;opacity:.92;line-height:1.7;font-weight:500}
@@ -141,6 +142,10 @@
         .service-card:hover .service-icon img{transform:scale(1.15)}
         footer{background:#000;padding:6rem 0 4rem;border-top:3px solid #222}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4rem;margin-bottom:5rem}
+        .footer-col h3{margin-bottom:1rem;font-size:1.2rem}
+        .footer-col p{margin-bottom:0.5rem;opacity:.85}
+        .footer-col a{display:block;margin-bottom:0.8rem;opacity:.85;transition:all .3s;font-weight:500}
+        .footer-col a:hover{opacity:1;transform:translateX(5px)}
 
         /* CONTACT SECTION STYLES */
         .contact-section{padding:8rem 0;background:#111;text-align:center}
@@ -161,8 +166,39 @@
         .license-section img:hover{transform:scale(1.02);box-shadow:0 12px 40px rgba(255,255,255,.15)}
 
         /* PAYMENT NOTICE SECTION STYLES */
-        .payment-notice{padding:2rem 1.5rem;background:#222;text-align:center}
-        .payment-notice p{font-size:1.1rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem;opacity:.95}
+        .payment-notice{padding:3rem 1.5rem;background:linear-gradient(135deg, #ff0000 0%, #cc0000 100%);text-align:center;position:relative;overflow:hidden}
+        .payment-notice::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.05) 10px,rgba(255,255,255,.05) 20px);animation:stripes 20s linear infinite}
+        @keyframes stripes{0%{transform:translate(0,0)}100%{transform:translate(50px,50px)}}
+        .payment-notice .container{position:relative;z-index:1}
+        .payment-notice p{font-size:1.2rem;font-weight:900;text-transform:uppercase;margin-bottom:0.8rem;opacity:1;text-shadow:2px 2px 4px rgba(0,0,0,.3);letter-spacing:1px}
+        .payment-notice p:first-child{font-size:1.5rem;animation:pulse-text 2s ease-in-out infinite}
+        @keyframes pulse-text{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+        /* TESTIMONIALS SECTION */
+        .testimonials-section{padding:8rem 0;background:#000;text-align:center}
+        .testimonials-section h2{font-size:2.8rem;margin-bottom:4rem}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:1200px;margin:0 auto}
+        .testimonial-card{background:#111;padding:2.5rem;border-radius:16px;border:1px solid #222;transition:all .4s}
+        .testimonial-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 50px rgba(255,255,255,.1)}
+        .stars{font-size:1.8rem;color:#ffd700;margin-bottom:1.5rem;letter-spacing:4px}
+        .quote{font-size:1.1rem;line-height:1.8;margin-bottom:1.5rem;font-style:italic;opacity:.95}
+        .author{font-weight:700;font-size:0.95rem;opacity:.8}
+
+        /* FAQ SECTION */
+        .faq-section{padding:8rem 0;background:#111;text-align:center}
+        .faq-section h2{font-size:2.8rem;margin-bottom:4rem}
+        .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;max-width:1200px;margin:0 auto;text-align:left}
+        .faq-item{background:#000;padding:2rem;border-radius:12px;border:1px solid #222;transition:all .3s}
+        .faq-item:hover{border-color:#fff;box-shadow:0 10px 30px rgba(255,255,255,.08)}
+        .faq-item h3{font-size:1.3rem;margin-bottom:1rem;font-weight:700}
+        .faq-item p{font-size:1.05rem;line-height:1.7;opacity:.9;font-weight:500}
+
+        /* HIDE CALL BUBBLE WHEN MENU IS OPEN */
+        .call-bubble.hidden{
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
+        }
 
         /* RESPONSIVE */
         @media (max-width:768px){
@@ -173,13 +209,17 @@
             .about-section h2{font-size:2.3rem}
             .contact-section h2{font-size:2.3rem}
             .license-section h2{font-size:2.3rem}
+            .testimonials-section h2{font-size:2.3rem}
+            .faq-section h2{font-size:2.3rem}
             .call-bubble{font-size:1rem;padding:15px 32px 15px 15px;bottom:20px}
             .call-bubble::before{margin-right:12px}
+            .hamburger{padding:16px}
         }
         @media (max-width:480px){
             .call-bubble{padding:12px 28px 12px 12px;font-size:0.9rem;bottom:16px}
             .call-bubble::before{width:10px;height:10px;margin-right:10px}
         }
+        
         .hamburger{display:block!important}
     </style>
 </head>
@@ -192,50 +232,46 @@
 <nav id="nav">
     <div class="container nav-inner">
         <div class="logo">tree6z</div>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
 </nav>
 
 <!-- SIDEBAR -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="window.html">Window Cleaning</a>
+    <!-- <a href="window.html">Window Cleaning</a> -->
     <a href="lawncare.html">Lawn Care</a>
     <a href="leaf.html">Leaf Removal</a>
     <a href="spring.html">Spring Cleanup</a>
     <a href="snow.html">Snow Removal</a>
-    <!-- <a href="contact.html">Contact</a> -->
 </div>
 
-<!-- HERO + ABOUT + SERVICES + FOOTER (your original) -->
+<!-- HERO -->
 <header>
     <div class="logo-bubble">
         <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img" loading="eager">
     </div>
     <div class="container hero-content">
         <h1>Year-Round Property Maintenance</h1>
-        <!-- <p class="tagline">You can call TREE6Z 365</p> -->
-        <!-- <a href="tel:+13062229165" class="cta">Call (306) 222-9165</a> -->
     </div>
 </header>
 
 <!-- PAYMENT NOTICE SECTION -->
 <section class="payment-notice">
     <div class="container">
-    
-        <p>AT THE MOMENT WE ARE ONLY ACCEPTING CASH/E-TRANSFERS TIL WE GET A PAYMENT TERMINAL</p>
-        <p>WE SEND INVOICES TO *PROVIDED* EMAILS PRIOR TO ACCEPTING PAYMENT</p>
-        <p class="tagline">You can call TREE6Z 365</p>
+        <p>⚠️ CASH OR E-TRANSFER ONLY ⚠️</p>
+        <p>We send invoices to your email before accepting payment</p>
+        <p style="font-size:1rem;margin-top:1rem;font-weight:500;opacity:.95">You can call TREE6Z 365 days a year</p>
     </div>
 </section>
 
 <section class="about-section">
     <div class="container">
         <h2>About tree6z</h2>
-        <p>At tree6z, we’re proud to provide reliable, all-season landscaping and snow removal services to homeowners and businesses across Saskatoon. We built our company on simple values: hard work, honest pricing, and a commitment to quality.</p>
-        <p>Whether it’s lawn care, yard cleanups, tree trimming, or clearing heavy winter snow, our team delivers dependable results you can count on. As a local business, we understand the unique needs of Saskatoon’s climate — from hot prairie summers to freezing, -40° winters — and we’re equipped to handle it all.</p>
+        <p>At tree6z, we're proud to provide reliable, all-season landscaping and snow removal services to homeowners and businesses across Saskatoon. We built our company on simple values: hard work, honest pricing, and a commitment to quality.</p>
+        <p>Whether it's lawn care, yard cleanups, tree trimming, or clearing heavy winter snow, our team delivers dependable results you can count on. As a local business, we understand the unique needs of Saskatoon's climate — from hot prairie summers to freezing, -40° winters — and we're equipped to handle it all.</p>
         <p>Your property deserves professional care. tree6z is here to make outdoor maintenance easier, faster, and stress-free year-round.</p>
         <p>FIRST COME FIRST SERVE BASIS</p>
     </div>
@@ -253,29 +289,25 @@
 <section class="services-section">
     <div class="container">
         <div class="services-grid">
-            <a href="window.html" class="service-card">
-                <div class="service-icon"><img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Window Cleaning"></div>
+            <!-- <a href="window.html" class="service-card">
+                <div class="service-icon"><img src="https://i.ibb.co/tMCxGTHG/window.jpg" alt="Window Cleaning" loading="lazy"></div>
                 <h3>Window Cleaning</h3><p>Streak-free, no ladders, up to 3 stories.</p>
-            </a>
+            </a> -->
             <a href="lawncare.html" class="service-card">
-                <div class="service-icon"><img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn Care"></div>
+                <div class="service-icon"><img src="https://i.ibb.co/jv08qXQs/lawn.jpg" alt="Lawn Care" loading="lazy"></div>
                 <h3>Lawn Care</h3><p>Weekly cuts. Sharp lines. Golf-course grass.</p>
             </a>
             <a href="leaf.html" class="service-card">
-                <div class="service-icon"><img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf Removal"></div>
+                <div class="service-icon"><img src="https://i.ibb.co/dsNFXs8T/leaf.jpg" alt="Leaf Removal" loading="lazy"></div>
                 <h3>Leaf Removal</h3><p>Full yard + gutters. Zero leaves left.</p>
             </a>
             <a href="spring.html" class="service-card">
-                <div class="service-icon"><img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring Cleanup"></div>
+                <div class="service-icon"><img src="https://i.ibb.co/SDWS5Yfm/spring.jpg" alt="Spring Cleanup" loading="lazy"></div>
                 <h3>Spring Cleanup</h3><p>Dethatch, mulch, first mow — winter erased.</p>
             </a>
             <a href="snow.html" class="service-card">
-                <div class="service-icon"><img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="Snow Removal"></div>
+                <div class="service-icon"><img src="https://i.ibb.co/WvPV55XF/snow.jpg" alt="Snow Removal" loading="lazy"></div>
                 <h3>Snow Removal</h3><p>24/7 response. Gone before you wake up.</p>
-            </a>
-            <!-- <a href="contact.html" class="service-card">
-                <div class="service-icon"><img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="Contact"></div>
-                <h3>Contact</h3><p>Call, text, or send a photo — we answer fast.</p> -->
             </a>
         </div>
     </div>
@@ -286,7 +318,7 @@
     <div class="container">
         <h2>Get in Touch</h2>
         <p>Contact our sales via email at <strong>tree6zbookings@gmail.com</strong>. For any general inquiries, we will get back to you at our earliest convenience.</p>
-        <form class="contact-form" action="https://formsubmit.co/tree6zbookings@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="https://formsubmit.co/tree6zbookings@gmail.com" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -295,7 +327,64 @@
     </div>
 </section>
 
-<!-- FIXED CALL BUBBLE -->
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Best lawn service in Saskatoon. They're always on time and my yard has never looked better. The crew is professional and respectful."</p>
+                <p class="author">— Sarah M., Briarwood</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Called them at 5am during a blizzard and my driveway was cleared by 7am. These guys don't mess around with snow removal!"</p>
+                <p class="author">— Mike P., Willowgrove</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Fair pricing, no hidden fees, and they actually show up when they say they will. Hard to find that kind of reliability these days."</p>
+                <p class="author">— Jennifer K., Stonebridge</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>Do you require contracts?</h3>
+                <p>Nope! We work on a first-come, first-serve basis with no long-term commitments required.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What areas do you service?</h3>
+                <p>We serve all of Saskatoon and surrounding areas including Martensville, Warman, and Dalmeny.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I pay?</h3>
+                <p>We currently accept cash and e-transfers. We send invoices to your email before collecting payment.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you work year-round?</h3>
+                <p>Yes! We provide lawn care and maintenance in summer, leaf removal in fall, and 24/7 snow removal all winter long.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How quickly can you respond?</h3>
+                <p>For snow removal, we aim for same-day service. For other services, we typically schedule within 48-72 hours.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are you insured?</h3>
+                <p>Absolutely. We're fully insured and licensed by the City of Saskatoon for your peace of mind.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FIXED CALL BUBBLE (DESKTOP ONLY) -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
     Call Now: (306) 222-9165
 </div>
@@ -303,8 +392,22 @@
 <footer>
     <div class="container">
         <div class="footer-grid">
-            <div class="footer-col"><h3>Contact Us</h3><p>(306) 222-9165</p><p>tree6zlandscaping@gmail.com</p></div>
-            <div class="footer-col"><h3>Follow Us</h3><a href="#" target="_blank" rel="noopener">Instagram</a><a href="#" target="_blank" rel="noopener">TikTok</a></div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>(306) 222-9165</p>
+                <p>tree6zbookings@gmail.com</p>
+                <p>tree6zlandscaping@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Service Areas</h3>
+                <p>Saskatoon</p>
+                <!-- <p>Warman • Dalmeny</p> -->
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <a href="https://instagram.com/tree6z" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
+            </div>
         </div>
         <div class="footer-bottom"><p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p></div>
     </div>
@@ -315,12 +418,15 @@
     const overlay = document.getElementById('menuOverlay');
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
+    const callBubble = document.querySelector('.call-bubble');
 
     function toggleMenu() {
-        menu.classList.toggle('active');
+        const isActive = menu.classList.toggle('active');
         overlay.classList.toggle('active');
         hamburger.classList.toggle('active');
-        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        callBubble.classList.toggle('hidden');
+        hamburger.setAttribute('aria-expanded', isActive);
+        document.body.style.overflow = isActive ? 'hidden' : '';
     }
 
     hamburger.addEventListener('click', toggleMenu);
@@ -328,6 +434,8 @@
         menu.classList.remove('active');
         overlay.classList.remove('active');
         hamburger.classList.remove('active');
+        callBubble.classList.remove('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     });
 

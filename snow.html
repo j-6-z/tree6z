@@ -11,12 +11,12 @@
     <meta property="og:description" content="24/7 snow plowing, shoveling, salting. Gone before you wake up. No contracts." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tree6z.ca/snow.html" />
-    <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
+    <meta property="og:image" content="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Favicon -->
-    <link rel="icon" href="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" type="image/jpeg">
+    <link rel="icon" href="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" type="image/png">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
       "provider": {
         "@type": "LocalBusiness",
         "name": "tree6z",
-        "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
+        "image": "https://i.ibb.co/5XK5Zbfx/tree6z-logo.png",
         "telephone": "+13062229165",
         "email": "tree6zlandscaping@gmail.com",
         "address": {
@@ -52,32 +52,48 @@
         img{max-width:100%;display:block}
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-        .text-center{text-align:center}
 
-        /* NAV */
+        /* OVERLAY */
+        .menu-overlay{
+            position:fixed;top:0;left:0;width:100%;height:100dvh;
+            background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);
+            opacity:0;visibility:hidden;z-index:1001;transition:all .35s ease;
+        }
+        .menu-overlay.active{opacity:1;visibility:visible}
+
+        /* NAVBAR - MATCHING INDEX */
         nav{
-            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
-            background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
+            position:fixed;top:0;left:50%;transform:translateX(-50%);
+            width:100%;max-width:1400px;padding:1.8rem 1.5rem;
+            z-index:1003;background:transparent;transition:all .4s ease;pointer-events:none;
         }
-        nav.scrolled{padding:1.2rem 0}
-        .nav-inner{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.08em}
+        nav.scrolled{
+            padding:1rem 1.5rem;background:rgba(0,0,0,.96);
+            backdrop-filter:blur(20px);border-radius:0 0 26px 26px;
+            box-shadow:0 12px 40px rgba(0,0,0,.7);
+        }
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;pointer-events:auto}
+        .logo{font-size:2.1rem;font-weight:900;letter-spacing:.08em}
         .hamburger{
-            cursor:pointer;padding:10px;border-radius:50%;transition:all .3s
+            cursor:pointer;padding:16px;border-radius:50%;
+            background:rgba(255,255,255,.1);transition:all .3s;
+            position:relative;z-index:1004;border:none;
         }
-        .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
-        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
+        .hamburger:hover{background:rgba(255,255,255,.2)}
+        .hamburger span{display:block;width:28px;height:3px;background:#fff;margin:6px 0;transition:all .3s;border-radius:3px}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(10px,10px)}
         .hamburger.active span:nth-child(2){opacity:0}
-        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(9px,-9px)}
 
-        /* Mobile Menu */
+        /* SIDEBAR */
         .mobile-menu{
-            position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
-            padding:7rem 2rem 3rem;z-index:1002;transition:right .5s cubic-bezier(0.77,0,0.18,1);
-            box-shadow:-10px 0 40px rgba(0,0,0,.7);border-left:1px solid #222;overflow-y:auto;
+            position:fixed;top:0;right:-420px;width:100%;max-width:380px;height:100dvh;
+            background:#000;padding:7rem 2rem 3rem;z-index:1002;
+            transition:right .5s cubic-bezier(0.77,0,0.18,1);
+            box-shadow:-10px 0 50px rgba(0,0,0,.9);border-left:1px solid #222;overflow-y:auto;
         }
         .mobile-menu.active{right:0}
-        .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
+        .mobile-menu a{display:block;padding:1.5rem 0;font-size:1.5rem;font-weight:700;border-bottom:1px solid #111}
         .mobile-menu a:last-child{border:none}
 
         /* HERO */
@@ -88,55 +104,16 @@
                        url('https://images.unsplash.com/photo-1542601098-3adb3baeb5ec?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
         }
 
-        .logo-bubble {
-            position: relative;
-            width: clamp(180px, 45vw, 320px);
-            height: clamp(180px, 45vw, 320px);
-            background: #fff;
-            border: 8px solid #000;
-            margin: 0 auto 2.8rem;
-            overflow: hidden;
-            box-shadow: 
-                0 0 0 22px rgba(0,0,0,.8), 
-                0 0 110px rgba(255,255,255,.4),
-                inset 0 0 60px rgba(0,0,0,.7);
-            backdrop-filter: blur(20px);
-            animation: logoFloat 4s ease-in-out infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            z-index: 1001;
-            padding: 0;
+        .logo-bubble{
+            position:relative;width:clamp(180px,45vw,320px);height:clamp(180px,45vw,320px);
+            background:#fff;border:8px solid #000;margin:0 auto 2.8rem;overflow:hidden;
+            box-shadow:0 0 0 22px rgba(0,0,0,.8),0 0 110px rgba(255,255,255,.4),inset 0 0 60px rgba(0,0,0,.7);
+            backdrop-filter:blur(20px);animation:logoFloat 4s ease-in-out infinite;
+            display:flex;align-items:center;justify-content:center;z-index:1;
         }
-
-        .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            transition: transform .4s ease;
-            display: block;
-        }
-
-        .logo-bubble:hover .logo-img {
-            transform: scale(1.15);
-        }
-
-        .logo-bubble:hover {
-            transform: translateY(-14px) scale(1.06);
-            box-shadow: 
-                0 0 0 22px rgba(0,0,0,.8), 
-                0 0 140px rgba(255,255,255,.6),
-                inset 0 0 80px rgba(0,0,0,.9);
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-18px); }
-        }
+        .logo-img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+        .logo-bubble:hover .logo-img{transform:scale(1.15)}
+        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
 
         .hero-content{max-width:900px;padding:0 1rem}
         h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
@@ -144,165 +121,159 @@
 
         /* SERVICE CONTENT */
         .service-content{padding:6rem 1.5rem}
-        .content-grid{
-            display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;
-        }
+        .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;}
         .service-details h2{font-size:2.6rem;margin-bottom:1.5rem}
         .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
-        .service-details ul{
-            margin:2rem 0;list-style:none;
-        }
-        .service-details li{
-            padding:1rem 0;display:flex;align-items:center;gap:1rem;
-            font-size:1.15rem;opacity:.95;font-weight:500;
-        }
-        .service-details li::before{
-            content:'\2714';font-size:1.4rem;color:#fff;
-        }
+        .service-details ul{margin:2rem 0;list-style:none;}
+        .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;opacity:.95;font-weight:500;}
+        .service-details li::before{content:'✓';font-size:1.4rem;color:#fff;flex-shrink:0}
 
-        /* PRICING TABLE */
-        .pricing-table{
-            background:#111;padding:2.8rem 2.2rem;border-radius:16px;
-            box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;
+        /* ENHANCED PRICING TABLE */
+        .pricing-table{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
+        .pricing-table h3{font-size:1.8rem;text-align:center;margin-bottom:2.5rem;letter-spacing:-.02em;}
+        .price-item{padding:1.3rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;}
+        .price-item:last-of-type{border:none}
+        .price-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem}
+        .price-item strong{font-weight:900;color:#fff;font-size:1.2rem}
+        .popular-tag{
+            background:linear-gradient(135deg, #00bfff 0%, #0099cc 100%);
+            color:#000;font-size:0.7rem;font-weight:900;padding:0.35rem 0.9rem;
+            border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;
+            white-space:nowrap;display:inline-block;margin-top:0.3rem;
         }
-        .pricing-table h3{
-            font-size:1.6rem;text-align:center;margin-bottom:2rem;letter-spacing:-.02em;
-        }
-        .price-item{
-            display:flex;justify-content:space-between;padding:1rem 0;
-            border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;
-        }
-        .price-item:last-child{border:none}
-        .price-item strong{font-weight:900;color:#fff}
-        .pricing-note{
-            margin-top:2rem;font-size:.95rem;opacity:.85;text-align:center;line-height:1.5;
-        }
+        .pricing-note{margin-top:2rem;padding-top:2rem;border-top:1px solid #333;font-size:.95rem;opacity:.85;text-align:center;line-height:1.6}
 
         /* CTA */
-        .cta-service{
-            display:inline-block;margin-top:2rem;padding:1.1rem 3rem;
-            border:2px solid #fff;font-weight:900;font-size:1.1rem;
-            letter-spacing:1px;transition:all .4s;border-radius:50px;
+        .cta-service{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;}
+        .cta-service:hover{background:#fff;color:#000;transform:scale(1.05);box-shadow:0 15px 35px rgba(255,255,255,.15);}
+
+        /* SASKATOON WINTER SECTION */
+        .winter-section{padding:6rem 1.5rem;background:#111;text-align:center}
+        .winter-section h2{font-size:2.8rem;margin-bottom:3rem}
+        .winter-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:1100px;margin:0 auto}
+        .stat-card{background:#000;padding:2.5rem 2rem;border-radius:14px;border:1px solid #222;transition:all .4s}
+        .stat-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.1)}
+        .stat-number{font-size:3.5rem;font-weight:900;background:linear-gradient(135deg, #00bfff 0%, #0099cc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.5rem}
+        .stat-label{font-size:1.1rem;opacity:.9;font-weight:500}
+
+        /* EMERGENCY RESPONSE SECTION */
+        .emergency-section{padding:6rem 1.5rem;background:#000}
+        .emergency-section h2{font-size:2.8rem;text-align:center;margin-bottom:1rem}
+        .emergency-subtitle{font-size:1.2rem;opacity:.9;text-align:center;margin-bottom:3rem;font-weight:500}
+        .emergency-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem;max-width:1100px;margin:0 auto}
+        .emergency-card{background:#111;padding:2.5rem 2rem;border-radius:14px;border:1px solid #222;transition:all .4s;text-align:left}
+        .emergency-card:hover{transform:translateY(-10px);border-color:#00bfff;box-shadow:0 20px 40px rgba(0,191,255,.15)}
+        .emergency-icon{font-size:3rem;margin-bottom:1rem}
+        .emergency-card h3{font-size:1.5rem;margin-bottom:1rem}
+        .emergency-card p{font-size:1.05rem;opacity:.9;line-height:1.7;font-weight:500}
+
+        /* SEASONAL PACKAGES */
+        .packages-section{padding:6rem 1.5rem;background:#111;text-align:center}
+        .packages-section h2{font-size:2.8rem;margin-bottom:1rem}
+        .packages-subtitle{font-size:1.2rem;opacity:.9;margin-bottom:3rem;font-weight:500}
+        .packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:1100px;margin:0 auto}
+        .package-card{background:#000;padding:3rem 2.5rem;border-radius:16px;border:2px solid #222;transition:all .4s;position:relative}
+        .package-card:hover{transform:translateY(-15px);border-color:#fff;box-shadow:0 30px 60px rgba(255,255,255,.15)}
+        .package-card.featured{border-color:#00bfff;background:#0a0a0a}
+        .package-card.featured::before{
+            content:'BEST VALUE';position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+            background:linear-gradient(135deg, #00bfff 0%, #0099cc 100%);color:#000;
+            padding:0.5rem 1.5rem;border-radius:20px;font-weight:900;font-size:0.85rem;letter-spacing:1px;
         }
-        .cta-service:hover{
-            background:#fff;color:#000;transform:scale(1.05);
-            box-shadow:0 15px 35px rgba(255,255,255,.15);
-        }
+        .package-card h3{font-size:1.8rem;margin-bottom:1rem}
+        .package-price{font-size:2.5rem;font-weight:900;margin-bottom:1.5rem}
+        .package-price span{font-size:1rem;font-weight:500;opacity:.8}
+        .package-features{list-style:none;margin:2rem 0;text-align:left}
+        .package-features li{padding:0.8rem 0;display:flex;align-items:center;gap:0.8rem;font-size:1.05rem;font-weight:500}
+        .package-features li::before{content:'✓';font-size:1.2rem;color:#00bfff}
 
         /* TRUST GRID */
-        .trust-section{
-            padding:6rem 1.5rem;background:#111;border-radius:16px;margin:6rem auto;max-width:1100px;
-        }
-        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:1.8rem}
-        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
-        .trust-card{
-            background:#000;padding:2.2rem 1.8rem;border-radius:14px;text-align:center;
-            border:1px solid #222;transition:all .4s;
-        }
+        .trust-section{padding:6rem 1.5rem;background:#000;margin:0}
+        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:2.5rem;}
+        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+        .trust-card{background:#111;padding:2.5rem 2rem;border-radius:14px;text-align:center;border:1px solid #222;transition:all .4s;}
         .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
-        .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
-        .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
+        .trust-card h3{font-size:1.35rem;margin-bottom:1rem}
+        .trust-card p{font-size:1.05rem;opacity:.9;line-height:1.6;font-weight:500}
 
-        /* CALL BUBBLE */
+        /* CALL BUBBLE - MATCHING INDEX WITH HIDE */
         .call-bubble{
-            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
-            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:999;
+            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px 18px 18px;border-radius:60px;
             font-weight:900;font-size:1.1rem;letter-spacing:.7px;
-            box-shadow:0 20px 55px rgba(0,0,0,.35);
-            display:flex;align-items:center;gap:14px;cursor:pointer;
+            box-shadow:0 20px 55px rgba(0,0,0,.35);cursor:pointer;
             animation:float 3s ease-in-out infinite;white-space:nowrap;
             backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
-            transition:all .3s;
+            transition:all .3s;display:flex;align-items:center;
         }
         .call-bubble::before{
             content:'';width:12px;height:12px;background:#fff;border-radius:50%;
-            animation:pulse 2s infinite;
+            animation:pulse 2s infinite;margin-right:14px;flex-shrink:0;
         }
-        .call-bubble:hover{
-            background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);
+        .call-bubble:active{
+            transform:translateX(-50%) scale(1.1);
+            background:rgba(255,255,255,.22);
             box-shadow:0 25px 65px rgba(0,0,0,.5);
+        }
+        .call-bubble.hidden{
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
         }
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* FOOTER */
-        footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
-        .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
-        .footer-col a:hover{transform:translateX(8px);color:#fff}
+        /* FOOTER - MATCHING INDEX */
+        footer{background:#000;padding:6rem 0 4rem;border-top:3px solid #222}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4rem;margin-bottom:5rem}
+        .footer-col h3{margin-bottom:1rem;font-size:1.2rem}
+        .footer-col p{margin-bottom:0.5rem;opacity:.85}
+        .footer-col a{display:block;margin-bottom:0.8rem;opacity:.85;transition:all .3s;font-weight:500}
+        .footer-col a:hover{opacity:1;transform:translateX(5px)}
+        .footer-bottom{text-align:center;opacity:.8;font-size:.95rem}
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
-            nav { padding: 1rem 0; }
-            nav.scrolled { padding: 0.8rem 0; }
-            header { padding-top: 140px; }
-            .call-bubble { font-size: 1rem; padding: 15px 28px; bottom: 20px; }
-            h1 { font-size: 2.8rem; }
-            .tagline { font-size: 1.2rem; }
-            .logo { font-size: 1.5rem; }
-            .content-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .service-content { padding: 4rem 1rem; }
-            .trust-section { padding: 4rem 1rem; margin: 4rem auto; }
-            .pricing-table { padding: 2rem 1.5rem; }
-            .service-details h2 { font-size: 2.2rem; }
-            .trust-section h2 { font-size: 2.2rem; }
-            .container { padding: 0 1rem; }
-            .logo-bubble { margin-bottom: 2rem; }
-            .hero-content { padding: 0 1rem; }
-            .price-item { font-size: 1rem; }
-            .cta-service { padding: 1rem 2.5rem; font-size: 1rem; }
-            .trust-card { padding: 1.8rem 1.4rem; }
-            footer { padding: 4rem 0 2rem; }
-            .footer-grid { gap: 2rem; }
-
-            /* === FIX: LOGO NO LONGER BLOCKS MOBILE MENU === */
-            .logo-bubble {
-                z-index: 1 !important;            /* way below menu */
-                width: clamp(140px, 38vw, 260px) !important;
-                height: clamp(140px, 38vw, 260px) !important;
-            }
-
-            /* Prevent hover nonsense on touch */
-            .call-bubble:hover {
-                transform: translateX(-50%);
-                background: rgba(255,255,255,.12);
-                box-shadow: 0 20px 55px rgba(0,0,0,.35);
-            }
+        @media(max-width:768px){
+            nav{padding:1.4rem 1rem}
+            nav.scrolled{padding:0.9rem 1rem;border-radius:0 0 22px 22px}
+            .logo{font-size:1.85rem}
+            .logo-bubble{width:clamp(140px,38vw,260px)!important;height:clamp(140px,38vw,260px)!important}
+            header{padding-top:140px}
+            .content-grid{grid-template-columns:1fr;gap:3rem}
+            .pricing-table{padding:2.2rem 1.8rem}
+            .call-bubble{font-size:1rem;padding:15px 32px 15px 15px;bottom:20px}
+            .call-bubble::before{margin-right:12px}
+            .trust-section h2,.winter-section h2,.emergency-section h2,.packages-section h2{font-size:2.3rem}
+            h1{font-size:2.8rem}
+            .tagline{font-size:1.2rem}
+            .hamburger{padding:16px}
+            .packages-grid{grid-template-columns:1fr}
+            .winter-stats{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+            .stat-number{font-size:2.5rem}
         }
 
-        @media (max-width: 480px) {
-            .call-bubble { padding: 12px 24px; font-size: 0.9rem; gap: 10px; bottom: 16px; }
-            .call-bubble::before { width: 10px; height: 10px; }
-            h1 { font-size: 2.4rem; }
-            .tagline { font-size: 1.1rem; }
-            .service-details h2 { font-size: 2rem; }
-            .trust-section h2 { font-size: 2rem; }
-            .pricing-table h3 { font-size: 1.4rem; }
-            .price-item { flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
-            .pricing-note { font-size: 0.9rem; }
-            .trust-card h3 { font-size: 1.2rem; }
-            .trust-card p { font-size: 0.95rem; }
-            .footer-col h3 { font-size: 1.3rem; }
-            .footer-col p, .footer-col a { font-size: 0.95rem; }
+        @media(max-width:480px){
+            .call-bubble{padding:12px 28px 12px 12px;font-size:0.9rem;bottom:16px}
+            .call-bubble::before{width:10px;height:10px;margin-right:10px}
+            .winter-stats{grid-template-columns:1fr}
         }
-
-        /* HAMBURGER ALWAYS VISIBLE */
-        .hamburger { display: block !important; }
     </style>
 </head>
 <body>
 
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <!-- NAV -->
 <nav id="nav">
     <div class="container nav-inner">
-        <div class="logo">tree6z</div>
-        <div class="hamburger" onclick="toggleMobileMenu()">
+        <a href="index.html" class="logo">tree6z</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- SIDEBAR -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="window.html">Window Cleaning</a>
@@ -310,17 +281,16 @@
     <a href="leaf.html">Leaf Removal</a>
     <a href="spring.html">Spring Cleanup</a>
     <a href="snow.html">Snow Removal</a>
-    <!-- <a href="contact.html">Contact</a> -->
 </div>
 
-<!-- SERVICE HERO -->
+<!-- HERO -->
 <header>
     <div class="logo-bubble">
         <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img" loading="eager">
     </div>
     <div class="container hero-content">
         <h1>Snow Removal</h1>
-        <!-- <p class="tagline">We show up at 3 AM so you don’t have to.</p> -->
+        <p class="tagline">We show up at 3 AM so you don't have to.</p>
     </div>
 </header>
 
@@ -329,7 +299,7 @@
     <div class="content-grid">
         <div class="service-details">
             <h2>24/7 Snow & Ice — Gone Before You Wake Up</h2>
-            <p>Commercial gear. Fast response. No excuses. We plow, shovel, salt — your driveway and walkways are **safe** and **clear**.</p>
+            <p>Commercial gear. Fast response. No excuses. We plow, shovel, salt — your driveway and walkways are safe and clear.</p>
             <ul>
                 <li>Driveway + sidewalk plowing</li>
                 <li>Hand-shoveling tight spots</li>
@@ -338,86 +308,207 @@
                 <li>24/7 emergency calls</li>
                 <li>Seasonal contracts or per-visit</li>
             </ul>
-            <a href="tel:+13062229165" class="cta-service">Call to Book</a>
+            <a href="tel:+13062229165" class="cta-service">Call for Emergency Service</a>
         </div>
         <div class="pricing-table">
-            <h3>No Contracts. Just Results.</h3>
+            <h3>Transparent Pricing</h3>
             <div class="price-item">
-                <span>Standard Driveway (1–2 cars)</span>
-                <strong>$40 / visit</strong>
+                <div class="price-row">
+                    <span>Standard Driveway (1–2 cars)</span>
+                    <strong>$40</strong>
+                </div>
+                <span class="popular-tag">Most Popular</span>
             </div>
             <div class="price-item">
-                <span>Double + Walkways</span>
-                <strong>$65 / visit</strong>
+                <div class="price-row">
+                    <span>Double + Walkways</span>
+                    <strong>$65</strong>
+                </div>
             </div>
             <div class="price-item">
-                <span>Full Property</span>
-                <strong>$85 / visit</strong>
+                <div class="price-row">
+                    <span>Full Property</span>
+                    <strong>$85</strong>
+                </div>
             </div>
             <div class="price-item">
-                <span>Salting</span>
-                <strong>+$10</strong>
+                <div class="price-row">
+                    <span>Salting Add-On</span>
+                    <strong>+$10</strong>
+                </div>
             </div>
             <div class="price-item">
-                <span>Roof Raking/Clearing</span>
-                <strong>$80-160</strong>
+                <div class="price-row">
+                    <span>Roof Raking/Clearing</span>
+                    <strong>$80-$160</strong>
+                </div>
             </div>
             <div class="price-item">
-                <span>Seasonal (Nov–Mar, small lot)</span>
-                <strong>$225 / month</strong>
+                <div class="price-row">
+                    <span>Seasonal (Nov–Mar, Small)</span>
+                    <strong>$225/mo</strong>
+                </div>
             </div>
             <div class="price-item">
-                <span>Seasonal (Nov-Mar, medium/large)</span>
-                <strong>$375 / month</strong>
+                <div class="price-row">
+                    <span>Seasonal (Nov–Mar, Medium/Large)</span>
+                    <strong>$375/mo</strong>
+                </div>
             </div>
-            <p class="pricing-note"> Roof pricing based on size/complexity. Salting is an extra $10 charge. Commercial? We quote.</p>
+            <p class="pricing-note"><strong>All per-visit pricing.</strong> Seasonal packages = unlimited visits all winter, one monthly price. Roof pricing based on size/complexity. Commercial properties quoted custom.</p>
         </div>
     </div>
 </section>
 
-<!-- WHY CLIENTS STAY -->
+<!-- SASKATOON WINTER STATS -->
+<section class="winter-section">
+    <div class="container">
+        <h2>Saskatoon Winters Are Brutal</h2>
+        <div class="winter-stats">
+            <div class="stat-card">
+                <div class="stat-number">-40°C</div>
+                <div class="stat-label">Average Low (January)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">115cm</div>
+                <div class="stat-label">Annual Snowfall</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5mo</div>
+                <div class="stat-label">Snow Season Length</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Our Response Time</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EMERGENCY RESPONSE -->
+<section class="emergency-section">
+    <div class="container">
+        <h2>When It Dumps Overnight</h2>
+        <p class="emergency-subtitle">Our 24/7 emergency response system keeps you safe</p>
+        <div class="emergency-grid">
+            <div class="emergency-card">
+                <div class="emergency-icon">📱</div>
+                <h3>Call Anytime</h3>
+                <p>Snow at 2 AM? We answer. Emergency line runs 24/7 Nov–March. Real person, every time.</p>
+            </div>
+            <div class="emergency-card">
+                <div class="emergency-icon">🚨</div>
+                <h3>Priority Response</h3>
+                <p>Seasonal customers get first priority during major storms. We hit your property before the main roads clear.</p>
+            </div>
+            <div class="emergency-card">
+                <div class="emergency-icon">🚜</div>
+                <h3>Commercial Equipment</h3>
+                <p>Heavy-duty plows, salt spreaders, and backup gear. We're equipped for Saskatoon's worst.</p>
+            </div>
+            <div class="emergency-card">
+                <div class="emergency-icon">❄️</div>
+                <h3>Every Snowfall</h3>
+                <p>Seasonal contracts = we come after EVERY snowfall 5cm+. You never lift a shovel all winter.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SEASONAL PACKAGES -->
+<section class="packages-section">
+    <div class="container">
+        <h2>Seasonal Packages</h2>
+        <p class="packages-subtitle">Pay once monthly, never worry about snow again</p>
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3>Small Property</h3>
+                <div class="package-price">$225<span>/month</span></div>
+                <ul class="package-features">
+                    <li>Standard driveway (1-2 cars)</li>
+                    <li>Front walkway clearing</li>
+                    <li>Unlimited visits (5cm+ snow)</li>
+                    <li>Priority response</li>
+                    <li>Nov 1 – Mar 31</li>
+                </ul>
+                <a href="tel:+13062229165" class="cta-service">Book Now</a>
+            </div>
+            
+            <div class="package-card featured">
+                <h3>Medium/Large Property</h3>
+                <div class="package-price">$375<span>/month</span></div>
+                <ul class="package-features">
+                    <li>Everything in Small</li>
+                    <li>Double+ driveway</li>
+                    <li>All walkways & paths</li>
+                    <li>Salting included</li>
+                    <li>Same-day service guarantee</li>
+                </ul>
+                <a href="tel:+13062229165" class="cta-service">Most Popular</a>
+            </div>
+            
+            <div class="package-card">
+                <h3>Per-Visit</h3>
+                <div class="package-price">$40+<span>/visit</span></div>
+                <ul class="package-features">
+                    <li>Pay only when we come</li>
+                    <li>No monthly commitment</li>
+                    <li>Call when you need us</li>
+                    <li>Standard or rush service</li>
+                    <li>Great for occasional use</li>
+                </ul>
+                <a href="tel:+13062229165" class="cta-service">Get Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="trust-section">
     <div class="container">
         <h2>Why Clients Never Leave</h2>
         <div class="trust-grid">
             <div class="trust-card">
-                <h3>Reliable 24/7</h3>
-                <p>Snow at 3 AM? We’re there before you wake up.</p>
+                <h3>❄️ Reliable 24/7</h3>
+                <p>Snow at 3 AM? We're there before you wake up. No missed storms, no excuses.</p>
             </div>
             <div class="trust-card">
-                <h3>Same Crew, Every Time</h3>
-                <p>No strangers. You’ll know our names.</p>
+                <h3>👥 Same Crew, Every Time</h3>
+                <p>No strangers. You'll know our names and we'll know your property.</p>
             </div>
             <div class="trust-card">
-                <h3>Fully Insured</h3>
-                <p>Liability + workers’ comp. Zero risk to you.</p>
+                <h3>🛡️ Fully Insured</h3>
+                <p>Liability + workers' comp. Zero risk to your property or driveway.</p>
             </div>
             <div class="trust-card">
-                <h3>One Call Does It All</h3>
-                <p>Lawn, snow, windows — one crew, year-round.</p>
+                <h3>📞 One Call Does It All</h3>
+                <p>Lawn, snow, windows — one crew, year-round. Simple.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CALL BUBBLE -->
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
     Call Now: (306) 222-9165
 </div>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <p>(306) 222-9165</p>
-                <p>tree6zlandscaping@gmail.com</p>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99edebfcfcafe3fbf6f6f2f0f7feead9fef4f8f0f5b7faf6f4">[email&#160;protected]</a></p>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3b7b1a6a6f5b9afa2ada7b0a0a2b3aaada483a4aea2aaafeda0acae">[email&#160;protected]</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Service Area</h3>
+                <p>All of Saskatoon</p>
+                <p>Residential & Commercial</p>
             </div>
             <div class="footer-col">
                 <h3>Follow Us</h3>
-                <a href="#" target="_blank" rel="noopener">Instagram</a>
-                <a href="#" target="_blank" rel="noopener">TikTok</a>
+                <a href="https://instagram.com/tree6z" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -427,24 +518,33 @@
 </footer>
 
 <script>
-    window.addEventListener('scroll', () => {
-        document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
-    });
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    const callBubble = document.querySelector('.call-bubble');
 
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        menu.classList.toggle('active');
+    function toggleMenu() {
+        const isActive = menu.classList.toggle('active');
+        overlay.classList.toggle('active');
         hamburger.classList.toggle('active');
+        callBubble.classList.toggle('hidden');
+        hamburger.setAttribute('aria-expanded', isActive);
+        document.body.style.overflow = isActive ? 'hidden' : '';
     }
 
-    document.addEventListener('click', (e) => {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.classList.remove('active');
+        callBubble.classList.remove('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    });
+
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', scrollY > 50);
     });
 </script>
 </body>

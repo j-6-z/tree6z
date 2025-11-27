@@ -10,12 +10,12 @@
     <meta property="og:description" content="Call (306) 222-9165 or email tree6zlandscaping@gmail.com — we answer fast." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tree6z.ca/contact.html" />
-    <meta property="og:image" content="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" />
+    <meta property="og:image" content="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Favicon -->
-    <link rel="icon" href="https://i.ibb.co/tpFpDrvm/t6z-logo.jpg" type="image/jpeg">
+    <link rel="icon" href="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" type="image/png">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "tree6z",
-      "image": "https://i.ibb.co/tpFpDrvm/t6z-logo.jpg",
+      "image": "https://i.ibb.co/5XK5Zbfx/tree6z-logo.png",
       "url": "https://tree6z.ca/contact.html",
       "telephone": "+13062229165",
       "email": "tree6zlandscaping@gmail.com",
@@ -48,52 +48,62 @@
         h1,h2,h3{font-weight:900;letter-spacing:-.02em}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        /* NAV - LOWER Z-INDEX */
+        /* DARK OVERLAY */
+        .menu-overlay{
+            position:fixed;top:0;left:0;width:100%;height:100dvh;
+            background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);
+            opacity:0;visibility:hidden;z-index:1001;
+            transition:all .35s ease;
+        }
+        .menu-overlay.active{opacity:1;visibility:visible}
+
+        /* CENTERED SEXY NAVBAR - MATCHING INDEX */
         nav{
-            position:fixed;top:0;left:0;width:100%;padding:1.6rem 0;z-index:1000;
-            background:rgba(0,0,0,.96);backdrop-filter:blur(12px);transition:all .3s;
+            position:fixed;top:0;left:50%;transform:translateX(-50%);
+            width:100%;max-width:1400px;padding:1.8rem 1.5rem;
+            z-index:1003;background:transparent;transition:all .4s ease;
+            pointer-events:none;
         }
-        nav.scrolled{padding:1.2rem 0}
-        .nav-inner{display:flex;justify-content:space-between;align-items:center}
-
-        .logo{
-            font-size:1.8rem;
-            font-weight:900;
-            letter-spacing:.08em;
-            text-transform:uppercase;
-            color:#fff;
-            white-space:nowrap;
-            transition:all .3s ease;
-            display:flex;
-            align-items:center;
+        nav.scrolled{
+            padding:1rem 1.5rem;background:rgba(0,0,0,.96);
+            backdrop-filter:blur(20px);border-radius:0 0 26px 26px;
+            box-shadow:0 12px 40px rgba(0,0,0,.7);
         }
-        .logo:hover{
-            color:#ddd;
-            transform:scale(1.03);
+        .nav-inner{
+            display:flex;justify-content:space-between;align-items:center;
+            max-width:1200px;margin:0 auto;pointer-events:auto;
         }
-
+        .logo{font-size:2.1rem;font-weight:900;letter-spacing:.08em}
         .hamburger{
-            cursor:pointer;
-            padding:16px; /* Larger tap area */
-            border-radius:50%;
-            transition:all .3s
+            cursor:pointer;padding:16px;border-radius:50%;
+            background:rgba(255,255,255,.1);transition:all .3s;
+            position:relative;z-index:1004;border:none;
         }
-        .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
-        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
+        .hamburger:hover{background:rgba(255,255,255,.2)}
+        .hamburger span{
+            display:block;width:28px;height:3px;background:#fff;
+            margin:6px 0;transition:all .3s;border-radius:3px;
+        }
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(10px,10px)}
         .hamburger.active span:nth-child(2){opacity:0}
-        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(9px,-9px)}
 
-        /* Mobile Menu */
+        /* SIDEBAR - MATCHING INDEX */
         .mobile-menu{
-            position:fixed;top:0;right:-100%;width:100%;max-width:380px;height:100dvh;background:#000;
-            padding:7rem 2rem 3rem;z-index:1002;transition:right .5s cubic-bezier(0.77,0,0.18,1);
-            box-shadow:-10px 0 40px rgba(0,0,0,.7);border-left:1px solid #222;overflow-y:auto;
+            position:fixed;top:0;right:-420px;width:100%;max-width:380px;height:100dvh;
+            background:#000;padding:7rem 2rem 3rem;z-index:1002;
+            transition:right .5s cubic-bezier(0.77,0,0.18,1);
+            box-shadow:-10px 0 50px rgba(0,0,0,.9);border-left:1px solid #222;
+            overflow-y:auto;
         }
         .mobile-menu.active{right:0}
-        .mobile-menu a{display:block;padding:1.4rem 0;font-size:1.4rem;font-weight:700;border-bottom:1px solid #111}
+        .mobile-menu a{
+            display:block;padding:1.5rem 0;font-size:1.5rem;
+            font-weight:700;border-bottom:1px solid #111;
+        }
         .mobile-menu a:last-child{border:none}
 
-        /* HERO - INCREASED PADDING FOR NAV + LOGO CLEARANCE */
+        /* HERO */
         header{
             min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
             text-align:center;padding-top:160px;
@@ -102,7 +112,6 @@
             position: relative;
         }
 
-        /* LOGO BUBBLE - LOWER Z-INDEX + SMOOTH HIDE */
         .logo-bubble {
             position: relative;
             width: clamp(180px, 45vw, 320px);
@@ -120,33 +129,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            z-index: 10; /* LOWERED */
-            padding: 0;
-            transition: all .4s ease;
+            z-index: 1;
         }
 
         .logo-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
             transition: transform .4s ease;
-            display: block;
         }
 
         .logo-bubble:hover .logo-img {
             transform: scale(1.15);
-        }
-
-        .logo-bubble:hover {
-            transform: translateY(-14px) scale(1.06);
-            box-shadow: 
-                0 0 0 22px rgba(0,0,0,.8), 
-                0 0 140px rgba(255,255,255,.6),
-                inset 0 0 80px rgba(0,0,0,.9);
         }
 
         @keyframes logoFloat {
@@ -165,7 +159,7 @@
         .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
         .service-details ul{margin:2rem 0;list-style:none;}
         .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;opacity:.95;font-weight:500;}
-        .service-details li::before{content:'Checkmark';font-size:1.4rem;color:#fff;}
+        .service-details li::before{content:'✓';font-size:1.4rem;color:#fff;}
 
         /* CONTACT CARD */
         .contact-card{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
@@ -189,88 +183,134 @@
         .trust-card h3{font-size:1.35rem;margin-bottom:.8rem}
         .trust-card p{font-size:1rem;opacity:.9;line-height:1.5}
 
-        /* CALL BUBBLE */
-        .call-bubble{
-            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;
-            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px;border-radius:60px;
-            font-weight:900;font-size:1.1rem;letter-spacing:.7px;
-            box-shadow:0 20px 55px rgba(0,0,0,.35);display:flex;align-items:center;gap:14px;cursor:pointer;
-            animation:float 3s ease-in-out infinite;white-space:nowrap;backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
-            transition:all .3s;
+        /* CONTACT FORM SECTION */
+        .contact-form-section{padding:6rem 1.5rem;background:#000;text-align:center}
+        .contact-form-section h2{font-size:2.8rem;margin-bottom:1rem}
+        .form-subtitle{font-size:1.2rem;opacity:.9;margin-bottom:3rem;font-weight:500}
+        .contact-form{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+        .contact-form input, .contact-form textarea, .contact-form select{
+            background:#111;border:2px solid #222;padding:1.3rem;color:#fff;border-radius:12px;
+            font-size:1.05rem;font-family:'Inter',sans-serif;outline:none;transition:all .3s;font-weight:500;
         }
-        .call-bubble::before{content:'';width:12px;height:12px;background:#fff;border-radius:50%;animation:pulse 2s infinite;}
-        .call-bubble:hover{background:rgba(255,255,255,.22);transform:translateX(-50%) scale(1.1);box-shadow:0 25px 65px rgba(0,0,0,.5);}
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus{
+            background:#1a1a1a;border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.1);
+        }
+        .contact-form select{cursor:pointer}
+        .contact-form select option{background:#111;color:#fff}
+        .contact-form textarea{resize:vertical;min-height:140px}
+        .form-notice{
+            background:linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            padding:1.5rem;border-radius:12px;text-align:left;
+        }
+        .form-notice p{font-size:1rem;font-weight:700;margin:0;line-height:1.6}
+        .contact-form button{
+            background:#fff;color:#000;font-weight:900;padding:1.4rem;border:none;
+            border-radius:12px;cursor:pointer;transition:all .3s;font-size:1.2rem;
+            letter-spacing:.5px;text-transform:uppercase;
+        }
+        .contact-form button:hover{background:#ddd;transform:scale(1.02);box-shadow:0 10px 30px rgba(255,255,255,.2)}
+
+        /* LOCATION SECTION */
+        .location-section{padding:6rem 1.5rem;background:#111;text-align:center}
+        .location-section h2{font-size:2.8rem;margin-bottom:1rem}
+        .location-subtitle{font-size:1.2rem;opacity:.9;margin-bottom:3rem;font-weight:500}
+        .service-area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:1000px;margin:0 auto 3rem}
+        .area-card{background:#000;padding:2.5rem 2rem;border-radius:14px;border:1px solid #222;transition:all .4s;text-align:left}
+        .area-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.1)}
+        .area-card h3{font-size:1.5rem;margin-bottom:1rem;font-weight:700}
+        .area-card p{font-size:1.05rem;opacity:.9;line-height:1.6;font-weight:500}
+        .outside-area{font-size:1.15rem;opacity:.95;margin-top:2rem;font-weight:500}
+        .outside-area a{text-decoration:underline;font-weight:700;transition:all .3s}
+        .outside-area a:hover{color:#ddd}
+
+        /* CALL BUBBLE - MATCHING INDEX WITH HIDE CLASS */
+        .call-bubble{
+            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:999;
+            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px 18px 18px;border-radius:60px;
+            font-weight:900;font-size:1.1rem;letter-spacing:.7px;
+            box-shadow:0 20px 55px rgba(0,0,0,.35);cursor:pointer;
+            animation:float 3s ease-in-out infinite;white-space:nowrap;
+            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
+            transition:all .3s;display:flex;align-items:center;
+        }
+        .call-bubble::before{
+            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
+            animation:pulse 2s infinite;margin-right:14px;flex-shrink:0;
+        }
+        .call-bubble:active{
+            transform:translateX(-50%) scale(1.1);
+            background:rgba(255,255,255,.22);
+            box-shadow:0 25px 65px rgba(0,0,0,.5);
+        }
+        .call-bubble.hidden{
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
+        }
         @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
         @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
 
-        /* FOOTER */
-        footer{background:#000;padding:6rem 0 2rem;border-top:3px solid #222}
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-bottom:4rem}
-        .footer-col h3{font-size:1.5rem;margin-bottom:1.5rem;font-weight:900}
-        .footer-col a:hover{transform:translateX(8px);color:#fff}
-
-        /* HIDE LOGO BUBBLE WHEN MOBILE MENU IS OPEN */
-        .mobile-menu.active ~ header .logo-bubble,
-        .mobile-menu.active ~ .logo-bubble {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px) scale(0.95);
-        }
+        /* FOOTER - MATCHING INDEX */
+        footer{background:#000;padding:6rem 0 4rem;border-top:3px solid #222}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4rem;margin-bottom:5rem}
+        .footer-col h3{margin-bottom:1rem;font-size:1.2rem}
+        .footer-col p{margin-bottom:0.5rem;opacity:.85}
+        .footer-col a{display:block;margin-bottom:0.8rem;opacity:.85;transition:all .3s;font-weight:500}
+        .footer-col a:hover{opacity:1;transform:translateX(5px)}
 
         /* RESPONSIVE */
         @media(max-width:768px){
-            nav{padding:1.4rem 0}
-            nav.scrolled{padding:1rem 0}
+            nav{padding:1.4rem 1rem}
+            nav.scrolled{padding:0.9rem 1rem;border-radius:0 0 22px 22px}
+            .logo{font-size:1.85rem}
+            .logo-bubble{width:clamp(140px,38vw,260px)!important;height:clamp(140px,38vw,260px)!important}
             header{padding-top:140px}
             .content-grid{grid-template-columns:1fr;gap:3rem}
             .contact-card{padding:2.2rem 1.8rem}
-            .call-bubble{font-size:1rem;padding:15px 28px;bottom:20px;background:rgba(255,255,255,.15);backdrop-filter:blur(14px);}
+            .call-bubble{font-size:1rem;padding:15px 32px 15px 15px;bottom:20px}
+            .call-bubble::before{margin-right:12px}
             .trust-section h2{font-size:2.2rem}
+            .contact-form-section h2{font-size:2.2rem}
+            .location-section h2{font-size:2.2rem}
             h1{font-size:2.8rem}
             .tagline{font-size:1.2rem}
-            .logo{font-size:1.6rem;letter-spacing:.07em;}
-            /* Force same layout as desktop on mobile */
-            .footer-grid { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-            .footer-col {
-                text-align: left;
-            }
-            /* Fix call-bubble hover on mobile */
-            .call-bubble:hover {
-                transform: translateX(-50%);
-                background: rgba(255,255,255,.12);
-                box-shadow: 0 20px 55px rgba(0,0,0,.35);
-            }
+            .hamburger{padding:16px}
+            .form-row{grid-template-columns:1fr;gap:1.5rem}
+            .service-area-grid{grid-template-columns:1fr;gap:1.5rem}
         }
 
         @media(max-width:480px){
-            .logo{font-size:1.5rem;}
+            .call-bubble{padding:12px 28px 12px 12px;font-size:0.9rem;bottom:16px}
+            .call-bubble::before{width:10px;height:10px;margin-right:10px}
+            .contact-form-section h2{font-size:2rem}
+            .location-section h2{font-size:2rem}
         }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- NAV - MATCHING INDEX -->
 <nav id="nav">
     <div class="container nav-inner">
         <a href="index.html" class="logo">tree6z</a>
-        <div class="hamburger" onclick="toggleMobileMenu()">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- SIDEBAR - MATCHING INDEX -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="window.html">Window Cleaning</a>
+    <!-- <a href="window.html">Window Cleaning</a> -->
     <a href="lawncare.html">Lawn Care</a>
     <a href="leaf.html">Leaf Removal</a>
     <a href="spring.html">Spring Cleanup</a>
     <a href="snow.html">Snow Removal</a>
-    <a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -305,14 +345,74 @@
                 <a href="tel:+13062229165">(306) 222-9165</a>
             </div>
             <div class="contact-item">
-                <span>Email</span>
+                <span>Email (Bookings)</span>
+                <a href="mailto:tree6zbookings@gmail.com">tree6zbookings@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span>Email (General)</span>
                 <a href="mailto:tree6zlandscaping@gmail.com">tree6zlandscaping@gmail.com</a>
             </div>
             <div class="contact-item">
                 <span>Service Area</span>
-                <span>Saskatoon + 30km</span>
+                <span>All of Saskatoon</span>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- QUICK CONTACT FORM -->
+<section class="contact-form-section">
+    <div class="container">
+        <h2>Send Us a Message</h2>
+        <p class="form-subtitle">Prefer email? Fill out the form below and we'll get back to you within a few hours.</p>
+        <form class="contact-form" action="https://formsubmit.co/tree6zbookings@gmail.com" method="POST">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Your Name *" required>
+                <input type="tel" name="phone" placeholder="Phone Number *" required>
+            </div>
+            <input type="email" name="email" placeholder="Your Email *" required>
+            <select name="service" required>
+                <option value="" disabled selected>Select Service *</option>
+                <option value="Window Cleaning">Window Cleaning</option>
+                <option value="Lawn Care">Lawn Care</option>
+                <option value="Leaf Removal">Leaf Removal</option>
+                <option value="Spring Cleanup">Spring Cleanup</option>
+                <option value="Snow Removal">Snow Removal</option>
+                <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <textarea name="message" placeholder="Tell us about your property and what you need..." rows="5" required></textarea>
+            <div class="form-notice">
+                <p>⚠️ <strong>Payment Notice:</strong> We currently accept cash or e-transfer only. Invoice sent before payment.</p>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- LOCATION MAP SECTION -->
+<section class="location-section">
+    <div class="container">
+        <h2>Our Service Area</h2>
+        <p class="location-subtitle">We proudly serve all of Saskatoon and surrounding areas</p>
+        <div class="service-area-grid">
+            <div class="area-card">
+                <h3>📍 East Side</h3>
+                <p>Briarwood, Willowgrove, Stonebridge, and all east Saskatoon neighborhoods</p>
+            </div>
+            <div class="area-card">
+                <h3>📍 West Side</h3>
+                <p>Confederation, Holiday Park, Meadowgreen, and all west neighborhoods</p>
+            </div>
+            <div class="area-card">
+                <h3>📍 North End</h3>
+                <p>Silverwood Heights, Evergreen, Hampton Village, and surrounding areas</p>
+            </div>
+            <div class="area-card">
+                <h3>📍 Central & Downtown</h3>
+                <p>City Park, Nutana, Riversdale, and downtown Saskatoon</p>
+            </div>
+        </div>
+        <p class="outside-area">Just outside Saskatoon? <a href="tel:+13062229165">Call us anyway</a> — we might be able to help!</p>
     </div>
 </section>
 
@@ -323,15 +423,15 @@
         <div class="trust-grid">
             <div class="trust-card">
                 <h3>Reliable 24/7</h3>
-                <p>Snow at 3 AM? We’re there before you wake up.</p>
+                <p>Snow at 3 AM? We're there before you wake up.</p>
             </div>
             <div class="trust-card">
                 <h3>Same Crew, Every Time</h3>
-                <p>No strangers. You’ll know our names.</p>
+                <p>No strangers. You'll know our names.</p>
             </div>
             <div class="trust-card">
                 <h3>Fully Insured</h3>
-                <p>Liability + workers’ comp. Zero risk to you.</p>
+                <p>Liability + workers' comp. Zero risk to you.</p>
             </div>
             <div class="trust-card">
                 <h3>One Call Does It All</h3>
@@ -346,19 +446,25 @@
     Call Now: (306) 222-9165
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER - MATCHING INDEX -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <p>(306) 222-9165</p>
+                <p>tree6zbookings@gmail.com</p>
                 <p>tree6zlandscaping@gmail.com</p>
             </div>
             <div class="footer-col">
+                <h3>Service Areas</h3>
+                <p>Saskatoon</p>
+                <!-- <p>Warman • Dalmeny</p> -->
+            </div>
+            <div class="footer-col">
                 <h3>Follow Us</h3>
-                <a href="#" target="_blank" rel="noopener">Instagram</a>
-                <a href="#" target="_blank" rel="noopener">TikTok</a>
+                <a href="https://instagram.com/tree6z" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -367,23 +473,35 @@
     </div>
 </footer>
 
+<!-- JAVASCRIPT - MATCHING INDEX -->
 <script>
-    window.addEventListener('scroll', () => {
-        document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
-    });
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        menu.classList.toggle('active');
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    const callBubble = document.querySelector('.call-bubble');
+
+    function toggleMenu() {
+        const isActive = menu.classList.toggle('active');
+        overlay.classList.toggle('active');
         hamburger.classList.toggle('active');
+        callBubble.classList.toggle('hidden');
+        hamburger.setAttribute('aria-expanded', isActive);
+        document.body.style.overflow = isActive ? 'hidden' : '';
     }
-    document.addEventListener('click', (e) => {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.classList.remove('active');
+        callBubble.classList.remove('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    });
+
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', scrollY > 50);
     });
 </script>
 </body>
