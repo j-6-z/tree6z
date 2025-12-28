@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
     <title>Leaf Removal | tree6z</title>
+    <meta name="description" content="Saskatoon leaf removal — full yard cleanup, gutter cleaning, haul-away. Zero leaves left behind.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Leaf Removal | tree6z" />
@@ -11,236 +12,462 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tree6z.ca/leaf.html" />
     <meta property="og:image" content="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
 
     <!-- Favicon -->
     <link rel="icon" href="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" type="image/png">
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
-
-    <!-- Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Leaf Removal",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "tree6z",
-        "image": "https://i.ibb.co/5XK5Zbfx/tree6z-logo.png",
-        "telephone": "+13062229165",
-        "email": "tree6zlandscaping@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Saskatoon",
-          "addressRegion": "SK",
-          "addressCountry": "CA"
-        }
-      },
-      "areaServed": "Saskatoon",
-      "description": "Complete leaf removal, gutter cleaning, and full fall cleanup."
-    }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
         a{color:inherit;text-decoration:none}
         img{max-width:100%;display:block}
-        h1,h2,h3{font-weight:900;letter-spacing:-.02em}
-        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+        h1,h2,h3{font-weight:700;letter-spacing:-.02em}
+        .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
 
         /* OVERLAY */
         .menu-overlay{
             position:fixed;top:0;left:0;width:100%;height:100dvh;
-            background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);
+            background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);
             opacity:0;visibility:hidden;z-index:1001;transition:all .35s ease;
         }
         .menu-overlay.active{opacity:1;visibility:visible}
 
-        /* NAVBAR - MATCHING INDEX */
+        /* NAVBAR */
         nav{
             position:fixed;top:0;left:50%;transform:translateX(-50%);
-            width:100%;max-width:1400px;padding:1.8rem 1.5rem;
+            width:100%;max-width:1400px;padding:1.5rem;
             z-index:1003;background:transparent;transition:all .4s ease;pointer-events:none;
         }
         nav.scrolled{
-            padding:1rem 1.5rem;background:rgba(0,0,0,.96);
-            backdrop-filter:blur(20px);border-radius:0 0 26px 26px;
-            box-shadow:0 12px 40px rgba(0,0,0,.7);
+            padding:1rem 1.5rem;background:rgba(0,0,0,.95);
+            backdrop-filter:blur(20px);border-radius:0 0 20px 20px;
         }
-        .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;pointer-events:auto}
-        .logo{font-size:2.1rem;font-weight:900;letter-spacing:.08em}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;pointer-events:auto}
+        .logo{font-size:1.8rem;font-weight:900;letter-spacing:.05em}
         .hamburger{
-            cursor:pointer;padding:16px;border-radius:50%;
-            background:rgba(255,255,255,.1);transition:all .3s;
+            cursor:pointer;padding:14px;border-radius:50%;
+            background:rgba(255,255,255,.08);transition:all .3s;
             position:relative;z-index:1004;border:none;
         }
-        .hamburger:hover{background:rgba(255,255,255,.2)}
-        .hamburger span{display:block;width:28px;height:3px;background:#fff;margin:6px 0;transition:all .3s;border-radius:3px}
-        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(10px,10px)}
+        .hamburger:hover{background:rgba(255,255,255,.15)}
+        .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s;border-radius:2px}
+        .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
         .hamburger.active span:nth-child(2){opacity:0}
-        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(9px,-9px)}
+        .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 
         /* SIDEBAR */
         .mobile-menu{
-            position:fixed;top:0;right:-420px;width:100%;max-width:380px;height:100dvh;
-            background:#000;padding:7rem 2rem 3rem;z-index:1002;
+            position:fixed;top:0;right:-400px;width:100%;max-width:340px;height:100dvh;
+            background:#000;padding:6rem 2rem 3rem;z-index:1002;
             transition:right .5s cubic-bezier(0.77,0,0.18,1);
-            box-shadow:-10px 0 50px rgba(0,0,0,.9);border-left:1px solid #222;overflow-y:auto;
+            border-left:1px solid #1a1a1a;overflow-y:auto;
         }
         .mobile-menu.active{right:0}
-        .mobile-menu a{display:block;padding:1.5rem 0;font-size:1.5rem;font-weight:700;border-bottom:1px solid #111}
+        .mobile-menu a{display:block;padding:1.2rem 0;font-size:1.3rem;font-weight:600;border-bottom:1px solid #111;color:#999;transition:color .3s}
+        .mobile-menu a:hover{color:#fff}
         .mobile-menu a:last-child{border:none}
 
         /* HERO */
         header{
             min-height:75dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-            text-align:center;padding-top:160px;
-            background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-                       url('https://images.unsplash.com/photo-1604595704328-9f47701ed2f8?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
-            position: relative;
+            text-align:center;padding:140px 1.5rem 80px;
+            background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.95)),
+                       url('https://images.unsplash.com/photo-1604595704328-9f47701ed2f8?auto=format&fit=crop&w=2000&q=80') center/cover;
+            background-attachment:scroll;
+        }
+        
+        /* LOGO - SQUARE STYLE */
+        .logo-box{
+            width:clamp(140px,35vw,220px);
+            height:clamp(140px,35vw,220px);
+            background:#fff;
+            border-radius:20px;
+            margin-bottom:2.5rem;
+            overflow:hidden;
+            box-shadow:0 25px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.1);
+            animation:logoFloat 4s ease-in-out infinite;
+        }
+        .logo-box img{
+            width:100%;height:100%;object-fit:cover;
+            transition:transform .4s;
+        }
+        .logo-box:hover img{
+            transform:scale(1.05);
+        }
+        @keyframes logoFloat{
+            0%,100%{transform:translateY(0)}
+            50%{transform:translateY(-12px)}
+        }
+        
+        h1{font-size:clamp(2.5rem,8vw,4.5rem);font-weight:900;margin-bottom:1rem;letter-spacing:-.03em}
+        .tagline{font-size:1.15rem;font-weight:400;opacity:.6;max-width:500px}
+
+        /* FEATURES STRIP */
+        .features-strip{
+            padding:2.5rem 1.5rem;
+            background:#050505;
+            border-top:1px solid #111;
+            border-bottom:1px solid #111;
+        }
+        .features-row{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:3rem;
+            flex-wrap:wrap;
+            max-width:900px;
+            margin:0 auto;
+        }
+        .feature-item{
+            display:flex;
+            align-items:center;
+            gap:0.6rem;
+            font-size:0.9rem;
+            color:rgba(255,255,255,.5);
+        }
+        .feature-item::before{
+            content:'';
+            width:5px;height:5px;
+            background:#fff;
+            border-radius:50%;
+            flex-shrink:0;
         }
 
-        .logo-bubble{
-            position:relative;width:clamp(180px,45vw,320px);height:clamp(180px,45vw,320px);
-            background:#fff;border:8px solid #000;margin:0 auto 2.8rem;overflow:hidden;
-            box-shadow:0 0 0 22px rgba(0,0,0,.8),0 0 110px rgba(255,255,255,.4),inset 0 0 60px rgba(0,0,0,.7);
-            backdrop-filter:blur(20px);animation:logoFloat 4s ease-in-out infinite;
-            display:flex;align-items:center;justify-content:center;z-index:1;
+        /* INTRO SECTION */
+        .intro-section{
+            padding:5rem 1.5rem;
+            background:#000;
         }
-        .logo-img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-        .logo-bubble:hover .logo-img{transform:scale(1.15)}
-        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
-
-        .hero-content{max-width:900px;padding:0 1rem}
-        h1{font-size:clamp(2.8rem,9vw,5.5rem);margin-bottom:.5rem}
-        .tagline{font-size:1.4rem;font-weight:500;opacity:.95;margin:1.2rem 0}
-
-        /* SERVICE CONTENT */
-        .service-content{padding:6rem 1.5rem}
-        .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto;}
-        .service-details h2{font-size:2.6rem;margin-bottom:1.5rem}
-        .service-details p{font-size:1.15rem;margin-bottom:1.8rem;opacity:.95;line-height:1.7}
-        .service-details ul{margin:2rem 0;list-style:none;}
-        .service-details li{padding:1rem 0;display:flex;align-items:center;gap:1rem;font-size:1.15rem;opacity:.95;font-weight:500;}
-        .service-details li::before{content:'✓';font-size:1.4rem;color:#fff;flex-shrink:0}
-
-        /* ENHANCED PRICING TABLE */
-        .pricing-table{background:#111;padding:2.8rem 2.2rem;border-radius:16px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid #222;}
-        .pricing-table h3{font-size:1.8rem;text-align:center;margin-bottom:2.5rem;letter-spacing:-.02em;}
-        .price-item{
-            padding:1.3rem 0;border-bottom:1px solid #333;font-size:1.1rem;font-weight:500;
+        .intro-content{
+            max-width:800px;
+            margin:0 auto;
         }
-        .price-item:last-of-type{border:none}
-        .price-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem}
-        .price-item strong{font-weight:900;color:#fff;font-size:1.2rem}
-        .popular-tag{
-            background:linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
-            color:#000;font-size:0.7rem;font-weight:900;padding:0.35rem 0.9rem;
-            border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;
-            white-space:nowrap;display:inline-block;margin-top:0.3rem;
+        .intro-content h2{
+            font-size:1.8rem;
+            margin-bottom:1.5rem;
+            text-align:center;
         }
-        .pricing-note{margin-top:2rem;padding-top:2rem;border-top:1px solid #333;font-size:.95rem;opacity:.85;text-align:center;line-height:1.6}
+        .intro-content p{
+            font-size:1.05rem;
+            line-height:1.8;
+            opacity:.7;
+            margin-bottom:1.5rem;
+            text-align:center;
+        }
 
-        /* CTA */
-        .cta-service{display:inline-block;margin-top:2rem;padding:1.1rem 3rem;border:2px solid #fff;font-weight:900;font-size:1.1rem;letter-spacing:1px;transition:all .4s;border-radius:50px;}
-        .cta-service:hover{background:#fff;color:#000;transform:scale(1.05);box-shadow:0 15px 35px rgba(255,255,255,.15);}
+        /* PRICING SECTION */
+        .pricing-section{
+            padding:5rem 1.5rem;
+            background:#050505;
+            border-top:1px solid #111;
+        }
+        .section-header{text-align:center;margin-bottom:3.5rem}
+        .section-header h2{font-size:2rem;margin-bottom:0.75rem}
+        .section-header p{font-size:0.95rem;opacity:.4;font-weight:400}
 
-        /* WHY FALL CLEANUP SECTION */
-        .why-section{padding:6rem 1.5rem;background:#111;text-align:center}
-        .why-section h2{font-size:2.8rem;margin-bottom:3rem}
-        .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem;max-width:1100px;margin:0 auto}
-        .why-card{background:#000;padding:2.5rem 2rem;border-radius:14px;border:1px solid #222;transition:all .4s;text-align:left}
-        .why-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.1)}
-        .why-icon{font-size:3rem;margin-bottom:1rem}
-        .why-card h3{font-size:1.5rem;margin-bottom:1rem}
-        .why-card p{font-size:1.05rem;opacity:.9;line-height:1.7;font-weight:500}
+        .pricing-table{
+            max-width:650px;
+            margin:0 auto;
+            border:1px solid #1a1a1a;
+            border-radius:12px;
+            overflow:hidden;
+        }
+        
+        .pricing-row{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:1.2rem 1.5rem;
+            border-bottom:1px solid #111;
+            transition:background .2s;
+        }
+        .pricing-row:last-child{border-bottom:none}
+        .pricing-row:hover{background:rgba(255,255,255,.02)}
+        
+        .pricing-row .label{
+            font-size:0.95rem;
+            font-weight:500;
+        }
+        .pricing-row .sublabel{
+            font-size:0.8rem;
+            opacity:.4;
+            font-weight:400;
+            margin-top:0.15rem;
+        }
+        .pricing-row .price{
+            font-size:0.95rem;
+            font-weight:600;
+            text-align:right;
+            white-space:nowrap;
+        }
+        
+        .pricing-row.bundle{
+            background:rgba(255,255,255,.02);
+        }
+        .pricing-row.bundle .label{
+            font-weight:600;
+        }
+        .pricing-row.bundle .price{
+            color:#f59e0b;
+            font-weight:700;
+        }
+        .save-tag{
+            display:inline-block;
+            background:#f59e0b;
+            color:#000;
+            font-size:0.65rem;
+            font-weight:700;
+            padding:0.2rem 0.5rem;
+            border-radius:4px;
+            margin-left:0.5rem;
+            text-transform:uppercase;
+            letter-spacing:0.02em;
+        }
+
+        .pricing-note{
+            text-align:center;
+            margin-top:1.75rem;
+            font-size:0.8rem;
+            opacity:.3;
+        }
+
+        /* WHY IT MATTERS */
+        .why-section{
+            padding:5rem 1.5rem;
+            background:#000;
+            border-top:1px solid #111;
+        }
+        .why-section h2{
+            font-size:1.8rem;
+            text-align:center;
+            margin-bottom:3rem;
+        }
+        .why-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+            gap:1px;
+            background:#1a1a1a;
+            border:1px solid #1a1a1a;
+            border-radius:12px;
+            overflow:hidden;
+            max-width:900px;
+            margin:0 auto;
+        }
+        .why-card{
+            background:#000;
+            padding:2rem;
+        }
+        .why-card h3{
+            font-size:1.1rem;
+            margin-bottom:0.75rem;
+            font-weight:600;
+        }
+        .why-card p{
+            font-size:0.9rem;
+            opacity:.6;
+            line-height:1.6;
+        }
 
         /* PROCESS SECTION */
-        .process-section{padding:6rem 1.5rem;background:#000}
-        .process-section h2{font-size:2.8rem;text-align:center;margin-bottom:1rem}
-        .process-subtitle{font-size:1.2rem;opacity:.9;text-align:center;margin-bottom:3rem;font-weight:500}
-        .process-steps{max-width:800px;margin:0 auto}
-        .process-step{display:flex;gap:2rem;margin-bottom:3rem;align-items:start}
-        .step-number{
-            background:linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
-            color:#000;font-weight:900;font-size:1.8rem;
-            width:60px;height:60px;border-radius:50%;
-            display:flex;align-items:center;justify-content:center;flex-shrink:0;
+        .process-section{
+            padding:5rem 1.5rem;
+            background:#050505;
+            border-top:1px solid #111;
         }
-        .step-content h3{font-size:1.5rem;margin-bottom:0.8rem}
-        .step-content p{font-size:1.1rem;opacity:.9;line-height:1.7;font-weight:500}
+        .process-section h2{
+            font-size:1.8rem;
+            text-align:center;
+            margin-bottom:3rem;
+        }
+        .process-steps{
+            max-width:600px;
+            margin:0 auto;
+        }
+        .process-step{
+            display:flex;
+            gap:1.5rem;
+            margin-bottom:2rem;
+            align-items:flex-start;
+        }
+        .process-step:last-child{margin-bottom:0}
+        .step-num{
+            width:36px;height:36px;
+            background:#1a1a1a;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:0.85rem;
+            font-weight:600;
+            flex-shrink:0;
+            color:rgba(255,255,255,.6);
+        }
+        .step-content h3{
+            font-size:1rem;
+            font-weight:600;
+            margin-bottom:0.4rem;
+        }
+        .step-content p{
+            font-size:0.9rem;
+            opacity:.5;
+            line-height:1.6;
+        }
 
-        /* TRUST GRID */
-        .trust-section{padding:6rem 1.5rem;background:#000;margin:0}
-        .trust-section h2{font-size:2.6rem;text-align:center;margin-bottom:2.5rem;}
-        .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
-        .trust-card{background:#111;padding:2.5rem 2rem;border-radius:14px;text-align:center;border:1px solid #222;transition:all .4s;}
-        .trust-card:hover{transform:translateY(-10px);border-color:#fff;box-shadow:0 20px 40px rgba(255,255,255,.08)}
-        .trust-card h3{font-size:1.35rem;margin-bottom:1rem}
-        .trust-card p{font-size:1.05rem;opacity:.9;line-height:1.6;font-weight:500}
+        /* WHAT'S INCLUDED */
+        .included-section{
+            padding:5rem 1.5rem;
+            background:#000;
+            border-top:1px solid #111;
+        }
+        .included-section h2{
+            font-size:1.8rem;
+            text-align:center;
+            margin-bottom:3rem;
+        }
+        .included-list{
+            max-width:600px;
+            margin:0 auto;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:1rem 2rem;
+        }
+        .included-item{
+            font-size:0.95rem;
+            color:rgba(255,255,255,.6);
+            padding:0.5rem 0;
+            display:flex;
+            align-items:center;
+            gap:0.75rem;
+        }
+        .included-item::before{
+            content:'';
+            width:4px;height:4px;
+            background:#fff;
+            border-radius:50%;
+            flex-shrink:0;
+        }
 
-        /* CALL BUBBLE - MATCHING INDEX WITH HIDE */
+        /* CTA SECTION */
+        .cta-section{
+            padding:5rem 1.5rem;
+            text-align:center;
+            background:#050505;
+            border-top:1px solid #111;
+        }
+        .cta-section h2{
+            font-size:1.5rem;
+            font-weight:600;
+            margin-bottom:0.75rem;
+        }
+        .cta-section p{
+            font-size:0.95rem;
+            opacity:.5;
+            margin-bottom:2rem;
+        }
+        .cta-button{
+            display:inline-block;
+            padding:1rem 2.5rem;
+            border:1px solid #333;
+            font-weight:600;
+            font-size:0.95rem;
+            transition:all .3s;
+            border-radius:8px;
+            background:transparent;
+            color:#fff;
+        }
+        .cta-button:hover{
+            background:#fff;
+            color:#000;
+            border-color:#fff;
+        }
+
+        /* CALL BUBBLE */
         .call-bubble{
-            position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:999;
-            background:rgba(255,255,255,.12);color:#fff;padding:18px 36px 18px 18px;border-radius:60px;
-            font-weight:900;font-size:1.1rem;letter-spacing:.7px;
-            box-shadow:0 20px 55px rgba(0,0,0,.35);cursor:pointer;
-            animation:float 3s ease-in-out infinite;white-space:nowrap;
-            backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);
-            transition:all .3s;display:flex;align-items:center;
+            position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:999;
+            background:rgba(255,255,255,.1);color:#fff;padding:14px 28px;border-radius:50px;
+            font-weight:600;font-size:0.95rem;letter-spacing:.3px;
+            backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);
+            transition:all .3s;cursor:pointer;
         }
-        .call-bubble::before{
-            content:'';width:12px;height:12px;background:#fff;border-radius:50%;
-            animation:pulse 2s infinite;margin-right:14px;flex-shrink:0;
+        .call-bubble:hover{
+            background:rgba(255,255,255,.15);
+            border-color:rgba(255,255,255,.2);
         }
-        .call-bubble:active{
-            transform:translateX(-50%) scale(1.1);
-            background:rgba(255,255,255,.22);
-            box-shadow:0 25px 65px rgba(0,0,0,.5);
-        }
-        .call-bubble.hidden{
-            opacity:0;
-            visibility:hidden;
-            pointer-events:none;
-        }
-        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-14px)}}
-        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.6);opacity:.8}}
+        .call-bubble.hidden{opacity:0;visibility:hidden;pointer-events:none}
 
-        /* FOOTER - MATCHING INDEX */
-        footer{background:#000;padding:6rem 0 4rem;border-top:3px solid #222}
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4rem;margin-bottom:5rem}
-        .footer-col h3{margin-bottom:1rem;font-size:1.2rem}
-        .footer-col p{margin-bottom:0.5rem;opacity:.85}
-        .footer-col a{display:block;margin-bottom:0.8rem;opacity:.85;transition:all .3s;font-weight:500}
-        .footer-col a:hover{opacity:1;transform:translateX(5px)}
-        .footer-bottom{text-align:center;opacity:.8;font-size:.95rem}
+        /* FOOTER */
+        footer{
+            padding:4rem 1.5rem 3rem;
+            border-top:1px solid #111;
+            background:#000;
+        }
+        .footer-content{
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            flex-wrap:wrap;
+            gap:2rem;
+            max-width:900px;
+            margin:0 auto;
+        }
+        .footer-col h4{
+            font-size:0.75rem;
+            font-weight:600;
+            text-transform:uppercase;
+            letter-spacing:.1em;
+            opacity:.4;
+            margin-bottom:1rem;
+        }
+        .footer-col p,.footer-col a{
+            font-size:0.95rem;
+            opacity:.7;
+            margin-bottom:0.5rem;
+            display:block;
+            transition:opacity .3s;
+        }
+        .footer-col a:hover{opacity:1}
+        .footer-bottom{
+            text-align:center;
+            margin-top:3rem;
+            padding-top:2rem;
+            border-top:1px solid #111;
+            font-size:0.8rem;
+            opacity:.3;
+        }
 
         /* RESPONSIVE */
         @media(max-width:768px){
-            nav{padding:1.4rem 1rem}
-            nav.scrolled{padding:0.9rem 1rem;border-radius:0 0 22px 22px}
-            .logo{font-size:1.85rem}
-            .logo-bubble{width:clamp(140px,38vw,260px)!important;height:clamp(140px,38vw,260px)!important}
-            header{padding-top:140px}
-            .content-grid{grid-template-columns:1fr;gap:3rem}
-            .pricing-table{padding:2.2rem 1.8rem}
-            .call-bubble{font-size:1rem;padding:15px 32px 15px 15px;bottom:20px}
-            .call-bubble::before{margin-right:12px}
-            .trust-section h2,.why-section h2,.process-section h2{font-size:2.3rem}
-            h1{font-size:2.8rem}
-            .tagline{font-size:1.2rem}
-            .hamburger{padding:16px}
-            .process-step{flex-direction:column;gap:1rem}
-            .step-number{width:50px;height:50px;font-size:1.5rem}
+            nav{padding:1.2rem 1rem}
+            nav.scrolled{padding:0.8rem 1rem}
+            .logo{font-size:1.5rem}
+            header{padding:130px 1.5rem 60px;min-height:65dvh}
+            .logo-box{margin-bottom:2rem;border-radius:16px}
+            h1{font-size:2.5rem}
+            .tagline{font-size:1rem}
+            .features-row{gap:1.5rem 2rem}
+            .feature-item{font-size:0.85rem}
+            .section-header h2{font-size:1.6rem}
+            .intro-content h2{font-size:1.5rem}
+            .why-section h2,.process-section h2,.included-section h2{font-size:1.5rem}
+            .why-grid{grid-template-columns:1fr}
+            .included-list{grid-template-columns:1fr}
+            .pricing-row{padding:1rem 1.25rem}
+            .call-bubble{font-size:0.9rem;padding:12px 24px;bottom:20px}
+            .footer-content{flex-direction:column;text-align:center;align-items:center}
+            .process-step{gap:1rem}
         }
-
+        
         @media(max-width:480px){
-            .call-bubble{padding:12px 28px 12px 12px;font-size:0.9rem;bottom:16px}
-            .call-bubble::before{width:10px;height:10px;margin-right:10px}
+            .pricing-section{padding:4rem 1rem}
+            .intro-section{padding:4rem 1rem}
+            .why-section{padding:4rem 1rem}
+            .process-section{padding:4rem 1rem}
+            .included-section{padding:4rem 1rem}
+            .features-strip{padding:2rem 1rem}
+            .features-row{gap:1rem 1.5rem}
         }
     </style>
 </head>
@@ -248,114 +475,120 @@
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<!-- NAV -->
 <nav id="nav">
     <div class="container nav-inner">
         <a href="index.html" class="logo">tree6z</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </div>
 </nav>
 
-<!-- SIDEBAR -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
-    <!-- <a href="window.html">Window Cleaning</a> -->
     <a href="lawncare.html">Lawn Care</a>
     <a href="leaf.html">Leaf Removal</a>
     <a href="spring.html">Spring Cleanup</a>
     <a href="snow.html">Snow Removal</a>
 </div>
 
-<!-- HERO -->
 <header>
-    <div class="logo-bubble">
-        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo" class="logo-img" loading="eager">
+    <div class="logo-box">
+        <img src="https://i.ibb.co/5XK5Zbfx/tree6z-logo.png" alt="tree6z Logo">
     </div>
-    <div class="container hero-content">
-        <h1>Leaf Removal</h1>
-        <p class="tagline">We get every damn leaf off your lawn.</p>
-    </div>
+    <h1>Leaf Removal</h1>
+    <p class="tagline">Every leaf. Off your lawn. Gone.</p>
 </header>
 
-<!-- SERVICE CONTENT -->
-<section class="service-content">
-    <div class="content-grid">
-        <div class="service-details">
-            <h2>Fall Cleanup That Actually Works</h2>
-            <p>We don't rake and leave piles. We remove, haul, and clean — zero leaves, zero mess.</p>
-            <ul>
-                <li>Full yard leaf removal</li>
-                <li>Gutter cleaning + downspout flush</li>
-                <li>Haul everything off-site</li>
-                <li>Final blow-off — spotless</li>
-                <li>One-time or full-season packages</li>
-                <li>Mulch bed cleanup</li>
-                <li>Deck & patio clearing</li>
-            </ul>
-            <a href="tel:+13062229165" class="cta-service">Call to Book</a>
-        </div>
-        <div class="pricing-table">
-            <h3>Transparent Pricing</h3>
-            <div class="price-item">
-                <div class="price-row">
-                    <span>Small Yard (< 1000 sq ft)</span>
-                    <strong>$75</strong>
-                </div>
-                <span class="popular-tag">Most Popular</span>
-            </div>
-            <div class="price-item">
-                <div class="price-row">
-                    <span>Medium (< 2000 sq ft)</span>
-                    <strong>$120</strong>
-                </div>
-            </div>
-            <div class="price-item">
-                <div class="price-row">
-                    <span>Large (2000–10,000 sq ft)</span>
-                    <strong>$199-$599</strong>
-                </div>
-            </div>
-            <div class="price-item">
-                <div class="price-row">
-                    <span>Gutter Cleaning Add-On</span>
-                    <strong>+$50</strong>
-                </div>
-            </div>
-            <div class="price-item">
-                <div class="price-row">
-                    <span>Full Season Package (4+ visits)</span>
-                    <strong>Book All Fall & Save 20%</strong>
-                </div>
-            </div>
-            <p class="pricing-note"><strong>All haul-away included.</strong> Acreage properties quoted custom. <strong>Full Season Package:</strong> We come every 2 weeks Oct-Nov, you pay once, save 20%, never think about leaves again. Book early — October fills up fast in Saskatoon!</p>
+<div class="features-strip">
+    <div class="features-row">
+        <span class="feature-item">Full Yard Cleanup</span>
+        <span class="feature-item">Gutter Cleaning</span>
+        <span class="feature-item">Haul-Away Included</span>
+        <span class="feature-item">Same Day Service</span>
+    </div>
+</div>
+
+<section class="intro-section">
+    <div class="container">
+        <div class="intro-content">
+            <h2>Fall Cleanup Done Right</h2>
+            <p>Saskatoon's short fall means leaves pile up fast. Left alone, they suffocate your grass, clog your gutters, and create a mess that's ten times worse to deal with in spring. We don't rake and leave piles on your curb. We remove everything, haul it away, and leave your yard spotless.</p>
+            <p>One visit or full-season coverage — your call. Either way, zero leaves left behind.</p>
         </div>
     </div>
 </section>
 
-<!-- WHY FALL CLEANUP MATTERS -->
+<section class="pricing-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Leaf Removal Pricing</h2>
+            <p>All haul-away included · No hidden fees</p>
+        </div>
+        
+        <div class="pricing-table">
+            <div class="pricing-row">
+                <div>
+                    <div class="label">Small Yard</div>
+                    <div class="sublabel">Under 1,000 sq ft</div>
+                </div>
+                <span class="price">$75</span>
+            </div>
+            
+            <div class="pricing-row">
+                <div>
+                    <div class="label">Medium Yard</div>
+                    <div class="sublabel">1,000 – 2,000 sq ft</div>
+                </div>
+                <span class="price">$120</span>
+            </div>
+            
+            <div class="pricing-row">
+                <div>
+                    <div class="label">Large Yard</div>
+                    <div class="sublabel">2,000 – 10,000 sq ft</div>
+                </div>
+                <span class="price">$199 – $599</span>
+            </div>
+            
+            <div class="pricing-row">
+                <div>
+                    <div class="label">Gutter Cleaning</div>
+                    <div class="sublabel">Add-on service</div>
+                </div>
+                <span class="price">+$50</span>
+            </div>
+            
+            <div class="pricing-row bundle">
+                <div>
+                    <div class="label">Full Season Package<span class="save-tag">Save 20%</span></div>
+                    <div class="sublabel">4+ visits · Oct through Nov</div>
+                </div>
+                <span class="price">Custom Quote</span>
+            </div>
+        </div>
+        
+        <p class="pricing-note">Acreage properties quoted custom · October fills fast</p>
+    </div>
+</section>
+
 <section class="why-section">
     <div class="container">
         <h2>Why Fall Cleanup Matters</h2>
         <div class="why-grid">
             <div class="why-card">
-                <div class="why-icon">🍂</div>
                 <h3>Prevents Lawn Damage</h3>
                 <p>Leaves left over winter suffocate grass, create mold, and kill root systems. Spring recovery costs way more than fall cleanup.</p>
             </div>
             <div class="why-card">
-                <div class="why-icon">💧</div>
                 <h3>Protects Gutters</h3>
                 <p>Clogged gutters overflow, freeze, and crack. Water damage to your foundation starts at the roofline.</p>
             </div>
             <div class="why-card">
-                <div class="why-icon">🐛</div>
                 <h3>Eliminates Pests</h3>
-                <p>Leaf piles attract mice, insects, and disease. Clean yards = fewer unwanted visitors all winter.</p>
+                <p>Leaf piles attract mice, insects, and disease. Clean yards mean fewer unwanted visitors all winter.</p>
             </div>
             <div class="why-card">
-                <div class="why-icon">❄️</div>
                 <h3>Easier Snow Removal</h3>
                 <p>Snow plows and blowers work better on clean surfaces. Buried leaves create slippery, uneven terrain.</p>
             </div>
@@ -363,95 +596,89 @@
     </div>
 </section>
 
-<!-- OUR PROCESS -->
 <section class="process-section">
     <div class="container">
-        <h2>How We Do It</h2>
-        <p class="process-subtitle">Our proven 4-step leaf removal process</p>
+        <h2>Our Process</h2>
         <div class="process-steps">
             <div class="process-step">
-                <div class="step-number">1</div>
+                <div class="step-num">1</div>
                 <div class="step-content">
                     <h3>Rake & Blow</h3>
-                    <p>We start with power raking and commercial blowers to gather every leaf from beds, walkways, and hard-to-reach corners.</p>
+                    <p>Power raking and commercial blowers gather every leaf from beds, walkways, and hard-to-reach corners.</p>
                 </div>
             </div>
             <div class="process-step">
-                <div class="step-number">2</div>
+                <div class="step-num">2</div>
                 <div class="step-content">
                     <h3>Collect & Load</h3>
-                    <p>Leaves are bagged or loaded into our truck. We don't leave piles on your curb for weeks — everything goes immediately.</p>
+                    <p>Leaves bagged or loaded into our truck. No piles left on your curb — everything goes immediately.</p>
                 </div>
             </div>
             <div class="process-step">
-                <div class="step-number">3</div>
+                <div class="step-num">3</div>
                 <div class="step-content">
-                    <h3>Gutter Clean (Optional)</h3>
-                    <p>We flush downspouts, clear debris, and check for blockages. Gutters flow freely before winter freeze.</p>
+                    <h3>Gutter Clean</h3>
+                    <p>Optional add-on. We flush downspouts, clear debris, and check for blockages before winter freeze.</p>
                 </div>
             </div>
             <div class="process-step">
-                <div class="step-number">4</div>
+                <div class="step-num">4</div>
                 <div class="step-content">
-                    <h3>Final Inspection</h3>
-                    <p>One last blow-off to ensure your property is spotless. We walk the yard with you before we leave.</p>
+                    <h3>Final Blow-Off</h3>
+                    <p>One last pass to ensure your property is spotless. Walkthrough with you before we leave.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="trust-section">
+<section class="included-section">
     <div class="container">
-        <h2>Why Clients Never Leave</h2>
-        <div class="trust-grid">
-            <div class="trust-card">
-                <h3>⏰ Fast Turnaround</h3>
-                <p>Most properties done in 1-3 hours. We don't drag it out — we get in, get it done, get out.</p>
-            </div>
-            <div class="trust-card">
-                <h3>👥 Same Crew, Every Time</h3>
-                <p>No strangers. You'll know our names and we'll know your property.</p>
-            </div>
-            <div class="trust-card">
-                <h3>🛡️ Fully Insured</h3>
-                <p>Liability + workers' comp. Zero risk to your property.</p>
-            </div>
-            <div class="trust-card">
-                <h3>📞 One Call Does It All</h3>
-                <p>Lawn, snow, windows — one crew, year-round. Simple.</p>
-            </div>
+        <h2>What's Included</h2>
+        <div class="included-list">
+            <div class="included-item">Full yard leaf removal</div>
+            <div class="included-item">Mulch bed cleanup</div>
+            <div class="included-item">Deck & patio clearing</div>
+            <div class="included-item">Walkway cleaning</div>
+            <div class="included-item">Haul-away included</div>
+            <div class="included-item">Final blow-off</div>
+            <div class="included-item">Gutter cleaning (add-on)</div>
+            <div class="included-item">Final walkthrough</div>
         </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Book your fall cleanup</h2>
+        <p>October slots fill fast. Call today.</p>
+        <a href="tel:+13062229165" class="cta-button">Call (306) 222-9165</a>
     </div>
 </section>
 
 <div class="call-bubble" onclick="window.location.href='tel:+13062229165'">
-    Call Now: (306) 222-9165
+    (306) 222-9165
 </div>
 
 <footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <p>(306) 222-9165</p>
-                <p>tree6zbookings@gmail.com</p>
-                <p>tree6zlandscaping@gmail.com</p>
-            </div>
-            <div class="footer-col">
-                <h3>Service Area</h3>
-                <p>All of Saskatoon</p>
-                <p>Residential & Commercial</p>
-            </div>
-            <div class="footer-col">
-                <h3>Follow Us</h3>
-                <a href="https://instagram.com/tree6z" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
-            </div>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="tel:+13062229165">(306) 222-9165</a>
+            <a href="mailto:tree6zbookings@gmail.com">tree6zbookings@gmail.com</a>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 tree6z • Family-Run • Fully Insured • City of Saskatoon Licensed</p>
+        <div class="footer-col">
+            <h4>Service Area</h4>
+            <p>Saskatoon & Area</p>
         </div>
+        <div class="footer-col">
+            <h4>Social</h4>
+            <a href="https://instagram.com/tree6z" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@tree6z" target="_blank" rel="noopener">TikTok</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 tree6z · Fully Insured</p>
     </div>
 </footer>
 
@@ -461,6 +688,15 @@
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
     const callBubble = document.querySelector('.call-bubble');
+
+    function closeMenu() {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.classList.remove('active');
+        callBubble.classList.remove('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
 
     function toggleMenu() {
         const isActive = menu.classList.toggle('active');
@@ -472,18 +708,9 @@
     }
 
     hamburger.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', () => {
-        menu.classList.remove('active');
-        overlay.classList.remove('active');
-        hamburger.classList.remove('active');
-        callBubble.classList.remove('hidden');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    });
-
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', scrollY > 50);
-    });
+    overlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
 </script>
 </body>
 </html>
