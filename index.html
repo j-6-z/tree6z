@@ -265,11 +265,13 @@
             margin-bottom:2rem;
         }
         .license-section img{
+            width:100%;
             max-width:500px;
             margin:0 auto;
             border:1px solid #1a1a1a;
             border-radius:12px;
             transition:transform .3s;
+            height:auto;
         }
         .license-section img:hover{
             transform:scale(1.02);
@@ -525,6 +527,15 @@
             .services-grid,.testimonials-grid,.faq-grid{grid-template-columns:1fr}
             .call-bubble{font-size:0.9rem;padding:12px 24px;bottom:20px}
             .footer-content{flex-direction:column;text-align:center;align-items:center}
+            
+            /* Mobile-specific fix for business license image */
+            .license-section img{
+                max-width:100%;
+                border-radius:8px;
+            }
+            .license-section img:hover{
+                transform:scale(1.01);
+            }
         }
         
         @media(max-width:480px){
