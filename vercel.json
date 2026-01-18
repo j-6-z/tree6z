@@ -8,6 +8,10 @@
     {
       "src": "images/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "cleanUrls": true,
@@ -40,6 +44,26 @@
     {
       "source": "/images/(.*)",
       "destination": "/images/$1"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/public/favicon.ico"
+    },
+    {
+      "source": "/favicon.svg",
+      "destination": "/public/favicon.svg"
+    },
+    {
+      "source": "/favicon-96x96.png",
+      "destination": "/public/favicon-96x96.png"
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "destination": "/public/apple-touch-icon.png"
+    },
+    {
+      "source": "/site.webmanifest",
+      "destination": "/public/site.webmanifest"
     }
   ]
 }
